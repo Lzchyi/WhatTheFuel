@@ -239,28 +239,28 @@ const en: EditorialCopy = {
 
 const ms: EditorialCopy = {
   home: {
-    eyebrow: 'Konteks bahan api bersumber',
-    title: 'WhatTheFuel buang panik, kekalkan rujukan.',
-    subtitle: 'Baca harga bahan api yang disahkan, berita bahan api terkini, garis masa ringkas, dan penerangan mudah tentang kenapa kejutan minyak global masih sampai ke Malaysia.',
-    disclaimer: 'Laman pendidikan sahaja. Jika sesuatu angka masih disemak, ia tidak akan dipaparkan sehingga sumbernya siap.',
-    latestTitle: 'Ringkasan bahan api terkini',
-    latestSubtitle: 'Harga semasa dan garis subsidi berpaut pada halaman sumber rasmi.',
-    pricesLabel: 'Harga bahan api',
-    newsLabel: 'Berita langsung',
-    loadingPrices: 'Memuatkan data harga yang disahkan.',
+    eyebrow: 'Konteks harga minyak bersumber',
+    title: 'WhatTheFuel tapis bising, kekal pada sumber.',
+    subtitle: 'Baca harga minyak yang disahkan, berita terkini berkaitan minyak, garis masa ringkas, dan penerangan yang jelas tentang kenapa kejutan pasaran global masih terasa di Malaysia.',
+    disclaimer: 'Laman ini untuk rujukan umum. Jika sesuatu angka masih disemak, ia tidak akan dipaparkan dahulu.',
+    latestTitle: 'Ringkasan harga minyak terkini',
+    latestSubtitle: 'Harga semasa dan nota subsidi berpaut pada halaman sumber rasmi.',
+    pricesLabel: 'Harga minyak',
+    newsLabel: 'Berita terkini',
+    loadingPrices: 'Memuatkan harga yang disahkan.',
     emptyNews: 'Tiada item langsung lagi untuk tab ini.',
   },
   global: {
-    title: 'Kenapa petrol jadi mahal',
-    intro: 'Kejutan minyak global bergerak melalui perkapalan, inventori, niaga hadapan, dan margin penapisan sebelum sampai ke harga pam tempatan.',
-    footnote: 'Halaman ini menerangkan mekanisme. Ia tidak mendakwa setiap pergerakan global sampai ke Malaysia dengan kadar atau kesan yang sama.',
+    title: 'Kenapa harga minyak naik',
+    intro: 'Kejutan minyak global bergerak melalui perkapalan, inventori, pasaran hadapan, dan margin penapisan sebelum sampai ke harga pam tempatan.',
+    footnote: 'Halaman ini menerangkan mekanisme. Ia bukan dakwaan bahawa setiap pergerakan global akan menjejaskan Malaysia dengan kadar yang sama.',
     noteTitle: 'Apa yang halaman ini tidak dakwa',
     sections: [
       {
-        title: 'Minyak ditetapkan secara global, bukan ikut stesen semata-mata',
+        title: 'Harga minyak ditentukan secara global, bukan oleh satu stesen semata-mata',
         paragraphs: [
-          'Harga minyak mentah dan bahan api ditentukan oleh reaksi pedagang, penapis, syarikat perkapalan, dan kerajaan terhadap satu isyarat yang sama: sejauh mana pasaran dunia ketat sekarang dan betapa berisikonya minggu-minggu akan datang.',
-          'EIA menghimpunkan pemacu utama kepada harga spot, bekalan OPEC dan bukan OPEC, inventori, pasaran kewangan, dan permintaan dalam ekonomi OECD serta bukan OECD.',
+          'Harga minyak mentah dan produk minyak ditapis berubah kerana pedagang, penapis, syarikat perkapalan, dan kerajaan memberi reaksi kepada isyarat yang sama: betapa ketatnya pasaran dunia sekarang dan betapa berisikonya minggu-minggu akan datang.',
+          'EIA menghimpunkan pemacu utama harga spot, bekalan OPEC dan bukan OPEC, inventori, pasaran kewangan, dan permintaan dalam ekonomi OECD serta bukan OECD.',
         ],
         sources: [
           { label: 'Gambaran EIA', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php?funnelFromId=71' },
@@ -268,17 +268,17 @@ const ms: EditorialCopy = {
         ],
       },
       {
-        title: 'Titik sempit perkapalan tukar ketegangan jadi kos',
+        title: 'Pintu sempit perkapalan boleh menukar ketegangan jadi kos',
         paragraphs: [
-          'Selat Hormuz ialah contoh paling jelas kenapa berita bahan api menjadi isu tempatan. EIA mengatakan kira-kira 20 juta tong sehari melalui selat itu pada 2024, hampir satu perlima penggunaan cecair petroleum dunia.',
-          'Apabila laluan itu kelihatan terancam, pasaran tidak menunggu sekatan sebenar. Insurans, tambang, kos ganti bekalan, dan lindung nilai akan berubah lebih awal.',
+          'Selat Hormuz ialah contoh paling jelas kenapa berita minyak menjadi isu tempatan. EIA mengatakan kira-kira 20 juta tong sehari melalui selat itu pada 2024, hampir satu perlima penggunaan cecair petroleum dunia.',
+          'Apabila laluan itu kelihatan terancam, pasaran tidak menunggu sekatan sebenar. Insurans, tambang, kos bekalan gantian, dan lindung nilai akan bergerak lebih awal.',
         ],
         sources: [{ label: 'Analisis Hormuz EIA', url: 'https://www.eia.gov/todayinenergy/detail.php?id=65504' }],
       },
       {
-        title: 'Harga spot, niaga hadapan, dan inventori tidak bergerak serentak',
+        title: 'Harga spot, pasaran hadapan, dan inventori bergerak pada kelajuan berbeza',
         paragraphs: [
-          'Analisis pasaran EIA menerangkan bahawa harga semasa dan harga niaga hadapan bertindak balas berbeza terhadap kejutan. Bila pedagang jangka bekalan akan makin ketat, niaga hadapan bergerak dahulu; bila bekalan fizikal terganggu sekarang, harga spot boleh melonjak serta-merta.',
+          'Analisis pasaran EIA menerangkan bahawa harga semasa dan harga niaga hadapan bertindak balas berbeza terhadap kejutan. Bila pedagang menjangka bekalan akan lebih ketat, pasaran hadapan bergerak dahulu; bila bekalan fizikal terganggu sekarang, harga spot boleh melonjak serta-merta.',
           'Inventori ialah penampan antara dua dunia itu. Stok rendah, ruang penapisan yang sempit, atau gangguan perkapalan menjadikan pasaran lebih sensitif kepada berita.',
         ],
         sources: [
@@ -287,30 +287,30 @@ const ms: EditorialCopy = {
         ],
       },
       {
-        title: 'Malaysia tetap rasa pasaran yang sama',
+        title: 'Malaysia tetap berada dalam pasaran yang sama',
         paragraphs: [
-          'Malaysia ialah pengeluar minyak dan gas, tetapi itu tidak menjadikan pam tempatan terasing daripada harga global. Negara masih berdagang minyak mentah, produk ditapis, kapasiti perkapalan, dan bekalan ganti dalam pasaran dunia.',
+          'Malaysia ialah pengeluar minyak dan gas, tetapi itu tidak menjadikan pam tempatan terasing daripada harga global. Negara masih berdagang minyak mentah, produk ditapis, kapasiti perkapalan, dan bekalan gantian dalam pasaran dunia.',
           'Sebab itu konflik atau gangguan perkapalan di tempat jauh masih boleh muncul dalam pengiraan harga tempatan, tekanan subsidi, dan masa semakan harga mingguan.',
         ],
         bullets: [
-          'Pergerakan penanda aras global masuk ke kos ganti tempatan.',
-          'Kos perkapalan dan insurans boleh naik walaupun tajuk harga mentah berhenti seketika.',
+          'Pergerakan penanda aras global masuk ke kos bekalan gantian tempatan.',
+          'Kos perkapalan dan insurans boleh naik walaupun tajuk harga mentah belum berubah banyak.',
           'Penapis dan pengedar masih perlu membeli produk dalam sistem global yang sama.',
         ],
       },
     ],
   },
   malaysia: {
-    title: 'Kenapa Malaysia masih kena kesan',
-    intro: 'Malaysia memang pengeluar minyak, tetapi ia tetap berdagang dalam sistem bahan api global, mengimport gred produk yang diperlukan, dan menggunakan subsidi bersasar untuk meredakan kejutan.',
-    footnote: 'Intinya bukan Malaysia lemah. Intinya ialah harga tempatan masih bergantung pada bekalan global, dasar tempatan, dan kos bekalan ganti.',
-    noteTitle: 'Inti utama',
+    title: 'Kenapa Malaysia masih turut terkesan',
+    intro: 'Malaysia memang pengeluar minyak, tetapi harga tempatan masih bergerak dalam sistem global, masih perlu import gred produk tertentu, dan menggunakan subsidi bersasar untuk menyerap kejutan.',
+    footnote: 'Maksudnya bukan Malaysia lemah. Maksudnya harga tempatan masih bergantung pada bekalan global, dasar tempatan, dan kos bekalan gantian.',
+    noteTitle: 'Inti penting',
     sections: [
       {
         title: 'Malaysia bukan sekadar negara minyak',
         paragraphs: [
-          'Laporan KDNK DOSM menunjukkan perkhidmatan dan pembuatan ialah tunjang utama ekonomi. Sebab itu hujah “Malaysia ada minyak, jadi petrol mesti murah” terlalu mudah.',
-          'Ekonomi kita luas, dan dasar bahan api perlu menimbang pengguna, risiko fiskal, dan keperluan industri serentak.',
+          'Laporan KDNK DOSM menunjukkan perkhidmatan dan pembuatan ialah tunjang utama ekonomi. Sebab itu hujah "Malaysia ada minyak, jadi petrol mesti murah" terlalu mudah.',
+          'Ekonomi kita luas, dan dasar harga minyak perlu menimbang pengguna, risiko fiskal, dan keperluan industri serentak.',
         ],
         sources: [{ label: 'Laporan KDNK DOSM', url: 'https://v2.dosm.gov.my/portal-main/release-content/gross-domestic-product-gdp-by-state-2024' }],
       },
@@ -352,26 +352,26 @@ const ms: EditorialCopy = {
     ],
   },
   myths: {
-    title: 'Mitos vs fakta',
+    title: 'Mitos & fakta',
     intro: 'Kad ringkas dengan jejak sumber. Tenang, terus, dan mudah dikongsi.',
     cards: [
       {
-        myth: '“Malaysia ada minyak, jadi petrol mesti murah.”',
+        myth: '"Malaysia ada minyak, jadi petrol mesti murah."',
         fact: 'Malaysia masih berdagang minyak mentah dan produk ditapis dalam pasaran global, dan harga tempatan masih terdedah kepada kos ganti, margin penapisan, logistik, dan dasar subsidi.',
-        whyItMatters: 'Ini jalan pintas paling biasa bila orang marah tentang harga bahan api. Nampak logik, tetapi ia abaikan cara sebenar produk fizikal dan pasaran berfungsi.',
+        whyItMatters: 'Ini jalan pintas paling biasa bila orang marah tentang harga minyak. Nampak logik, tetapi ia abaikan cara sebenar produk fizikal dan pasaran berfungsi.',
         sources: [
           { label: 'Statistik petroleum DOSM', url: 'https://www.dosm.gov.my/portal-main/release-content/mining-of-petroleum-and-natural-gas-statistics-first-quarter-2025' },
           { label: 'Pasaran kewangan EIA', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php?funnelFromId=71' },
         ],
       },
       {
-        myth: '“Harga pam sama dengan harga minyak mentah hari ini.”',
+        myth: '"Harga pam sama dengan harga minyak mentah hari ini."',
         fact: 'MOF menyatakan harga pam Malaysia dikira berdasarkan purata kos minggu sebelumnya, jadi pergerakan pasaran hari ini tidak terus masuk ke pam.',
         whyItMatters: 'Sebab itu orang nampak harga minyak dunia jatuh dalam berita, lalu terus sangka kerajaan sorok harga murah.',
         sources: [{ label: 'Penjelasan lag harga MOF', url: 'https://www.mof.gov.my/portal/en/news/press-citations/mof-pump-fuel-prices-reflect-last-weeks-costs-despite-global-drop' }],
       },
       {
-        myth: '“Subsidi bermaksud kerajaan boleh tanggung apa sahaja selamanya.”',
+        myth: '"Subsidi bermaksud kerajaan boleh tanggung apa sahaja selamanya."',
         fact: 'Sistem semasa bersasar. MOF mengehadkan BUDI95 buat sementara waktu dan menyimpan kuota khas untuk kategori tertentu, bukannya subsidi tanpa had.',
         whyItMatters: 'Kalau perbincangan subsidi tak ambil kira had fiskal, ia bertukar jadi fantasi, bukan dasar.',
         sources: [
@@ -380,7 +380,7 @@ const ms: EditorialCopy = {
         ],
       },
       {
-        myth: '“Negara pengeluar tak akan terkesan oleh kejutan global.”',
+        myth: '"Negara pengeluar tak akan terkesan oleh kejutan global."',
         fact: 'Analisis Hormuz EIA menunjukkan titik sempit perkapalan yang jauh dari Malaysia pun boleh mengubah harga dunia, insurans, dan tambang dengan cepat.',
         whyItMatters: 'Malaysia berada dalam sistem komoditi yang sama seperti semua orang. Geografi ubah tahap kesan, bukan kewujudan kesannya.',
         sources: [{ label: 'Analisis Hormuz EIA', url: 'https://www.eia.gov/todayinenergy/detail.php?id=65504' }],
@@ -388,45 +388,45 @@ const ms: EditorialCopy = {
     ],
   },
   sources: {
-    title: 'Sumber dan metodologi',
-    intro: 'WhatTheFuel menggunakan set sumber yang kecil tetapi diluluskan, dan hanya memaparkan perkara yang boleh dijejak.',
-    updateTitle: 'Cara kemas kini berjalan',
-    updateBody: 'Berita langsung disegar semula daripada suapan yang diluluskan. Garis masa dan penerangan dikurasi dan hanya berubah apabila ada sumber yang jelas.',
+    title: 'Sumber dan kaedah',
+    intro: 'WhatTheFuel hanya menggunakan sumber yang diluluskan dan hanya menerbitkan perkara yang boleh dijejak.',
+    updateTitle: 'Cara kemas kini dijalankan',
+    updateBody: 'Berita langsung disegar semula daripada suapan yang diluluskan. Garis masa dan penerangan disusun secara editorial dan hanya dikemas kini apabila ada sumber yang jelas.',
     sourceTitle: 'Dari mana maklumat datang',
-    sourceBody: 'Halaman dasar Malaysia, statistik rasmi, data tenaga global, dan beberapa outlet berita terpilih digabungkan dalam satu laman yang mudah dibaca.',
+    sourceBody: 'Halaman dasar Malaysia, statistik rasmi, data tenaga global, dan beberapa media yang disemak digabungkan dalam satu laman yang mudah dibaca.',
     noteTitle: 'Apa yang tidak kami siarkan',
     noteBody: 'Tiada kad harga tanpa sumber, tiada entri pengisi, dan tiada dakwaan yang nampak kemas tetapi tidak boleh dijejak.',
     sourceGroups: [
-      { name: 'Kementerian Kewangan Malaysia', purpose: 'Harga bahan api, dasar subsidi, kuota, dan kenyataan rasmi', url: 'https://www.mof.gov.my/portal/en/' },
+      { name: 'Kementerian Kewangan Malaysia', purpose: 'Harga minyak, dasar subsidi, kuota, dan kenyataan rasmi', url: 'https://www.mof.gov.my/portal/en/' },
       { name: 'Jabatan Perangkaan Malaysia', purpose: 'Data ekonomi dan perdagangan petroleum untuk penerangan', url: 'https://www.dosm.gov.my/portal-main/' },
-      { name: 'Free Malaysia Today', purpose: 'Liputan nasional, perniagaan, dan dunia untuk berita langsung berkaitan bahan api', url: 'https://www.freemalaysiatoday.com/' },
-      { name: 'Malay Mail', purpose: 'Liputan Malaysia dan dunia untuk berita langsung berkaitan bahan api', url: 'https://www.malaymail.com/' },
-      { name: 'Berita RTM', purpose: 'Liputan nasional berbahasa Melayu untuk berita langsung berkaitan bahan api', url: 'https://berita.rtm.gov.my/' },
-      { name: 'Sin Chew Daily', purpose: 'Liputan Malaysia dan dunia berbahasa Cina untuk berita langsung berkaitan bahan api', url: 'https://www.sinchew.com.my/' },
-      { name: 'Sinar Premium', purpose: 'Liputan berbahasa Melayu untuk berita langsung berkaitan bahan api', url: 'https://premium.sinarharian.com.my/' },
+      { name: 'Free Malaysia Today', purpose: 'Liputan nasional, perniagaan, dan dunia untuk berita langsung berkaitan minyak', url: 'https://www.freemalaysiatoday.com/' },
+      { name: 'Malay Mail', purpose: 'Liputan Malaysia dan dunia untuk berita langsung berkaitan minyak', url: 'https://www.malaymail.com/' },
+      { name: 'Berita RTM', purpose: 'Liputan nasional berbahasa Melayu untuk berita langsung berkaitan minyak', url: 'https://berita.rtm.gov.my/' },
+      { name: 'Sin Chew Daily', purpose: 'Liputan Malaysia dan dunia berbahasa Cina untuk berita langsung berkaitan minyak', url: 'https://www.sinchew.com.my/' },
+      { name: 'Sinar Premium', purpose: 'Liputan berbahasa Melayu untuk berita langsung berkaitan minyak', url: 'https://premium.sinarharian.com.my/' },
       { name: 'U.S. Energy Information Administration', purpose: 'Struktur pasaran minyak global, titik sempit, harga, dan mekanik pasaran', url: 'https://www.eia.gov/' },
-      { name: 'BBC News, Reuters, dan outlet lain yang disemak', purpose: 'Laporan langsung tentang bahan api, minyak, perkapalan, dan tenaga apabila sumber newsroom diperlukan' },
+      { name: 'BBC News, Reuters, dan media lain yang disemak', purpose: 'Laporan langsung tentang minyak, perkapalan, dan tenaga apabila sumber newsroom diperlukan' },
     ],
   },
 };
 
 const zh: EditorialCopy = {
   home: {
-    eyebrow: '有来源的燃油背景',
+    eyebrow: '有来源的油价背景',
     title: 'WhatTheFuel 只保留事实，不放大恐慌。',
-    subtitle: '这里有已核实的燃油价格、最新燃油新闻、简洁时间线，以及为什么全球油价冲击仍会传到马来西亚的浅白说明。',
+    subtitle: '这里有已核实的油价、最新相关新闻、简洁时间线，以及为什么全球油市冲击仍会传到马来西亚的浅白说明。',
     disclaimer: '仅供公众阅读与理解。若某个数字仍在核查中，它不会先放上去。',
-    latestTitle: '最新燃油快照',
+    latestTitle: '最新油价快照',
     latestSubtitle: '价格和补贴信息都连接到官方来源页面。',
-    pricesLabel: '燃油价格',
+    pricesLabel: '油价',
     newsLabel: '实时新闻',
     loadingPrices: '正在加载已核实的价格数据。',
     emptyNews: '此分类目前还没有实时条目。',
   },
   global: {
-    title: '为什么汽油会变贵',
-    intro: '全球油价冲击会先经过航运、库存、期货和炼油利润，再传到本地油站价格。',
-    footnote: '本页解释的是机制，不是要说每一次全球波动都会以同样速度、同样方式影响马来西亚。',
+    title: '为什么油价会涨',
+    intro: '全球油市冲击会先经过航运、库存、期货和炼油利润，再传到本地油站价格。',
+    footnote: '本页解释的是机制，不是在说每一次全球波动都会以同样速度、同样方式影响马来西亚。',
     noteTitle: '本页不主张什么',
     sections: [
       {
@@ -475,20 +475,20 @@ const zh: EditorialCopy = {
   },
   malaysia: {
     title: '为什么马来西亚仍会受影响',
-    intro: '马来西亚虽然产油，但仍处在全球燃油体系里，仍需要进口所需油品等级，并使用定向补贴来减缓冲击。',
+    intro: '马来西亚虽然产油，但仍处在全球油市里，仍需要进口所需油品等级，并使用定向补贴来减缓冲击。',
     footnote: '重点不是马来西亚无力，而是本地价格仍受全球供给、本地政策和替代供给成本影响。',
     noteTitle: '核心重点',
     sections: [
       {
         title: '马来西亚不只是石油国家',
         paragraphs: [
-          'DOSM 的 GDP 报告显示，服务业和制造业才是经济的主要支柱。因此“马来西亚有石油，所以汽油一定便宜”这个说法太简单。',
-          '国家经济很宽，燃油政策必须同时兼顾消费者、财政压力和工业需求。',
+          'DOSM 的 GDP 报告显示，服务业和制造业才是经济的主要支柱。因此"马来西亚有石油，所以汽油一定便宜"这个说法太简单。',
+          '国家经济很宽，油价政策必须同时兼顾消费者、财政压力和工业需求。',
         ],
         sources: [{ label: 'DOSM GDP 报告', url: 'https://v2.dosm.gov.my/portal-main/release-content/gross-domestic-product-gdp-by-state-2024' }],
       },
       {
-        title: '马来西亚出口原油，也进口原油和成品油',
+        title: '马来西亚会出口原油，也会进口原油和成品油',
         paragraphs: [
           'DOSM 的石油统计显示，马来西亚会出口原油和凝析油，也会进口原油、凝析油和成品油。这对于一个与炼油和贸易紧密相连的经济体很正常。',
           '真正关键的不是“有没有产油”，而是国内需要的油种、油品和时间点，能否以合理成本及时获得。',
@@ -525,8 +525,8 @@ const zh: EditorialCopy = {
     ],
   },
   myths: {
-    title: '迷思与事实',
-    intro: '短卡片，附来源。语气平静，直接，方便转发。',
+    title: '常见误区',
+    intro: '短卡片，附来源。语气平静、直接，方便转发。',
     cards: [
       {
         myth: '“马来西亚产油，所以汽油一定便宜。”',
@@ -561,24 +561,24 @@ const zh: EditorialCopy = {
     ],
   },
   sources: {
-    title: '来源与方法',
-    intro: 'WhatTheFuel 只使用少量批准来源，只发布能被追溯的内容。',
+    title: '资料来源与方法',
+    intro: 'WhatTheFuel 只使用少量已批准来源，只发布能被追溯的内容。',
     updateTitle: '更新方式',
-    updateBody: '实时新闻会从批准的来源自动刷新。时间线和解释页由人工整理，只在有清楚来源时更新。',
+    updateBody: '实时新闻会从已批准的来源自动刷新。时间线和解释页由编辑整理，只在有清楚来源时更新。',
     sourceTitle: '信息来自哪里',
-    sourceBody: '马来西亚政策页面、官方统计、全球能源数据，以及少量审过的新闻媒体会一起组成这个网站。',
+    sourceBody: '马来西亚政策页面、官方统计、全球能源数据，以及少数经过审看的新闻媒体，共同组成这个网站。',
     noteTitle: '我们不会发布什么',
     noteBody: '没有来源的价格卡、没有内容的填充条目，以及看起来漂亮却追不到出处的说法。',
     sourceGroups: [
-      { name: '马来西亚财政部', purpose: '燃油价格、补贴政策、配额规则和官方声明', url: 'https://www.mof.gov.my/portal/en/' },
+      { name: '马来西亚财政部', purpose: '油价、补贴政策、配额规则和官方声明', url: 'https://www.mof.gov.my/portal/en/' },
       { name: '马来西亚统计局', purpose: '解释页需要的经济与石油贸易数据', url: 'https://www.dosm.gov.my/portal-main/' },
-      { name: 'Free Malaysia Today', purpose: '用于燃油相关实时报道的马来西亚本地、商业与国际新闻', url: 'https://www.freemalaysiatoday.com/' },
-      { name: 'Malay Mail', purpose: '用于燃油相关实时报道的马来西亚与国际新闻', url: 'https://www.malaymail.com/' },
-      { name: 'Berita RTM', purpose: '用于燃油相关实时报道的马来语全国新闻', url: 'https://berita.rtm.gov.my/' },
-      { name: 'Sin Chew Daily', purpose: '用于燃油相关实时报道的中文马来西亚与国际新闻', url: 'https://www.sinchew.com.my/' },
-      { name: 'Sinar Premium', purpose: '用于燃油相关实时报道的马来语新闻', url: 'https://premium.sinarharian.com.my/' },
+      { name: 'Free Malaysia Today', purpose: '用于油价相关实时报道的马来西亚本地、商业与国际新闻', url: 'https://www.freemalaysiatoday.com/' },
+      { name: 'Malay Mail', purpose: '用于油价相关实时报道的马来西亚与国际新闻', url: 'https://www.malaymail.com/' },
+      { name: 'Berita RTM', purpose: '用于油价相关实时报道的马来语全国新闻', url: 'https://berita.rtm.gov.my/' },
+      { name: 'Sin Chew Daily', purpose: '用于油价相关实时报道的中文马来西亚与国际新闻', url: 'https://www.sinchew.com.my/' },
+      { name: 'Sinar Premium', purpose: '用于油价相关实时报道的马来语新闻', url: 'https://premium.sinarharian.com.my/' },
       { name: '美国能源信息署', purpose: '全球油市结构、咽喉点、价格与市场机制', url: 'https://www.eia.gov/' },
-      { name: 'BBC 新闻、路透社及其他审过的媒体', purpose: '需要新闻室来源时，用于燃油、石油、航运与能源的实时报道' },
+      { name: 'BBC 新闻、路透社及其他已核实媒体', purpose: '需要新闻室来源时，用于油价、石油、航运与能源的实时报道' },
     ],
   },
 };

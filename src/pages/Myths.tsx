@@ -4,7 +4,7 @@ import { editorial } from '../lib/editorial';
 import { useI18n } from '../lib/i18n';
 
 export function Myths() {
-  const { language } = useI18n();
+  const { language, t } = useI18n();
   const copy = editorial(language);
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@ export function Myths() {
             <div className="mb-4 flex items-center gap-3 text-amber-700 dark:text-amber-500"><ShieldAlert size={20} /><span className="font-bold">{card.myth}</span></div>
             <p className="mb-4 leading-relaxed text-stone-700 dark:text-stone-300">{card.fact}</p>
             <div className="rounded-2xl bg-stone-50 p-4 text-sm leading-relaxed text-stone-600 dark:bg-stone-800/60 dark:text-stone-400">
-              <span className="font-bold text-stone-800 dark:text-stone-200">Why it matters: </span>{card.whyItMatters}
+              <span className="font-bold text-stone-800 dark:text-stone-200">{t('myths.why_it_matters')}: </span>{card.whyItMatters}
             </div>
             <div className="mt-5 flex flex-wrap gap-3">
               {card.sources.map((source) => (

@@ -46,9 +46,14 @@ export function News() {
         {!filtered.length && !error ? <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-6 text-stone-500 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-400">{t('news.empty')}</div> : null}
         {filtered.map((item) => (
           <a key={item.id} href={item.url} target="_blank" rel="noreferrer" className="group block rounded-2xl border border-stone-200 bg-white p-6 transition-all hover:border-amber-300 hover:shadow-sm dark:border-stone-800 dark:bg-stone-900 dark:hover:border-amber-700">
-            <h4 className="mb-3 text-lg font-medium leading-snug text-stone-900 group-hover:text-amber-700 dark:text-stone-100 dark:group-hover:text-amber-500">{item.title}</h4>
-            {item.summary ? <p className="mb-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">{item.summary}</p> : null}
-            <div className="flex items-center justify-between text-sm text-stone-500 dark:text-stone-400"><span className="font-bold text-stone-700 dark:text-stone-300">{item.source}</span><span className="flex items-center gap-1">{formatDateTimeLabel(item.publishedAt)} <ExternalLink size={14} /></span></div>
+            <div className="mb-4 flex items-start justify-between gap-4">
+              <h4 className="text-lg font-medium leading-snug text-stone-900 group-hover:text-amber-700 dark:text-stone-100 dark:group-hover:text-amber-500">{item.title}</h4>
+              <ExternalLink size={16} className="mt-1 shrink-0 text-stone-400 transition-colors group-hover:text-amber-600 dark:text-stone-500 dark:group-hover:text-amber-400" />
+            </div>
+            <div className="flex items-center justify-between gap-3 border-t border-stone-100 pt-4 text-sm text-stone-500 dark:border-stone-800 dark:text-stone-400">
+              <span className="font-bold text-stone-700 dark:text-stone-300">{item.source}</span>
+              <span className="flex items-center gap-1">{formatDateTimeLabel(item.publishedAt)}</span>
+            </div>
           </a>
         ))}
       </div>
