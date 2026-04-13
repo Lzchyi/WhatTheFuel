@@ -31,6 +31,12 @@
       "url": "https://www.dosm.gov.my/portal-main/"
     },
     {
+      "name": "Free Malaysia Today",
+      "type": "newswire",
+      "purpose": "Malaysia national, business, and world reporting used for live fuel-related coverage",
+      "url": "https://www.freemalaysiatoday.com/"
+    },
+    {
       "name": "BBC News and other reviewed outlets",
       "type": "newswire",
       "purpose": "Live fuel, oil, shipping, and energy reporting when a newsroom source is needed",

@@ -5,7 +5,7 @@ import { useI18n } from '../lib/i18n';
 import { editorial } from '../lib/editorial';
 
 export function Sources() {
-  const { language } = useI18n();
+  const { language, t } = useI18n();
   const copy = editorial(language);
   const [data, setData] = useState<MethodologyData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -42,7 +42,7 @@ export function Sources() {
           <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-stone-900 dark:text-stone-100"><CheckCircle className="text-amber-600 dark:text-amber-500" /> {copy.sources.sourceTitle}</h2>
             <div className="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-800 dark:bg-stone-900">
-              <p className="mb-8 text-lg leading-relaxed text-stone-600 dark:text-stone-400">Updated {formatDateTimeLabel(data.updatedAt)}</p>
+              <p className="mb-8 text-lg leading-relaxed text-stone-600 dark:text-stone-400">{t('sources.updated')} {formatDateTimeLabel(data.updatedAt)}</p>
               <div className="space-y-6">
                 <div>
                   <h3 className="mb-4 border-b border-stone-200 pb-2 text-sm font-bold uppercase tracking-wider text-stone-500 dark:border-stone-800 dark:text-stone-400">{copy.sources.sourceTitle}</h3>

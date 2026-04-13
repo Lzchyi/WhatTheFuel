@@ -40,6 +40,9 @@ const feeds = [
   { kind: 'rss', region: 'global', source: 'U.S. EIA', url: 'https://www.eia.gov/rss/press_rss.xml', weight: 4 },
   { kind: 'rss', region: 'global', source: 'BBC News', url: 'https://newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml', weight: 3 },
   { kind: 'rss', region: 'global', source: 'BBC News', url: 'https://newsrss.bbc.co.uk/rss/newsonline_uk_edition/business/rss.xml', weight: 3 },
+  { kind: 'rss', region: 'malaysia', source: 'FMT', url: 'https://www.freemalaysiatoday.com/category/nation/feed/', weight: 4 },
+  { kind: 'rss', region: 'malaysia', source: 'FMT', url: 'https://www.freemalaysiatoday.com/category/business/feed/', weight: 4 },
+  { kind: 'rss', region: 'global', source: 'FMT', url: 'https://www.freemalaysiatoday.com/category/world/feed/', weight: 3 },
   { kind: 'html', region: 'malaysia', source: 'MOF / Bernama', url: 'https://www.mof.gov.my/portal/en/news/press-citations?start=2', weight: 5 },
   { kind: 'html', region: 'malaysia', source: 'MOF / Bernama', url: 'https://www.mof.gov.my/portal/en/news/press-citations?start=3', weight: 5 },
 ];

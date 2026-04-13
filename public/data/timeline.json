@@ -24,6 +24,39 @@
       "reviewedAt": "2026-04-14T00:00:00Z"
     },
     {
+      "id": "2026-03-16-iran-supply-fears-persist",
+      "date": "2026-03-16T00:00:00Z",
+      "title": "Oil resumes its climb as Iran supply fears refuse to fade",
+      "description": "Reuters reported that the brief market respite ended and Brent stayed above the key $100 level as the Strait of Hormuz remained effectively shut.",
+      "impact": "This matters because it shows the crisis did not spike once and vanish. The market kept pricing supply risk across weeks, not days.",
+      "category": "global",
+      "source": "Reuters",
+      "sourceUrl": "https://www.investing.com/news/commodities-news/oil-prices-jump-2-brent-stays-above-100barrel-as-iran-supply-fears-persis-4564393",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "2026-04-07-trump-deadline",
+      "date": "2026-04-07T00:00:00Z",
+      "title": "Trump’s ceasefire deadline turns the Strait of Hormuz into a market countdown",
+      "description": "Reuters coverage on the eve of the deadline described Iran as defiant while Trump warned that the U.S. would escalate if the Strait of Hormuz was not reopened safely.",
+      "impact": "This is the point where the market started pricing the countdown itself, not just the earlier conflict.",
+      "category": "global",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/world/asia-pacific/iran-defiant-eve-trumps-ceasefire-deadline-2026-04-07/",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "2026-04-07-eia-q1-price-update",
+      "date": "2026-04-07T00:00:00Z",
+      "title": "EIA says Brent averaged about $103 in March and briefly neared $128 on April 2",
+      "description": "The EIA’s first-quarter price review said the Middle East conflict pushed Brent sharply higher, with the quarter ending at $118 and the April 2 peak near $128.",
+      "impact": "This gives the timeline a concrete market marker. It shows the crisis was not just a headline shock; it rewired oil pricing across the entire quarter.",
+      "category": "global",
+      "source": "U.S. EIA",
+      "sourceUrl": "https://www.eia.gov/todayinenergy/detail.php?id=67424",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
       "id": "2026-04-08-ceasefire",
       "date": "2026-04-08T00:00:00Z",
       "title": "A two-week ceasefire pushes oil back below $100",
@@ -48,23 +81,23 @@
     {
       "id": "2026-04-12-blockade-announced",
       "date": "2026-04-12T00:00:00Z",
-      "title": "The U.S. orders a blockade of Iranian ports and raises the pressure again",
-      "description": "Reuters reported that the U.S. military would begin blocking maritime traffic entering and leaving Iranian ports on April 13 after the talks failed.",
-      "impact": "The market sees this as a renewed supply-risk signal. Even if the Strait remains open for non-Iranian traffic, oil traders price the risk immediately.",
+      "title": "Talks collapse, oil bounces back above $100",
+      "description": "Reuters reported that oil prices bounced back above $100 after U.S.-Iran talks ended in stalemate, showing how quickly the relief rally could unwind.",
+      "impact": "This is the moment the market proved the ceasefire was fragile. The risk premium came back before the blockade itself took effect.",
       "category": "global",
       "source": "Reuters",
-      "sourceUrl": "https://www.investing.com/news/commodities-news/us-military-says-it-will-start-blockade-of-all-ships-going-to-and-from-iran-on-monday-4609106",
+      "sourceUrl": "https://www.reuters.com/business/energy/oil-bounces-back-above-100-after-us-iran-talks-end-stalemate-2026-04-12/",
       "reviewedAt": "2026-04-14T00:00:00Z"
     },
     {
       "id": "2026-04-13-blockade-takes-effect",
       "date": "2026-04-13T00:00:00Z",
       "title": "Oil pushes back above $100 as the blockade starts",
-      "description": "Reuters reported that oil jumped above $100 and physical barrels for immediate delivery in Europe traded around record highs near $150 after the blockade announcement.",
+      "description": "Reuters reported that oil jumped above $100 when the U.S. military said it would block ships leaving Iran’s ports, with immediate-delivery physical barrels in Europe trading much higher.",
       "impact": "This is the latest major escalation in the chain. It marks the point where the crisis moves from fear to direct supply pricing.",
       "category": "global",
       "source": "Reuters",
-      "sourceUrl": "https://www.investing.com/news/commodities-news/oil-prices-jump-6-to-above-100-a-barrel-on-us-blockade-of-iran-4610921",
+      "sourceUrl": "https://www.reuters.com/world/middle-east/us-blockade-iran-after-talks-fail-yield-a-deal-2026-04-13/",
       "reviewedAt": "2026-04-14T00:00:00Z"
     }
   ]

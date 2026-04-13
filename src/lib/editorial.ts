@@ -226,8 +226,9 @@ const en: EditorialCopy = {
     sourceGroups: [
       { name: 'Ministry of Finance Malaysia', purpose: 'Fuel pricing, subsidy policy, quota rules, and official statements', url: 'https://www.mof.gov.my/portal/en/' },
       { name: 'Department of Statistics Malaysia', purpose: 'Economic and petroleum trade data used in explainers', url: 'https://www.dosm.gov.my/portal-main/' },
+      { name: 'Free Malaysia Today', purpose: 'Malaysia national, business, and world coverage used for live fuel-related reporting', url: 'https://www.freemalaysiatoday.com/' },
       { name: 'U.S. Energy Information Administration', purpose: 'Global oil-market structure, chokepoints, prices, and market mechanics', url: 'https://www.eia.gov/' },
-      { name: 'BBC News and other reviewed outlets', purpose: 'Live fuel, oil, shipping, and energy reporting when a newsroom source is needed' },
+      { name: 'BBC News, Reuters, and other reviewed outlets', purpose: 'Live fuel, oil, shipping, and energy reporting when a newsroom source is needed' },
     ],
   },
 };
@@ -394,8 +395,9 @@ const ms: EditorialCopy = {
     sourceGroups: [
       { name: 'Kementerian Kewangan Malaysia', purpose: 'Harga bahan api, dasar subsidi, kuota, dan kenyataan rasmi', url: 'https://www.mof.gov.my/portal/en/' },
       { name: 'Jabatan Perangkaan Malaysia', purpose: 'Data ekonomi dan perdagangan petroleum untuk penerangan', url: 'https://www.dosm.gov.my/portal-main/' },
+      { name: 'Free Malaysia Today', purpose: 'Liputan nasional, perniagaan, dan dunia untuk berita langsung berkaitan bahan api', url: 'https://www.freemalaysiatoday.com/' },
       { name: 'U.S. Energy Information Administration', purpose: 'Struktur pasaran minyak global, titik sempit, harga, dan mekanik pasaran', url: 'https://www.eia.gov/' },
-      { name: 'BBC News dan outlet lain yang disemak', purpose: 'Laporan langsung tentang bahan api, minyak, perkapalan, dan tenaga apabila sumber newsroom diperlukan' },
+      { name: 'BBC News, Reuters, dan outlet lain yang disemak', purpose: 'Laporan langsung tentang bahan api, minyak, perkapalan, dan tenaga apabila sumber newsroom diperlukan' },
     ],
   },
 };
@@ -562,8 +564,9 @@ const zh: EditorialCopy = {
     sourceGroups: [
       { name: '马来西亚财政部', purpose: '燃油价格、补贴政策、配额规则和官方声明', url: 'https://www.mof.gov.my/portal/en/' },
       { name: '马来西亚统计局', purpose: '解释页需要的经济与石油贸易数据', url: 'https://www.dosm.gov.my/portal-main/' },
+      { name: 'Free Malaysia Today', purpose: '用于燃油相关实时报道的马来西亚本地、商业与国际新闻', url: 'https://www.freemalaysiatoday.com/' },
       { name: '美国能源信息署', purpose: '全球油市结构、咽喉点、价格与市场机制', url: 'https://www.eia.gov/' },
-      { name: 'BBC 新闻及其他审过的媒体', purpose: '需要新闻室来源时，用于燃油、石油、航运与能源的实时报道' },
+      { name: 'BBC 新闻、路透社及其他审过的媒体', purpose: '需要新闻室来源时，用于燃油、石油、航运与能源的实时报道' },
     ],
   },
 };
