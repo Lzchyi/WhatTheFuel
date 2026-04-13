@@ -1,0 +1,27 @@
+{
+  "status": "pending_source_connection",
+  "updatedAt": "2026-04-14T00:00:00Z",
+  "disclaimer": "These cards are now driven by static JSON instead of hardcoded mock values. The previous unsourced figures were removed. Publish official figures here only after the source and refresh process are reviewed.",
+  "sections": [
+    {
+      "title": "West Malaysia",
+      "items": [
+        { "label": "RON95", "value": "Pending verification" },
+        { "label": "RON97", "value": "Pending verification" },
+        { "label": "Diesel", "value": "Pending verification" },
+        { "label": "Euro 5 Diesel", "value": "Pending verification" }
+      ]
+    },
+    {
+      "title": "East Malaysia",
+      "items": [
+        { "label": "RON95", "value": "Pending verification" },
+        { "label": "Diesel", "value": "Pending verification" }
+      ]
+    }
+  ],
+  "quotaNotes": [
+    "Quota and subsidy category cards stay hidden until an official source is linked and reviewed.",
+    "Do not publish policy figures here from hearsay, screenshots, or social posts."
+  ]
+}
