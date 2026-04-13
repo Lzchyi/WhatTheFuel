@@ -1,6 +1,66 @@
 {
-  "updatedAt": "2026-04-13T19:02:51.861Z",
+  "updatedAt": "2026-04-13T19:12:22Z",
   "items": [
+    {
+      "id": "malay-mail-border-petrol-stations-fuel-smuggling-crackdown-2026-04-13",
+      "region": "malaysia",
+      "title": "Police to be deployed at Malaysia’s 151 border petrol stations in fuel smuggling crackdown, says DPM Fadillah",
+      "summary": "Police will be temporarily deployed at 151 border petrol stations as part of a crackdown on fuel smuggling and leakage.",
+      "source": "Malay Mail",
+      "url": "https://www.malaymail.com/news/malaysia/2026/04/13/police-to-be-deployed-at-malaysias-151-border-petrol-stations-in-fuel-smuggling-crackdown-says-dpm-fadillah/216221",
+      "publishedAt": "2026-04-13T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "malay-mail-fuel-measures-anwar-2026-04-13",
+      "region": "malaysia",
+      "title": "Malaysian govt to keep reviewing prices, fuel measures, says Anwar",
+      "summary": "Anwar said the government will keep reviewing prices and fuel measures as needed.",
+      "source": "Malay Mail",
+      "url": "https://www.malaymail.com/news/malaysia/2026/04/13/malaysian-govt-to-keep-reviewing-prices-fuel-measures-says-anwar/216215",
+      "publishedAt": "2026-04-13T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "malay-mail-energy-driven-shocks-2026-04-13",
+      "region": "malaysia",
+      "title": "Don’t panic, don’t relax: Home minister urges Malaysians to brace for possible energy-driven shocks",
+      "summary": "The Home Minister warned Malaysians to stay calm while bracing for possible energy-driven shocks.",
+      "source": "Malay Mail",
+      "url": "https://www.malaymail.com/news/malaysia/2026/04/13/dont-panic-dont-relax-home-minister-urges-malaysians-to-brace-for-possible-energy-driven-shocks/216155",
+      "publishedAt": "2026-04-13T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "rtm-151-stesen-minyak-berisiko-tinggi-dipantau-banteras-ketirisan-bahan-api-2026-04-13",
+      "region": "malaysia",
+      "title": "151 stesen minyak berisiko tinggi dipantau, banteras ketirisan bahan api",
+      "summary": "Sebanyak 151 stesen minyak berisiko tinggi akan dipantau rapi bagi membanteras ketirisan bahan api.",
+      "source": "Berita RTM",
+      "url": "https://berita.rtm.gov.my/kes/senarai-berita-kes/senarai-artikel/151-stesen-minyak-berisiko-tinggi-dipantau-banteras-ketirisan-bahan-api/",
+      "publishedAt": "2026-04-13T00:00:00Z",
+      "language": "ms"
+    },
+    {
+      "id": "sinchew-us-blockade-hormuz-oil-above-100-2026-04-13",
+      "region": "global",
+      "title": "美军封锁霍峡生效 国际油价飙涨回到100美元以上价位",
+      "summary": "美军封锁霍尔木兹海峡生效后，国际油价飙涨并回到100美元以上价位。",
+      "source": "Sin Chew Daily",
+      "url": "https://www.sinchew.com.my/news/20260413/international/7421405",
+      "publishedAt": "2026-04-13T00:00:00Z",
+      "language": "zh"
+    },
+    {
+      "id": "sinchew-germany-relief-oil-price-surge-2026-04-13",
+      "region": "global",
+      "title": "德国推出16亿欧元纾困措施  应对油价飚升",
+      "summary": "德国宣布推出16亿欧元纾困措施，应对油价飚升带来的压力。",
+      "source": "Sin Chew Daily",
+      "url": "https://www.sinchew.com.my/news/20260413/international/7421398",
+      "publishedAt": "2026-04-13T00:00:00Z",
+      "language": "zh"
+    },
     {
       "id": "mof-subsidised-prices-apr-8-2026",
       "region": "malaysia",

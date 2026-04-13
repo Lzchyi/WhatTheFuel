@@ -37,6 +37,30 @@
       "url": "https://www.freemalaysiatoday.com/"
     },
     {
+      "name": "Malay Mail",
+      "type": "newswire",
+      "purpose": "Malaysia and world reporting used for live fuel-related coverage",
+      "url": "https://www.malaymail.com/"
+    },
+    {
+      "name": "Berita RTM",
+      "type": "newswire",
+      "purpose": "Malay-language national coverage used for live fuel-related reporting",
+      "url": "https://berita.rtm.gov.my/"
+    },
+    {
+      "name": "Sin Chew Daily",
+      "type": "newswire",
+      "purpose": "Chinese-language Malaysia and world reporting used for live fuel-related coverage",
+      "url": "https://www.sinchew.com.my/"
+    },
+    {
+      "name": "Sinar Premium",
+      "type": "newswire",
+      "purpose": "Malay-language coverage used for live fuel-related reporting",
+      "url": "https://premium.sinarharian.com.my/"
+    },
+    {
       "name": "BBC News and other reviewed outlets",
       "type": "newswire",
       "purpose": "Live fuel, oil, shipping, and energy reporting when a newsroom source is needed",

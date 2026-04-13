@@ -20,6 +20,19 @@ const includePatterns = [
   /refinery/i,
   /shipping/i,
   /energy/i,
+  /minyak/i,
+  /harga minyak/i,
+  /bahan api/i,
+  /subsidi/i,
+  /petroleum/i,
+  /汽油/i,
+  /柴油/i,
+  /燃油/i,
+  /油价/i,
+  /原油/i,
+  /补贴/i,
+  /石油/i,
+  /炼油/i,
 ];
 
 const rejectPatterns = [
@@ -43,6 +56,16 @@ const feeds = [
   { kind: 'rss', region: 'malaysia', source: 'FMT', url: 'https://www.freemalaysiatoday.com/category/nation/feed/', weight: 4 },
   { kind: 'rss', region: 'malaysia', source: 'FMT', url: 'https://www.freemalaysiatoday.com/category/business/feed/', weight: 4 },
   { kind: 'rss', region: 'global', source: 'FMT', url: 'https://www.freemalaysiatoday.com/category/world/feed/', weight: 3 },
+  { kind: 'html-list', region: 'malaysia', source: 'Malay Mail', url: 'https://www.malaymail.com/news/malaysia/feed/', weight: 4, maxItems: 20, linkPattern: /https:\/\/www\.malaymail\.com\/news\// },
+  { kind: 'html-list', region: 'global', source: 'Malay Mail', url: 'https://www.malaymail.com/news/world/feed/', weight: 3, maxItems: 20, linkPattern: /https:\/\/www\.malaymail\.com\/news\// },
+  { kind: 'html-list', region: 'global', source: 'Malay Mail', url: 'https://www.malaymail.com/news/money/feed/', weight: 3, maxItems: 20, linkPattern: /https:\/\/www\.malaymail\.com\/news\// },
+  { kind: 'html-list', region: 'malaysia', source: 'Sin Chew Daily', url: 'https://www.sinchew.com.my/?feed=rss2', weight: 4, maxItems: 20, linkPattern: /https:\/\/(?:[a-z0-9-]+\.)?sinchew\.com\.my\/news\//i },
+  { kind: 'html-list', region: 'global', source: 'Sin Chew Daily', url: 'https://www.sinchew.com.my/latest', weight: 3, maxItems: 20, linkPattern: /https:\/\/(?:[a-z0-9-]+\.)?sinchew\.com\.my\/news\//i },
+  { kind: 'rss', region: 'malaysia', source: 'Berita RTM', url: 'https://berita.rtm.gov.my/feed/', weight: 4 },
+  { kind: 'rss', region: 'malaysia', source: 'Berita RTM', url: 'https://berita.rtm.gov.my/category/niaga/feed/', weight: 4 },
+  { kind: 'rss', region: 'malaysia', source: 'Sinar Premium', url: 'https://premium.sinarharian.com.my/rssFeed/15', weight: 4 },
+  { kind: 'rss', region: 'malaysia', source: 'Sinar Premium', url: 'https://premium.sinarharian.com.my/rssFeed/300', weight: 4 },
+  { kind: 'rss', region: 'malaysia', source: 'Sinar Premium', url: 'https://premium.sinarharian.com.my/rssFeed/305', weight: 4 },
   { kind: 'html', region: 'malaysia', source: 'MOF / Bernama', url: 'https://www.mof.gov.my/portal/en/news/press-citations?start=2', weight: 5 },
   { kind: 'html', region: 'malaysia', source: 'MOF / Bernama', url: 'https://www.mof.gov.my/portal/en/news/press-citations?start=3', weight: 5 },
 ];
@@ -100,6 +123,46 @@ function dedupe(items) {
   });
 }
 
+function extractMetaContent(html, names) {
+  for (const name of names) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const patterns = [
+      new RegExp(`<meta[^>]+name=["']${escaped}["'][^>]+content=["']([^"']+)["'][^>]*>`, 'i'),
+      new RegExp(`<meta[^>]+property=["']${escaped}["'][^>]+content=["']([^"']+)["'][^>]*>`, 'i'),
+    ];
+    for (const pattern of patterns) {
+      const match = html.match(pattern);
+      if (match) return decodeEntities(match[1]).trim();
+    }
+  }
+  return '';
+}
+
+function inferPublishedAtFromUrl(url) {
+  const match = url.match(/\/news\/(\d{4})\/(\d{2})\/(\d{2})\//i);
+  if (match) return new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00Z`).toISOString();
+  const compactMatch = url.match(/\/news\/(\d{8})\//i);
+  if (compactMatch) {
+    const value = compactMatch[1];
+    return new Date(`${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}T00:00:00Z`).toISOString();
+  }
+  return new Date().toISOString();
+}
+
+function parseArticleLinks(html, baseUrl, linkPattern) {
+  const anchors = [...html.matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)];
+  const items = [];
+  for (const [, href, inner] of anchors) {
+    const title = stripTags(decodeEntities(inner));
+    const url = resolveUrl(baseUrl, href);
+    if (!title || !url) continue;
+    if (linkPattern && !linkPattern.test(url)) continue;
+    if (/next|prev|back to top|share|subscribe|newsletter|advertise|login|sign in|rss/i.test(title)) continue;
+    items.push({ title, url });
+  }
+  return dedupe(items);
+}
+
 async function fetchText(url) {
   const response = await fetch(url, {
     headers: {
@@ -134,6 +197,36 @@ async function loadRssFeed(feed) {
     const score = relevanceScore(item, feed.weight);
     if (item.title && item.url && score >= 5) {
       items.push({ ...item, score });
+    }
+  }
+  return items;
+}
+
+async function loadHtmlListingFeed(feed) {
+  const html = await fetchText(feed.url);
+  const articleLinks = parseArticleLinks(html, feed.url, feed.linkPattern).slice(0, feed.maxItems ?? 8);
+  const items = [];
+  for (const article of articleLinks) {
+    try {
+      const articleHtml = await fetchText(article.url);
+      const title = article.title;
+      const summary = extractMetaContent(articleHtml, ['description', 'og:description']) || firstMeaningfulParagraph(articleHtml, title);
+      const publishedAt = inferPublishedAtFromUrl(article.url);
+      const item = {
+        id: `${feed.source.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${article.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 72)}`.replace(/-+/g, '-').replace(/^-|-$/g, ''),
+        region: feed.region,
+        title,
+        summary,
+        source: feed.source,
+        url: article.url,
+        publishedAt,
+        language: 'en',
+        score: 0,
+      };
+      const score = relevanceScore(item, feed.weight);
+      if (score >= 5) items.push({ ...item, score });
+    } catch {
+      // Keep processing the rest of the listing if one article fails.
     }
   }
   return items;
@@ -195,6 +288,7 @@ async function loadMofFeed(feed) {
 
 async function fetchFeed(feed) {
   if (feed.kind === 'rss') return loadRssFeed(feed);
+  if (feed.kind === 'html-list') return loadHtmlListingFeed(feed);
   return loadMofFeed(feed);
 }
 
