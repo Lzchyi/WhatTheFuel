@@ -1,0 +1,37 @@
+{
+  "updatedAt": "2026-04-14T00:00:00Z",
+  "summary": "WhatTheFuel now separates layout from evidence. Static JSON files drive homepage prices, news, and timeline entries so the site can stay GitHub Pages compatible without pretending that mock text is live data.",
+  "automation": [
+    "The frontend reads static JSON from /public/data instead of hardcoded mock cards.",
+    "News and timeline sections can remain empty until a reviewed source pipeline is connected.",
+    "GitHub Pages remains the target deployment model, so no runtime server is required."
+  ],
+  "editorialRules": [
+    "Do not publish an item unless it links to a real source URL.",
+    "Do not write decorative citations that do not resolve to evidence.",
+    "Do not mix explainer language with breaking news without a linked source.",
+    "Prefer a blank state over a confident but unverifiable claim."
+  ],
+  "limitations": [
+    "Automated source fetching has not been connected in this patch because it must be verified source by source.",
+    "Current data files are intentionally conservative and may be empty.",
+    "Translations can remain, but evidence and source URLs must be reviewed in the English source layer first."
+  ],
+  "approvedSources": [
+    {
+      "name": "Malaysia official ministries and agencies",
+      "type": "official",
+      "purpose": "Fuel pricing, subsidy policy, quota rules, and public statements"
+    },
+    {
+      "name": "DOSM / official data portals",
+      "type": "data",
+      "purpose": "Malaysia macro and sector data used in explainers"
+    },
+    {
+      "name": "Reuters / AP / BBC / equivalent reviewed outlets",
+      "type": "newswire",
+      "purpose": "Global fuel, oil, shipping, and energy disruption coverage"
+    }
+  ]
+}
