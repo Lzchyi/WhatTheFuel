@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "refresh:news": "node scripts/update-news.mjs",
+    "build": "node scripts/update-news.mjs && vite build",
     "preview": "vite preview",
     "lint": "tsc --noEmit"
   },
