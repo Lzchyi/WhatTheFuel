@@ -1,37 +1,45 @@
 {
   "updatedAt": "2026-04-14T00:00:00Z",
-  "summary": "WhatTheFuel now separates layout from evidence. Static JSON files drive homepage prices, news, and timeline entries so the site can stay GitHub Pages compatible without pretending that mock text is live data.",
+  "summary": "WhatTheFuel separates presentation from evidence. The site uses source-backed JSON for prices, timeline entries, and news while keeping the build GitHub Pages-friendly.",
   "automation": [
-    "The frontend reads static JSON from /public/data instead of hardcoded mock cards.",
-    "News and timeline sections can remain empty until a reviewed source pipeline is connected.",
-    "GitHub Pages remains the target deployment model, so no runtime server is required."
+    "The frontend reads reviewed JSON from /public/data so the pages can render without a runtime server.",
+    "The build now refreshes the news file before deployment, using approved feed sources where available.",
+    "If a source fetch fails, the site falls back to the checked-in JSON instead of showing fabricated live data."
   ],
   "editorialRules": [
     "Do not publish an item unless it links to a real source URL.",
     "Do not write decorative citations that do not resolve to evidence.",
-    "Do not mix explainer language with breaking news without a linked source.",
+    "Keep explainers, news, and policy snapshots clearly separated.",
     "Prefer a blank state over a confident but unverifiable claim."
   ],
   "limitations": [
-    "Automated source fetching has not been connected in this patch because it must be verified source by source.",
-    "Current data files are intentionally conservative and may be empty.",
-    "Translations can remain, but evidence and source URLs must be reviewed in the English source layer first."
+    "The live news layer is intentionally limited to approved sources and will only surface stories that match fuel-related keywords.",
+    "Full trilingual prose is still a separate content task; the current change fixes the missing source-backed English content first.",
+    "Some fuel-price figures update on different MOF pages, so the site labels each snapshot with its own source and date."
   ],
   "approvedSources": [
     {
-      "name": "Malaysia official ministries and agencies",
+      "name": "Ministry of Finance Malaysia",
       "type": "official",
-      "purpose": "Fuel pricing, subsidy policy, quota rules, and public statements"
+      "purpose": "Fuel pricing, subsidy policy, quota rules, and public statements",
+      "url": "https://www.mof.gov.my/portal/en/"
     },
     {
-      "name": "DOSM / official data portals",
+      "name": "Department of Statistics Malaysia",
       "type": "data",
-      "purpose": "Malaysia macro and sector data used in explainers"
+      "purpose": "Malaysia macro, energy trade, and sector data used in explainers",
+      "url": "https://www.dosm.gov.my/portal-main/"
     },
     {
-      "name": "Reuters / AP / BBC / equivalent reviewed outlets",
+      "name": "U.S. Energy Information Administration",
+      "type": "official",
+      "purpose": "Global oil-market structure, chokepoints, prices, and market mechanics",
+      "url": "https://www.eia.gov/"
+    },
+    {
+      "name": "Bernama, Reuters, AP, BBC, and other reviewed outlets",
       "type": "newswire",
-      "purpose": "Global fuel, oil, shipping, and energy disruption coverage"
+      "purpose": "Attributable fuel and energy reporting used when the story needs editorial context or a linked quotation"
     }
   ]
 }

@@ -1,4 +1,71 @@
 {
   "updatedAt": "2026-04-14T00:00:00Z",
-  "items": []
+  "items": [
+    {
+      "id": "2025-06-16-hormuz-eia",
+      "date": "2025-06-16T00:00:00Z",
+      "title": "EIA flags the Strait of Hormuz as a critical global oil chokepoint",
+      "description": "EIA’s June 2025 analysis explains why the Strait of Hormuz matters for world oil flows, shipping risk, and price volatility.",
+      "impact": "This is the clearest recent reminder that Malaysia’s fuel outlook still sits inside a global market, not a closed domestic bubble.",
+      "category": "global",
+      "source": "U.S. EIA",
+      "sourceUrl": "https://www.eia.gov/todayinenergy/detail.php?id=65504",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "2025-11-04-budi95-e-hailing",
+      "date": "2025-11-04T00:00:00Z",
+      "title": "MOF says e-hailing BUDI95 tiering will reach up to 800 litres for the highest-distance users",
+      "description": "MOF explained that e-hailing drivers can qualify for tiered additional BUDI95 eligibility, with the highest band reaching 800 litres per month.",
+      "impact": "This is the clearest official example of the subsidy system moving from blanket support to targeted, category-based support.",
+      "category": "malaysia",
+      "source": "MOF / Bernama",
+      "sourceUrl": "https://mof.gov.my/portal/en/news/press-citations/budi95-tiered-eligibility-for-e-hailing-drivers-to-be-activated-mid-month-mof",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "2025-12-31-prices-unchanged",
+      "date": "2025-12-31T00:00:00Z",
+      "title": "MOF cut unsubsidised RON97 and RON95 at year-end while subsidised RON95 stayed at RM1.99",
+      "description": "The late-December weekly update lowered unsubsidised RON97 and RON95, kept subsidised RON95 at RM1.99, and left Sabah, Sarawak and Labuan diesel at RM2.15.",
+      "impact": "This shows the policy split between market-priced fuel and the targeted BUDI95 layer the site keeps explaining.",
+      "category": "malaysia",
+      "source": "MOF / Bernama",
+      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/retail-price-of-unsubsidised-ron97-ron95-down-by-six-sen-from-dec-25-to-31",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "2026-03-05-retail-price-update",
+      "date": "2026-03-04T00:00:00Z",
+      "title": "MOF’s March retail-price release raised RON97, non-subsidised RON95, and Peninsular diesel",
+      "description": "The official retail-price release set RON97 at RM3.25, non-subsidised RON95 at RM2.67, and Peninsular diesel at RM3.12 from 5 to 11 March 2026.",
+      "impact": "This is one of the clearest examples of how weekly price updates track global oil movement with a short lag.",
+      "category": "malaysia",
+      "source": "MOF retail-price release",
+      "sourceUrl": "https://www.mof.gov.my/portal/images/2026/03/04/Press-Release-Government-Raises-RON97-RON95-And-Diesel-Retail-Prices-From-5-March-2026-To-11-March-2026.pdf",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "2026-04-01-ron97-diesel-shift",
+      "date": "2026-04-01T00:00:00Z",
+      "title": "RON97 fell to RM4.95 while Peninsular diesel rose to RM6.02",
+      "description": "MOF’s April 1 citation confirmed a weekly retail-price change that lowered RON97 and increased Peninsular diesel for 2 to 8 April 2026.",
+      "impact": "It shows how different fuel lines can move in opposite directions even within the same week.",
+      "category": "malaysia",
+      "source": "MOF / Bernama",
+      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/ron97-retail-price-down-20-sen-diesel-up-50-sen-mof",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "2026-04-08-targeted-price-hold",
+      "date": "2026-04-08T00:00:00Z",
+      "title": "MOF held subsidised fuel prices at RM1.99 and kept East Malaysia diesel at RM2.15",
+      "description": "MOF said the weekly average-cost formula means current pump prices still reflect earlier high supply costs even after the global market eased.",
+      "impact": "This is the strongest recent explanation of the gap between headline oil prices and the price people actually see at the pump.",
+      "category": "malaysia",
+      "source": "MOF / Bernama",
+      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/govt-maintains-subsidised-prices-amid-global-oil-market-volatility",
+      "reviewedAt": "2026-04-14T00:00:00Z"
+    }
+  ]
 }

@@ -1,27 +1,34 @@
 {
-  "status": "pending_source_connection",
-  "updatedAt": "2026-04-14T00:00:00Z",
-  "disclaimer": "These cards are now driven by static JSON instead of hardcoded mock values. The previous unsourced figures were removed. Publish official figures here only after the source and refresh process are reviewed.",
+  "status": "verified",
+  "updatedAt": "2026-04-08T16:00:00Z",
+  "disclaimer": "Prices shown here are source-backed snapshots from Ministry of Finance releases. The April 8 citation covers the latest subsidised and regional prices, while the retail-price release below shows the most recent full weekly table we confirmed.",
   "sections": [
     {
-      "title": "West Malaysia",
+      "title": "Current subsidised snapshot",
+      "sourceLabel": "Ministry of Finance press citation",
+      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/govt-maintains-subsidised-prices-amid-global-oil-market-volatility",
       "items": [
-        { "label": "RON95", "value": "Pending verification" },
-        { "label": "RON97", "value": "Pending verification" },
-        { "label": "Diesel", "value": "Pending verification" },
-        { "label": "Euro 5 Diesel", "value": "Pending verification" }
+        { "label": "BUDI95 RON95", "value": "RM1.99/L" },
+        { "label": "RON95 unsubsidised", "value": "RM4.27/L" },
+        { "label": "Diesel Peninsular", "value": "RM6.72/L" },
+        { "label": "Diesel Sabah / Sarawak / Labuan", "value": "RM2.15/L" }
       ]
     },
     {
-      "title": "East Malaysia",
+      "title": "Latest full weekly table we confirmed",
+      "sourceLabel": "Ministry of Finance press citation",
+      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/ron97-retail-price-down-20-sen-diesel-up-50-sen-mof",
       "items": [
-        { "label": "RON95", "value": "Pending verification" },
-        { "label": "Diesel", "value": "Pending verification" }
+        { "label": "RON97", "value": "RM4.95/L" },
+        { "label": "RON95 unsubsidised", "value": "RM3.87/L" },
+        { "label": "Diesel Peninsular", "value": "RM6.02/L" },
+        { "label": "Diesel Sabah / Sarawak / Labuan", "value": "RM2.15/L" }
       ]
     }
   ],
   "quotaNotes": [
-    "Quota and subsidy category cards stay hidden until an official source is linked and reviewed.",
-    "Do not publish policy figures here from hearsay, screenshots, or social posts."
+    "General BUDI95 eligibility is temporarily capped at 200 litres per month.",
+    "Qualified e-hailing drivers can reach up to 800 litres per month under the tiered eligibility rule.",
+    "BUDI Diesel cash assistance remains a targeted support layer instead of a blanket fuel subsidy."
   ]
 }

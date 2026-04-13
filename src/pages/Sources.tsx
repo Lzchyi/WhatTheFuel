@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BookOpen, CheckCircle, Database, ExternalLink } from 'lucide-react';
+import { BookOpen, CheckCircle, Database, ExternalLink, ShieldAlert } from 'lucide-react';
 import { MethodologyData, formatDateTimeLabel, loadMethodology } from '../lib/content';
 import { useI18n } from '../lib/i18n';
 
@@ -57,6 +57,10 @@ export function Sources() {
                 </div>
               </div>
             </div>
+          </section>
+          <section className="rounded-3xl border border-amber-100 bg-amber-50 p-6 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-200">
+            <div className="mb-2 flex items-center gap-2 font-bold"><ShieldAlert size={18} /> Source rule</div>
+            <p className="leading-relaxed">If a number or claim does not have a traceable source URL, it does not belong on the homepage, in the timeline, or in the myth cards.</p>
           </section>
         </div>
       ) : null}

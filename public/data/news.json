@@ -1,4 +1,55 @@
 {
   "updatedAt": "2026-04-14T00:00:00Z",
-  "items": []
+  "items": [
+    {
+      "id": "mof-subsidised-prices-apr-8-2026",
+      "region": "malaysia",
+      "title": "Govt Maintains Subsidised Prices Amid Global Oil Market Volatility",
+      "summary": "MOF kept BUDI95 at RM1.99, held the 200-litre limit, and maintained regional diesel support despite recent global volatility.",
+      "source": "MOF / Bernama",
+      "url": "https://www.mof.gov.my/portal/en/news/press-citations/govt-maintains-subsidised-prices-amid-global-oil-market-volatility",
+      "publishedAt": "2026-04-08T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "mof-pump-prices-lag-apr-8-2026",
+      "region": "malaysia",
+      "title": "MOF: Pump Fuel Prices Reflect Last Week’s Costs Despite Global Drop",
+      "summary": "The ministry said Malaysia’s pump prices lag the current headline market because the weekly average cost is what drives the calculation.",
+      "source": "MOF / Bernama",
+      "url": "https://www.mof.gov.my/portal/en/news/press-citations/mof-pump-fuel-prices-reflect-last-weeks-costs-despite-global-drop",
+      "publishedAt": "2026-04-08T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "mof-budi95-limit-apr-7-2026",
+      "region": "malaysia",
+      "title": "Claims Of Additional BUDI95 Subsidy Application Untrue, 200-litre Monthly Limit Remains - MOF",
+      "summary": "MOF said the public cannot freely apply for higher BUDI95 limits and that the temporary 200-litre cap remains in force.",
+      "source": "MOF / Bernama",
+      "url": "https://www.mof.gov.my/portal/en/news/press-citations/claims-of-additional-budi95-subsidy-application-untrue-200-litre-monthly-limit-remains-mof",
+      "publishedAt": "2026-04-07T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "mof-ron97-diesel-apr-1-2026",
+      "region": "malaysia",
+      "title": "RON97 Retail Price Down 20 Sen, Diesel Up 50 Sen - MOF",
+      "summary": "MOF confirmed a weekly retail update that lowered RON97 to RM4.95, lifted Peninsular diesel to RM6.02, and kept Sabah, Sarawak and Labuan diesel at RM2.15 for 2 to 8 April.",
+      "source": "MOF / Bernama",
+      "url": "https://www.mof.gov.my/portal/en/news/press-citations/ron97-retail-price-down-20-sen-diesel-up-50-sen-mof",
+      "publishedAt": "2026-04-01T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "eia-hormuz-critical-chokepoint-2025",
+      "region": "global",
+      "title": "Amid regional conflict, the Strait of Hormuz remains critical oil chokepoint",
+      "summary": "EIA says the strait moved about 20 million barrels per day in 2024, roughly one-fifth of global petroleum liquids consumption.",
+      "source": "U.S. EIA",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=65504",
+      "publishedAt": "2025-06-16T00:00:00Z",
+      "language": "en"
+    }
+  ]
 }
