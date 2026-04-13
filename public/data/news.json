@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-14T00:00:00Z",
+  "updatedAt": "2026-04-13T18:51:00.574Z",
   "items": [
     {
       "id": "mof-subsidised-prices-apr-8-2026",
@@ -32,13 +32,43 @@
       "language": "en"
     },
     {
-      "id": "mof-ron97-diesel-apr-1-2026",
-      "region": "malaysia",
-      "title": "RON97 Retail Price Down 20 Sen, Diesel Up 50 Sen - MOF",
-      "summary": "MOF confirmed a weekly retail update that lowered RON97 to RM4.95, lifted Peninsular diesel to RM6.02, and kept Sabah, Sarawak and Labuan diesel at RM2.15 for 2 to 8 April.",
-      "source": "MOF / Bernama",
-      "url": "https://www.mof.gov.my/portal/en/news/press-citations/ron97-retail-price-down-20-sen-diesel-up-50-sen-mof",
-      "publishedAt": "2026-04-01T00:00:00Z",
+      "id": "reuters-hormuz-blockade-apr-13-2026",
+      "region": "global",
+      "title": "Oil prices jump 6% to above $100 a barrel on US blockade of Iran",
+      "summary": "Reuters reported that oil jumped above $100 after the U.S. military said it would blockade ships leaving Iran’s ports, with physical crude for immediate delivery trading much higher.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/commodities-news/oil-prices-jump-6-to-above-100-a-barrel-on-us-blockade-of-iran-4610921",
+      "publishedAt": "2026-04-13T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "reuters-ceasefire-apr-8-2026",
+      "region": "global",
+      "title": "Global energy stocks plunge as US-Iran ceasefire hits oil",
+      "summary": "Reuters said oil fell below $100 after a two-week ceasefire to the Middle East conflict punctured the war premium built into prices.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/stock-market-news/global-energy-stocks-plunge-as-usiran-ceasefire-hits-oil-4554924",
+      "publishedAt": "2026-04-08T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "reuters-hedging-mar-3-2026",
+      "region": "global",
+      "title": "Investors, US crude producers scramble to lock in oil price spike",
+      "summary": "Reuters reported a record wave of hedging after the first trading day following the U.S. and Israel strikes on Iran.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/commodities-news/investors-us-crude-producers-scramble-to-lock-in-oil-price-spike-4539528",
+      "publishedAt": "2026-03-03T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "reuters-strikes-feb-28-2026",
+      "region": "global",
+      "title": "Market analysts react to US-Israel strikes on Iran",
+      "summary": "Reuters said the strikes on Iran put Gulf oil producers on edge and prompted some major shipping disruption fears through the Strait of Hormuz.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/stock-market-news/market-analysts-react-to-usisrael-strikes-on-iran-4533407",
+      "publishedAt": "2026-02-28T00:00:00Z",
       "language": "en"
     },
     {
@@ -49,6 +79,16 @@
       "source": "U.S. EIA",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=65504",
       "publishedAt": "2025-06-16T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "mof-ron97-diesel-apr-1-2026",
+      "region": "malaysia",
+      "title": "RON97 Retail Price Down 20 Sen, Diesel Up 50 Sen - MOF",
+      "summary": "MOF confirmed a weekly retail update that lowered RON97 to RM4.95, lifted Peninsular diesel to RM6.02, and kept Sabah, Sarawak and Labuan diesel at RM2.15 for 2 to 8 April.",
+      "source": "MOF / Bernama",
+      "url": "https://www.mof.gov.my/portal/en/news/press-citations/ron97-retail-price-down-20-sen-diesel-up-50-sen-mof",
+      "publishedAt": "2026-04-01T00:00:00Z",
       "language": "en"
     }
   ]

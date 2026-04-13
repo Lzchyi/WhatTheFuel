@@ -7,7 +7,7 @@ import { cn } from '../lib/utils';
 export function Timeline() {
   const { t } = useI18n();
   const [filter, setFilter] = useState<'all' | 'global' | 'malaysia'>('all');
-  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
+  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('asc');
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [items, setItems] = useState<TimelineItem[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -18,7 +18,7 @@ export function Timeline() {
       if (!mounted) return;
       setItems(payload.items);
       setError(null);
-    }).catch(() => mounted && setError('Unable to load the reviewed timeline right now.'));
+    }).catch(() => mounted && setError(t('timeline.error')));
     return () => { mounted = false; };
   }, []);
 
@@ -39,7 +39,7 @@ export function Timeline() {
       </div>
 
       {error ? <div className="rounded-2xl border border-stone-200 bg-white p-6 text-stone-600 dark:border-stone-800 dark:bg-stone-900 dark:text-stone-400">{error}</div> : null}
-      {!filteredData.length && !error ? <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-6 text-stone-500 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-400">No reviewed timeline entries have been published yet.</div> : null}
+      {!filteredData.length && !error ? <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-6 text-stone-500 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-400">{t('timeline.empty')}</div> : null}
 
       <div className="relative ml-4 space-y-12 border-l-2 border-stone-200 pb-12 dark:border-stone-800 md:ml-8">
         {filteredData.map((event) => {

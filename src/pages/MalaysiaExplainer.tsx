@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link2, MapPin, ShieldAlert } from 'lucide-react';
-import { malaysiaSections } from '../lib/editorial';
+import { editorial } from '../lib/editorial';
+import { useI18n } from '../lib/i18n';
 
 export function MalaysiaExplainer() {
+  const { language } = useI18n();
+  const copy = editorial(language);
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-12">
         <div className="mb-6 inline-flex items-center justify-center rounded-2xl bg-amber-100 p-3 text-amber-700 dark:bg-amber-900/30 dark:text-amber-500"><MapPin size={32} /></div>
-        <h1 className="mb-6 text-4xl font-bold leading-tight text-stone-900 dark:text-stone-100 md:text-5xl">Why Malaysia still gets hit</h1>
-        <p className="text-xl leading-relaxed text-stone-600 dark:text-stone-400">Malaysia produces oil, but it still trades in the same global fuel system, imports product grades it needs, and uses targeted subsidies to soften the shock.</p>
+        <h1 className="mb-6 text-4xl font-bold leading-tight text-stone-900 dark:text-stone-100 md:text-5xl">{copy.malaysia.title}</h1>
+        <p className="text-xl leading-relaxed text-stone-600 dark:text-stone-400">{copy.malaysia.intro}</p>
       </div>
       <div className="space-y-8">
-        {malaysiaSections.map((section) => (
+        {copy.malaysia.sections.map((section) => (
           <section key={section.title} className="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-800 dark:bg-stone-900">
             <h2 className="mb-4 text-2xl font-bold text-stone-900 dark:text-stone-100">{section.title}</h2>
             <div className="space-y-4 text-stone-700 dark:text-stone-300">
@@ -35,8 +38,8 @@ export function MalaysiaExplainer() {
         ))}
       </div>
       <div className="mt-8 rounded-3xl border border-amber-100 bg-amber-50 p-6 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-200">
-        <div className="mb-2 flex items-center gap-2 font-bold"><ShieldAlert size={18} /> The core point</div>
-        <p className="leading-relaxed">“Oil producer” is not the same as “immune to fuel inflation.” The country still has to buy, refine, move, and subsidise fuel inside a global market.</p>
+        <div className="mb-2 flex items-center gap-2 font-bold"><ShieldAlert size={18} /> {copy.malaysia.noteTitle}</div>
+        <p className="leading-relaxed">{copy.malaysia.footnote}</p>
       </div>
     </div>
   );

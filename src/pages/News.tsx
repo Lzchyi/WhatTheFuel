@@ -18,7 +18,7 @@ export function News() {
       setItems(payload.items);
       setUpdatedAt(payload.updatedAt);
       setError(null);
-    }).catch(() => mounted && setError('Unable to load verified news items right now.'));
+    }).catch(() => mounted && setError(t('news.error')));
     return () => { mounted = false; };
   }, []);
 
@@ -43,7 +43,7 @@ export function News() {
       <div className="space-y-4">
         <div className="mb-6 flex items-center justify-between"><span className="flex items-center gap-1.5 text-sm text-stone-500 dark:text-stone-400"><Clock size={14} /> {updatedAt ? formatDateTimeLabel(updatedAt) : t('news.refreshed')}</span></div>
         {error ? <div className="rounded-2xl border border-stone-200 bg-white p-6 text-stone-600 dark:border-stone-800 dark:bg-stone-900 dark:text-stone-400">{error}</div> : null}
-        {!filtered.length && !error ? <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-6 text-stone-500 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-400">No reviewed news items are published yet for this tab.</div> : null}
+        {!filtered.length && !error ? <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-6 text-stone-500 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-400">{t('news.empty')}</div> : null}
         {filtered.map((item) => (
           <a key={item.id} href={item.url} target="_blank" rel="noreferrer" className="group block rounded-2xl border border-stone-200 bg-white p-6 transition-all hover:border-amber-300 hover:shadow-sm dark:border-stone-800 dark:bg-stone-900 dark:hover:border-amber-700">
             <h4 className="mb-3 text-lg font-medium leading-snug text-stone-900 group-hover:text-amber-700 dark:text-stone-100 dark:group-hover:text-amber-500">{item.title}</h4>

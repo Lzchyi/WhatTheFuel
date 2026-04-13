@@ -1,21 +1,21 @@
 {
   "updatedAt": "2026-04-14T00:00:00Z",
-  "summary": "WhatTheFuel separates presentation from evidence. The site uses source-backed JSON for prices, timeline entries, and news while keeping the build GitHub Pages-friendly.",
+  "summary": "WhatTheFuel separates presentation from evidence. Prices, news, and timeline entries are traced to official pages and selected newsroom sources.",
   "automation": [
-    "The frontend reads reviewed JSON from /public/data so the pages can render without a runtime server.",
-    "The build now refreshes the news file before deployment, using approved feed sources where available.",
-    "If a source fetch fails, the site falls back to the checked-in JSON instead of showing fabricated live data."
+    "The frontend reads JSON from /public/data so the pages can render without a runtime server.",
+    "Live news refreshes from approved feeds before deployment and on a weekly schedule.",
+    "If a source fetch fails, the checked-in JSON stays in place instead of fabricating live data."
   ],
   "editorialRules": [
-    "Do not publish an item unless it links to a real source URL.",
-    "Do not write decorative citations that do not resolve to evidence.",
+    "Only publish an item if it links to a real source URL.",
     "Keep explainers, news, and policy snapshots clearly separated.",
-    "Prefer a blank state over a confident but unverifiable claim."
+    "Prefer a blank state over a confident but unverifiable claim.",
+    "Keep live feed items in the source language when that is how the source publishes them."
   ],
   "limitations": [
-    "The live news layer is intentionally limited to approved sources and will only surface stories that match fuel-related keywords.",
-    "Full trilingual prose is still a separate content task; the current change fixes the missing source-backed English content first.",
-    "Some fuel-price figures update on different MOF pages, so the site labels each snapshot with its own source and date."
+    "Live news is limited to approved sources and fuel-related keyword matches.",
+    "Long-form pages are translated, but live feed items stay in the original source language.",
+    "Some fuel-price figures update on different MOF pages, so each snapshot keeps its own source and date."
   ],
   "approvedSources": [
     {
@@ -31,13 +31,19 @@
       "url": "https://www.dosm.gov.my/portal-main/"
     },
     {
+      "name": "BBC News and other reviewed outlets",
+      "type": "newswire",
+      "purpose": "Live fuel, oil, shipping, and energy reporting when a newsroom source is needed",
+      "url": "https://feeds.bbci.co.uk/news/world/rss.xml"
+    },
+    {
       "name": "U.S. Energy Information Administration",
       "type": "official",
       "purpose": "Global oil-market structure, chokepoints, prices, and market mechanics",
       "url": "https://www.eia.gov/"
     },
     {
-      "name": "Bernama, Reuters, AP, BBC, and other reviewed outlets",
+      "name": "Reuters and other reviewed outlets",
       "type": "newswire",
       "purpose": "Attributable fuel and energy reporting used when the story needs editorial context or a linked quotation"
     }
