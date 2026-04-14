@@ -1,11 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { Activity, AlertTriangle, ArrowRight, ExternalLink, Info, ShieldAlert } from 'lucide-react';
+import { AlertTriangle, ArrowRight, ExternalLink, Info, ShieldAlert } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FuelPricesData, NewsItem, formatDateTimeLabel, loadFuelPrices, loadNews } from '../lib/content';
 import { useI18n } from '../lib/i18n';
 import { editorial } from '../lib/editorial';
 
 type State = { fuelPrices: FuelPricesData | null; news: NewsItem[]; newsUpdatedAt: string | null; error: string | null };
+
+const priceTextMap = {
+  en: {
+    'Current subsidised snapshot': 'Current subsidised snapshot',
+    'Latest full weekly table we confirmed': 'Latest full weekly table we confirmed',
+    'Ministry of Finance press citation': 'Ministry of Finance press citation',
+    'BUDI95 RON95': 'BUDI95 RON95',
+    'RON95 unsubsidised': 'RON95 unsubsidised',
+    'RON97': 'RON97',
+    'Diesel Peninsular': 'Diesel Peninsular',
+    'Diesel Sabah / Sarawak / Labuan': 'Diesel Sabah / Sarawak / Labuan',
+  },
+  ms: {
+    'Current subsidised snapshot': 'Ringkasan bersubsidi semasa',
+    'Latest full weekly table we confirmed': 'Jadual mingguan penuh terkini yang kami sahkan',
+    'Ministry of Finance press citation': 'Rujukan akhbar Kementerian Kewangan',
+    'BUDI95 RON95': 'BUDI95 RON95',
+    'RON95 unsubsidised': 'RON95 tanpa subsidi',
+    'RON97': 'RON97',
+    'Diesel Peninsular': 'Diesel Semenanjung',
+    'Diesel Sabah / Sarawak / Labuan': 'Diesel Sabah / Sarawak / Labuan',
+  },
+  zh: {
+    'Current subsidised snapshot': '当前补贴快照',
+    'Latest full weekly table we confirmed': '我们确认的最新完整周表',
+    'Ministry of Finance press citation': '财政部新闻引文',
+    'BUDI95 RON95': 'BUDI95 RON95',
+    'RON95 unsubsidised': 'RON95 非补贴价',
+    'RON97': 'RON97',
+    'Diesel Peninsular': '半岛柴油',
+    'Diesel Sabah / Sarawak / Labuan': '沙巴 / 沙捞越 / 纳闽柴油',
+  },
+} as const;
+
+function translatePriceText(language: keyof typeof priceTextMap, value: string) {
+  return priceTextMap[language][value as keyof (typeof priceTextMap)[typeof language]] ?? value;
+}
 
 export function Home() {
   const { t, language } = useI18n();
@@ -22,14 +59,6 @@ export function Home() {
 
   const malaysiaNews = state.news.filter((item) => item.region === 'malaysia').slice(0, 2);
   const globalNews = state.news.filter((item) => item.region === 'global').slice(0, 2);
-  const featuredPriceLabels = ['BUDI95 RON95', 'RON95 unsubsidised', 'RON97', 'Diesel Peninsular'];
-  const featuredPrices = featuredPriceLabels.flatMap((label) => {
-    for (const section of state.fuelPrices?.sections ?? []) {
-      const match = section.items.find((item) => item.label === label);
-      if (match) return [{ label, value: match.value }];
-    }
-    return [];
-  });
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
@@ -45,30 +74,7 @@ export function Home() {
           <ShieldAlert size={16} className="mt-0.5 shrink-0 text-amber-600 dark:text-amber-500" />
           <span>{copy.home.disclaimer}</span>
         </div>
-      </div>
-
-      <div className="mb-20 rounded-3xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900 md:p-8">
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h2 className="flex items-center gap-2 text-2xl font-bold text-stone-900 dark:text-stone-100"><Activity className="text-amber-600 dark:text-amber-500" /> {copy.home.latestTitle}</h2>
-            <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">{copy.home.latestSubtitle}</p>
-          </div>
-        </div>
-        {featuredPrices.length ? (
-          <div className="grid gap-4 md:grid-cols-2">
-            {featuredPrices.map((item) => (
-              <div key={item.label} className="rounded-2xl border border-stone-200 bg-stone-50 p-4 dark:border-stone-800 dark:bg-stone-800/40">
-                <div className="text-sm text-stone-500 dark:text-stone-400">{item.label}</div>
-                <div className="mt-1 text-2xl font-bold text-stone-900 dark:text-stone-100">{item.value}</div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="rounded-2xl border border-dashed border-stone-300 bg-stone-50 p-6 dark:border-stone-700 dark:bg-stone-800/30 md:p-10">
-            <p className="leading-relaxed text-stone-700 dark:text-stone-300">{copy.home.loadingPrices}</p>
-          </div>
-        )}
-        {state.error ? <div className="mt-6 flex items-start gap-3 rounded-xl bg-stone-50 p-4 text-sm text-stone-600 dark:bg-stone-800/50 dark:text-stone-400"><AlertTriangle size={16} className="mt-0.5 shrink-0 text-amber-600 dark:text-amber-500" /><p>{state.error}</p></div> : null}
+        {state.error ? <div className="mt-4 flex items-start gap-3 rounded-xl bg-stone-50 p-4 text-sm text-stone-600 dark:bg-stone-800/50 dark:text-stone-400"><AlertTriangle size={16} className="mt-0.5 shrink-0 text-amber-600 dark:text-amber-500" /><p>{state.error}</p></div> : null}
       </div>
 
       <div className="mb-20">
@@ -76,35 +82,45 @@ export function Home() {
           <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{copy.home.pricesLabel}</h2>
           <span className="flex items-center gap-1.5 text-sm text-stone-500 dark:text-stone-400"><Info size={14} /> {state.fuelPrices ? formatDateTimeLabel(state.fuelPrices.updatedAt) : t('prices.updated')}</span>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {(state.fuelPrices?.sections ?? []).map((section) => (
-            <div key={section.title} className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900">
-              <div className="mb-4 border-b border-stone-100 pb-4 dark:border-stone-800">
-                <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">{section.title}</h3>
-                {section.sourceLabel ? (
-                  <a href={section.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-amber-700 hover:text-amber-800 dark:text-amber-500 dark:hover:text-amber-400">
-                    {section.sourceLabel} <ExternalLink size={12} />
-                  </a>
-                ) : null}
+        {state.fuelPrices?.sections?.length ? (
+          <div className="grid gap-6 md:grid-cols-2">
+            {state.fuelPrices.sections.map((section) => (
+              <div key={section.title} className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900">
+                <div className="mb-4 border-b border-stone-100 pb-4 dark:border-stone-800">
+                  <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">{translatePriceText(language, section.title)}</h3>
+                  {section.sourceLabel ? (
+                    <a href={section.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-amber-700 hover:text-amber-800 dark:text-amber-500 dark:hover:text-amber-400">
+                      {translatePriceText(language, section.sourceLabel)} <ExternalLink size={12} />
+                    </a>
+                  ) : null}
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  {section.items.map((item) => (
+                    <div key={item.label} className="rounded-lg bg-stone-50 p-3 dark:bg-stone-800/50">
+                      <div className="mb-1 text-sm text-stone-500 dark:text-stone-400">{translatePriceText(language, item.label)}</div>
+                      <div className="text-lg font-bold text-stone-900 dark:text-stone-100">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                {section.items.map((item) => (
-                  <div key={item.label} className="rounded-lg bg-stone-50 p-3 dark:bg-stone-800/50">
-                    <div className="mb-1 text-sm text-stone-500 dark:text-stone-400">{item.label}</div>
-                    <div className="text-lg font-bold text-stone-900 dark:text-stone-100">{item.value}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        {state.fuelPrices?.disclaimer ? <div className="mt-6 rounded-2xl border border-amber-100 bg-amber-50 p-6 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-200">{state.fuelPrices.disclaimer}</div> : null}
-        {!!state.fuelPrices?.quotaNotes?.length && (
-          <div className="mt-6 rounded-2xl border border-amber-100 bg-amber-50 p-6 dark:border-amber-900/30 dark:bg-amber-900/10">
-            <h3 className="mb-3 text-lg font-bold text-amber-900 dark:text-amber-500">{t('prices.quota.title')}</h3>
-            <ul className="space-y-2 text-amber-800 dark:text-amber-200">{state.fuelPrices.quotaNotes.map((note) => <li key={note}>{note}</li>)}</ul>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-6 text-stone-500 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-400">
+            {copy.home.loadingPrices}
           </div>
         )}
+        <div className="mt-6 rounded-2xl border border-amber-100 bg-amber-50 p-6 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-200">
+          <p className="leading-relaxed">{t('prices.note')}</p>
+          <div className="mt-4">
+            <h3 className="mb-3 text-lg font-bold text-amber-900 dark:text-amber-500">{t('prices.quota.title')}</h3>
+            <ul className="space-y-2 text-amber-800 dark:text-amber-200">
+              <li>{t('prices.quota.1')}</li>
+              <li>{t('prices.quota.2')}</li>
+              <li>{t('prices.quota.3')}</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div>

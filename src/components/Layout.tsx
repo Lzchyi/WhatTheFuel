@@ -72,7 +72,10 @@ export function Layout() {
       <footer className="mt-20 border-t border-stone-800 bg-stone-900 py-12 text-stone-400 dark:bg-black">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:px-6 lg:flex-row lg:px-8">
           <div className="flex items-center gap-2"><Droplets size={20} className="text-amber-600" /><span className="font-serif text-xl font-bold text-stone-200">WhatTheFuel</span></div>
-          <p className="max-w-2xl text-center text-sm leading-relaxed lg:text-left">{t('footer.disclaimer')}</p>
+          <div className="max-w-3xl space-y-2 text-center lg:text-left">
+            <p className="text-sm leading-relaxed text-stone-300">{t('footer.summary')}</p>
+            <p className="text-xs leading-relaxed text-stone-500">{t('footer.legal')}</p>
+          </div>
         </div>
       </footer>
     </div>

@@ -69,7 +69,7 @@ const en: EditorialCopy = {
     eyebrow: 'Fuel context with sources',
     title: 'WhatTheFuel keeps the panic out and the citations in.',
     subtitle: 'Read the latest verified fuel prices, current fuel-related news, a compact timeline, and plain-language explainers on why global oil shocks still reach Malaysia.',
-    disclaimer: 'Educational site only. If a figure is still under review, it stays out of the card until the source is ready.',
+    disclaimer: 'Independent public education project. We organize verified prices, current news, timelines, and source links; we do not publish official prices or original reporting.',
     latestTitle: 'Latest fuel snapshot',
     latestSubtitle: 'Current prices and subsidy lines tied to official source pages.',
     pricesLabel: 'Fuel prices',
@@ -169,13 +169,6 @@ const en: EditorialCopy = {
           { label: 'MOF e-hailing tier', url: 'https://mof.gov.my/portal/en/news/press-citations/budi95-tiered-eligibility-for-e-hailing-drivers-to-be-activated-mid-month-mof' },
         ],
       },
-      {
-        title: 'Why the site shows citations first',
-        paragraphs: [
-          'If a figure is not directly backed by an official release or a clearly attributable report, it should stay out of the hero cards and explainers.',
-          'That keeps the project useful instead of loud. A blank slot is better than a confident number that cannot be defended.',
-        ],
-      },
     ],
   },
   myths: {
@@ -242,7 +235,7 @@ const ms: EditorialCopy = {
     eyebrow: 'Konteks harga minyak bersumber',
     title: 'WhatTheFuel tapis bising, kekal pada sumber.',
     subtitle: 'Baca harga minyak yang disahkan, berita terkini berkaitan minyak, garis masa ringkas, dan penerangan yang jelas tentang kenapa kejutan pasaran global masih terasa di Malaysia.',
-    disclaimer: 'Laman ini untuk rujukan umum. Jika sesuatu angka masih disemak, ia tidak akan dipaparkan dahulu.',
+    disclaimer: 'Projek pendidikan awam bebas. Kami menyusun harga yang disahkan, berita semasa, garis masa, dan pautan sumber; kami tidak menerbitkan harga rasmi atau laporan asal.',
     latestTitle: 'Ringkasan harga minyak terkini',
     latestSubtitle: 'Harga semasa dan nota subsidi berpaut pada halaman sumber rasmi.',
     pricesLabel: 'Harga minyak',
@@ -342,13 +335,6 @@ const ms: EditorialCopy = {
           { label: 'Tier e-hailing MOF', url: 'https://mof.gov.my/portal/en/news/press-citations/budi95-tiered-eligibility-for-e-hailing-drivers-to-be-activated-mid-month-mof' },
         ],
       },
-      {
-        title: 'Kenapa laman ini dahulukan sitasi',
-        paragraphs: [
-          'Jika sesuatu angka tidak disokong terus oleh kenyataan rasmi atau laporan yang jelas, ia tidak patut masuk ke kad utama atau penerangan.',
-          'Itu menjadikan projek ini berguna, bukan bising. Ruang kosong lebih baik daripada nombor yakin yang tidak boleh dibuktikan.',
-        ],
-      },
     ],
   },
   myths: {
@@ -415,7 +401,7 @@ const zh: EditorialCopy = {
     eyebrow: '有来源的油价背景',
     title: 'WhatTheFuel 只保留事实，不放大恐慌。',
     subtitle: '这里有已核实的油价、最新相关新闻、简洁时间线，以及为什么全球油市冲击仍会传到马来西亚的浅白说明。',
-    disclaimer: '仅供公众阅读与理解。若某个数字仍在核查中，它不会先放上去。',
+    disclaimer: '独立的公众教育项目。我们整理已核实的价格、最新新闻、时间线和来源链接；我们不发布官方价格，也不做原创报道。',
     latestTitle: '最新油价快照',
     latestSubtitle: '价格和补贴信息都连接到官方来源页面。',
     pricesLabel: '油价',
@@ -427,7 +413,7 @@ const zh: EditorialCopy = {
     title: '为什么油价会涨',
     intro: '全球油市冲击会先经过航运、库存、期货和炼油利润，再传到本地油站价格。',
     footnote: '本页解释的是机制，不是在说每一次全球波动都会以同样速度、同样方式影响马来西亚。',
-    noteTitle: '本页不主张什么',
+    noteTitle: '核心重点',
     sections: [
       {
         title: '油价是全球定价，不是单个油站定价',
@@ -513,13 +499,6 @@ const zh: EditorialCopy = {
           { label: 'MOF 4 月 8 日', url: 'https://www.mof.gov.my/portal/en/news/press-citations/govt-maintains-subsidised-prices-amid-global-oil-market-volatility' },
           { label: 'MOF BUDI95 上限', url: 'https://www.mof.gov.my/portal/en/news/press-citations/claims-of-additional-budi95-subsidy-application-untrue-200-litre-monthly-limit-remains-mof' },
           { label: 'MOF e-hailing 级别', url: 'https://mof.gov.my/portal/en/news/press-citations/budi95-tiered-eligibility-for-e-hailing-drivers-to-be-activated-mid-month-mof' },
-        ],
-      },
-      {
-        title: '为什么页面先给出引文',
-        paragraphs: [
-          '如果某个数字不能直接用官方发布或明确可追溯的报道支撑，它就不该出现在主卡片或解释页里。',
-          '这样做让项目更有用，而不是更吵。一个空位，总比一个无法证明的漂亮数字更好。',
         ],
       },
     ],
