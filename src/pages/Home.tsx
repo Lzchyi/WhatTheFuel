@@ -1,48 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { AlertTriangle, ArrowRight, ExternalLink, Info, ShieldAlert } from 'lucide-react';
+import { AlertTriangle, ArrowRight, ExternalLink, ShieldAlert } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FuelPricesData, NewsItem, formatDateTimeLabel, loadFuelPrices, loadNews } from '../lib/content';
 import { useI18n } from '../lib/i18n';
 import { editorial } from '../lib/editorial';
 
 type State = { fuelPrices: FuelPricesData | null; news: NewsItem[]; newsUpdatedAt: string | null; error: string | null };
-
-const priceTextMap = {
-  en: {
-    'Current subsidised snapshot': 'Current subsidised snapshot',
-    'Latest full weekly table we confirmed': 'Latest full weekly table we confirmed',
-    'Ministry of Finance press citation': 'Ministry of Finance press citation',
-    'BUDI95 RON95': 'BUDI95 RON95',
-    'RON95 unsubsidised': 'RON95 unsubsidised',
-    'RON97': 'RON97',
-    'Diesel Peninsular': 'Diesel Peninsular',
-    'Diesel Sabah / Sarawak / Labuan': 'Diesel Sabah / Sarawak / Labuan',
-  },
-  ms: {
-    'Current subsidised snapshot': 'Ringkasan bersubsidi semasa',
-    'Latest full weekly table we confirmed': 'Jadual mingguan penuh terkini yang kami sahkan',
-    'Ministry of Finance press citation': 'Rujukan akhbar Kementerian Kewangan',
-    'BUDI95 RON95': 'BUDI95 RON95',
-    'RON95 unsubsidised': 'RON95 tanpa subsidi',
-    'RON97': 'RON97',
-    'Diesel Peninsular': 'Diesel Semenanjung',
-    'Diesel Sabah / Sarawak / Labuan': 'Diesel Sabah / Sarawak / Labuan',
-  },
-  zh: {
-    'Current subsidised snapshot': '当前补贴快照',
-    'Latest full weekly table we confirmed': '我们确认的最新完整周表',
-    'Ministry of Finance press citation': '财政部新闻引文',
-    'BUDI95 RON95': 'BUDI95 RON95',
-    'RON95 unsubsidised': 'RON95 非补贴价',
-    'RON97': 'RON97',
-    'Diesel Peninsular': '半岛柴油',
-    'Diesel Sabah / Sarawak / Labuan': '沙巴 / 沙捞越 / 纳闽柴油',
-  },
-} as const;
-
-function translatePriceText(language: keyof typeof priceTextMap, value: string) {
-  return priceTextMap[language][value as keyof (typeof priceTextMap)[typeof language]] ?? value;
-}
 
 export function Home() {
   const { t, language } = useI18n();
@@ -59,6 +22,16 @@ export function Home() {
 
   const malaysiaNews = state.news.filter((item) => item.region === 'malaysia').slice(0, 2);
   const globalNews = state.news.filter((item) => item.region === 'global').slice(0, 2);
+  const snapshotSection = state.fuelPrices?.sections.find((section) => section.title === 'Current subsidised snapshot');
+  const weeklySection = state.fuelPrices?.sections.find((section) => section.title === 'Latest full weekly table we confirmed');
+  const sourceUrl = weeklySection?.sourceUrl ?? snapshotSection?.sourceUrl;
+  const currentPriceCards = [
+    { key: 'ron95_subsidised', label: t('prices.ron95_subsidised'), value: snapshotSection?.items.find((item) => item.label === 'BUDI95 RON95')?.value ?? '—' },
+    { key: 'ron95_unsubsidised', label: t('prices.ron95_unsubsidised'), value: snapshotSection?.items.find((item) => item.label === 'RON95 unsubsidised')?.value ?? '—' },
+    { key: 'ron97', label: t('prices.ron97'), value: weeklySection?.items.find((item) => item.label === 'RON97')?.value ?? '—' },
+    { key: 'diesel_peninsular', label: t('prices.diesel_peninsular'), value: weeklySection?.items.find((item) => item.label === 'Diesel Peninsular')?.value ?? '—' },
+    { key: 'diesel_east', label: t('prices.diesel_east'), value: weeklySection?.items.find((item) => item.label === 'Diesel Sabah / Sarawak / Labuan')?.value ?? snapshotSection?.items.find((item) => item.label === 'Diesel Sabah / Sarawak / Labuan')?.value ?? '—' },
+  ];
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
@@ -78,49 +51,52 @@ export function Home() {
       </div>
 
       <div className="mb-20">
-        <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{copy.home.pricesLabel}</h2>
-          <span className="flex items-center gap-1.5 text-sm text-stone-500 dark:text-stone-400"><Info size={14} /> {state.fuelPrices ? formatDateTimeLabel(state.fuelPrices.updatedAt) : t('prices.updated')}</span>
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{t('prices.current_title')}</h2>
         </div>
-        {state.fuelPrices?.sections?.length ? (
-          <div className="grid gap-6 md:grid-cols-2">
-            {state.fuelPrices.sections.map((section) => (
-              <div key={section.title} className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900">
-                <div className="mb-4 border-b border-stone-100 pb-4 dark:border-stone-800">
-                  <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">{translatePriceText(language, section.title)}</h3>
-                  {section.sourceLabel ? (
-                    <a href={section.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-amber-700 hover:text-amber-800 dark:text-amber-500 dark:hover:text-amber-400">
-                      {translatePriceText(language, section.sourceLabel)} <ExternalLink size={12} />
-                    </a>
-                  ) : null}
+        {state.fuelPrices ? (
+          <div className="grid gap-6">
+            <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900 sm:p-8">
+              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                {currentPriceCards.map((item) => (
+                  <div key={item.key} className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
+                    <div className="mb-1.5 text-sm text-stone-500 dark:text-stone-400">{item.label}</div>
+                    <div className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900 sm:p-8">
+              <h3 className="mb-5 text-lg font-bold text-stone-900 dark:text-stone-100">{t('prices.context_title')}</h3>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
+                  <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.last_updated')}</div>
+                  <div className="mt-1 text-base font-semibold text-stone-900 dark:text-stone-100">{formatDateTimeLabel(state.fuelPrices.updatedAt)}</div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {section.items.map((item) => (
-                    <div key={item.label} className="rounded-lg bg-stone-50 p-3 dark:bg-stone-800/50">
-                      <div className="mb-1 text-sm text-stone-500 dark:text-stone-400">{translatePriceText(language, item.label)}</div>
-                      <div className="text-lg font-bold text-stone-900 dark:text-stone-100">{item.value}</div>
-                    </div>
-                  ))}
+                <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
+                  <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.source')}</div>
+                  <a href={sourceUrl ?? 'https://www.mof.gov.my/portal/en/'} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 font-semibold text-amber-700 hover:text-amber-800 dark:text-amber-500 dark:hover:text-amber-400">
+                    {t('prices.source_name')} <ExternalLink size={14} />
+                  </a>
                 </div>
               </div>
-            ))}
+              <div className="mt-5 rounded-2xl border border-amber-100 bg-amber-50 p-4 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-100">
+                <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">{t('prices.notes_title')}</h4>
+                <ul className="space-y-2 text-sm leading-relaxed">
+                  <li>{t('prices.note.1')}</li>
+                  <li>{t('prices.note.2')}</li>
+                  <li>{t('prices.note.3')}</li>
+                  <li>{t('prices.note.4')}</li>
+                </ul>
+              </div>
+            </div>
           </div>
         ) : (
           <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-6 text-stone-500 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-400">
             {copy.home.loadingPrices}
           </div>
         )}
-        <div className="mt-6 rounded-2xl border border-amber-100 bg-amber-50 p-6 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-200">
-          <p className="leading-relaxed">{t('prices.note')}</p>
-          <div className="mt-4">
-            <h3 className="mb-3 text-lg font-bold text-amber-900 dark:text-amber-500">{t('prices.quota.title')}</h3>
-            <ul className="space-y-2 text-amber-800 dark:text-amber-200">
-              <li>{t('prices.quota.1')}</li>
-              <li>{t('prices.quota.2')}</li>
-              <li>{t('prices.quota.3')}</li>
-            </ul>
-          </div>
-        </div>
       </div>
 
       <div>
