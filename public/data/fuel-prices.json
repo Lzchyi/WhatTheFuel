@@ -17,11 +17,11 @@
     {
       "title": "Latest full weekly table we confirmed",
       "sourceLabel": "Ministry of Finance press citation",
-      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/ron97-retail-price-down-20-sen-diesel-up-50-sen-mof",
+      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/govt-maintains-subsidised-prices-amid-global-oil-market-volatility",
       "items": [
-        { "label": "RON97", "value": "RM4.95/L" },
-        { "label": "RON95 unsubsidised", "value": "RM3.87/L" },
-        { "label": "Diesel Peninsular", "value": "RM6.02/L" },
+        { "label": "RON97", "value": "RM5.35/L" },
+        { "label": "RON95 unsubsidised", "value": "RM4.27/L" },
+        { "label": "Diesel Peninsular", "value": "RM6.72/L" },
         { "label": "Diesel Sabah / Sarawak / Labuan", "value": "RM2.15/L" }
       ]
     }
