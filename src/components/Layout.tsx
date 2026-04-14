@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { BookOpen, Clock, Droplets, Globe, HelpCircle, MapPin, Menu, Moon, Newspaper, Sun, X } from 'lucide-react';
+import { BookOpen, Clock, Droplets, HelpCircle, Lightbulb, Menu, Moon, Sun, X } from 'lucide-react';
 import { useI18n } from '../lib/i18n';
 import { useTheme } from '../lib/theme';
 import { cn } from '../lib/utils';
@@ -13,9 +13,7 @@ export function Layout() {
 
   const navItems = [
     { path: '/', label: t('nav.home'), icon: Droplets },
-    { path: '/news', label: t('nav.news'), icon: Newspaper },
-    { path: '/global', label: t('nav.global'), icon: Globe },
-    { path: '/malaysia', label: t('nav.malaysia'), icon: MapPin },
+    { path: '/understanding', label: t('nav.understanding'), icon: Lightbulb },
     { path: '/timeline', label: t('nav.timeline'), icon: Clock },
     { path: '/myths', label: t('nav.myths'), icon: HelpCircle },
     { path: '/sources', label: t('nav.sources'), icon: BookOpen },

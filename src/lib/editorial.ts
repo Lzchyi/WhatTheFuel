@@ -32,6 +32,11 @@ export type EditorialCopy = {
     loadingPrices: string;
     emptyNews: string;
   };
+  understanding: {
+    title: string;
+    intro: string;
+    cards: { title: string; body: string }[];
+  };
   global: {
     title: string;
     intro: string;
@@ -68,14 +73,25 @@ const en: EditorialCopy = {
   home: {
     eyebrow: 'Fuel context with sources',
     title: 'WhatTheFuel keeps the panic out and the citations in.',
-    subtitle: 'Read the latest verified fuel prices, current fuel-related news, a compact timeline, and plain-language explainers on why global oil shocks still reach Malaysia.',
-    disclaimer: 'Independent public education project. We organize verified prices, current news, timelines, and source links; we do not publish official prices or original reporting.',
+    subtitle: 'See verified fuel prices, a compact timeline, and plain-language explainers on why the same fuel line can mean different things.',
+    disclaimer: 'Independent public education project. We organize verified prices, explainers, timelines, and source links; we do not publish official prices or original reporting.',
     latestTitle: 'Latest fuel snapshot',
     latestSubtitle: 'Current prices and subsidy lines tied to official source pages.',
     pricesLabel: 'Fuel prices',
     newsLabel: 'Live news',
     loadingPrices: 'Loading verified price data.',
     emptyNews: 'No live items yet for this tab.',
+  },
+  understanding: {
+    title: 'Understanding the numbers',
+    intro: 'A plain-language guide to why each fuel line is priced differently and what the labels actually mean.',
+    cards: [
+      { title: 'Why RON95 is fixed', body: 'RON95 subsidised retail pricing is set by the government so the public pays a stable amount instead of a fully market-linked figure.' },
+      { title: 'Why RON97 changes weekly', body: 'RON97 is market-linked, so it follows the weekly pricing cycle rather than the fixed subsidised rate used for RON95.' },
+      { title: 'Why diesel differs by region', body: 'Peninsular Malaysia and East Malaysia use separate managed pricing because the support structure and retail treatment are not identical.' },
+      { title: 'What “unsubsidised” means', body: 'The unsubsidised line is the reference market price before support is applied. It helps show the gap subsidy policy closes.' },
+      { title: 'Why the labels matter', body: 'The same pump can show a public price, a reference price, and a regional price at once. Reading them correctly prevents bad comparisons.' },
+    ],
   },
   global: {
     title: 'Why petrol gets expensive',
@@ -234,14 +250,25 @@ const ms: EditorialCopy = {
   home: {
     eyebrow: 'Konteks harga minyak bersumber',
     title: 'WhatTheFuel tapis bising, kekal pada sumber.',
-    subtitle: 'Baca harga minyak yang disahkan, berita terkini berkaitan minyak, garis masa ringkas, dan penerangan yang jelas tentang kenapa kejutan pasaran global masih terasa di Malaysia.',
-    disclaimer: 'Projek pendidikan awam bebas. Kami menyusun harga yang disahkan, berita semasa, garis masa, dan pautan sumber; kami tidak menerbitkan harga rasmi atau laporan asal.',
+    subtitle: 'Lihat harga minyak yang disahkan, garis masa ringkas, dan penerangan yang jelas tentang kenapa angka harga bahan api boleh berbeza.',
+    disclaimer: 'Projek pendidikan awam bebas. Kami menyusun harga yang disahkan, penerangan, garis masa, dan pautan sumber; kami tidak menerbitkan harga rasmi atau laporan asal.',
     latestTitle: 'Ringkasan harga minyak terkini',
     latestSubtitle: 'Harga semasa dan nota subsidi berpaut pada halaman sumber rasmi.',
     pricesLabel: 'Harga minyak',
     newsLabel: 'Berita terkini',
     loadingPrices: 'Memuatkan harga yang disahkan.',
     emptyNews: 'Tiada item langsung lagi untuk tab ini.',
+  },
+  understanding: {
+    title: 'Memahami nombor',
+    intro: 'Panduan ringkas untuk memahami kenapa setiap baris harga bahan api berbeza dan apa maksud labelnya.',
+    cards: [
+      { title: 'Kenapa RON95 tetap', body: 'Harga runcit RON95 bersubsidi ditetapkan kerajaan supaya orang ramai membayar jumlah yang stabil, bukan harga pasaran penuh.' },
+      { title: 'Kenapa RON97 berubah mingguan', body: 'RON97 terikat kepada pasaran, jadi ia mengikuti kitaran harga mingguan, bukan kadar tetap seperti RON95 bersubsidi.' },
+      { title: 'Kenapa diesel berbeza ikut wilayah', body: 'Semenanjung Malaysia dan Malaysia Timur menggunakan struktur harga terurus yang berbeza, jadi harga runcitnya tidak sama.' },
+      { title: 'Apa maksud “tanpa subsidi”', body: 'Baris tanpa subsidi ialah harga rujukan pasaran sebelum sokongan kerajaan. Ia menunjukkan jurang yang ditutup oleh dasar subsidi.' },
+      { title: 'Kenapa label penting', body: 'Pam yang sama boleh memaparkan harga awam, harga rujukan, dan harga wilayah pada masa yang sama. Membacanya dengan betul elak perbandingan yang salah.' },
+    ],
   },
   global: {
     title: 'Kenapa harga minyak naik',
@@ -400,14 +427,25 @@ const zh: EditorialCopy = {
   home: {
     eyebrow: '有来源的油价背景',
     title: 'WhatTheFuel 只保留事实，不放大恐慌。',
-    subtitle: '这里有已核实的油价、最新相关新闻、简洁时间线，以及为什么全球油市冲击仍会传到马来西亚的浅白说明。',
-    disclaimer: '独立的公众教育项目。我们整理已核实的价格、最新新闻、时间线和来源链接；我们不发布官方价格，也不做原创报道。',
+    subtitle: '这里有已核实的油价、简洁时间线，以及为什么同一条燃油价格会有不同含义的浅白说明。',
+    disclaimer: '独立的公众教育项目。我们整理已核实的价格、说明、时间线和来源链接；我们不发布官方价格，也不做原创报道。',
     latestTitle: '最新油价快照',
     latestSubtitle: '价格和补贴信息都连接到官方来源页面。',
     pricesLabel: '油价',
     newsLabel: '实时新闻',
     loadingPrices: '正在加载已核实的价格数据。',
     emptyNews: '此分类目前还没有实时条目。',
+  },
+  understanding: {
+    title: '看懂这些数字',
+    intro: '这是一份通俗指南，解释为什么每条燃油价格线都不同，以及这些标签真正代表什么。',
+    cards: [
+      { title: '为什么 RON95 是固定的', body: 'RON95 的补贴零售价由政府设定，因此公众支付的是稳定价格，而不是完全跟随市场的价格。' },
+      { title: '为什么 RON97 每周变动', body: 'RON97 连接市场价格，所以它跟随每周定价周期，而不是像 RON95 补贴价那样固定。' },
+      { title: '为什么柴油分地区', body: '半岛与东马采用不同的受管价格结构，所以柴油零售价并不完全相同。' },
+      { title: '“未补贴”是什么意思', body: '未补贴价格是应用政府支持之前的市场参考价，用来显示补贴政策所覆盖的差额。' },
+      { title: '为什么这些标签重要', body: '同一个油站页面会同时出现公众价、参考价和地区价。读懂这些标签，才不会把不同价格拿来乱比。' },
+    ],
   },
   global: {
     title: '为什么油价会涨',

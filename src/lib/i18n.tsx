@@ -5,7 +5,7 @@ type Dict = Record<string, string>;
 
 const translations: Record<Language, Dict> = {
   en: {
-    'nav.home': 'Home', 'nav.news': 'News', 'nav.global': 'Global Context', 'nav.malaysia': 'Malaysia Context', 'nav.timeline': 'Timeline', 'nav.myths': 'Myths', 'nav.sources': 'Sources',
+    'nav.home': 'Home', 'nav.understanding': 'Understanding the Numbers', 'nav.timeline': 'Timeline', 'nav.myths': 'Myths', 'nav.sources': 'Sources',
     'prices.current_title': 'Current pump prices',
     'prices.context_title': 'Notes, source, and update context',
     'prices.last_updated': 'Last updated',
@@ -41,12 +41,12 @@ const translations: Record<Language, Dict> = {
     'timeline.error': 'Unable to load the timeline right now.',
     'sources.title': 'Sources & Methodology', 'sources.subtitle': 'Where the site pulls prices, context, and live updates from.', 'sources.update_title': 'Update cadence', 'sources.source_title': 'Source groups', 'sources.note_title': 'Publishing rule',
     'sources.error': 'Unable to load the methodology page right now.',
-    'footer.summary': 'Independent public education project. We organize verified prices, current news, timelines, and source links; we do not publish official prices or original reporting.',
+    'footer.summary': 'Independent public education project. We organize verified prices, explainers, timelines, and source links; we do not publish official prices or original reporting.',
     'footer.legal': 'WhatTheFuel is an independent educational website, not an official government platform, not a licensed price publisher, and not a newsroom. We compile and summarize information from publicly available sources for general information only. Although we try to keep the site accurate and current, we do not guarantee completeness, timeliness, uninterrupted availability, or error-free translation. The English version is the reference version; translations are provided for convenience only. For final official price, policy, subsidy, or legal information, rely on the original source documents and the relevant Malaysian authorities. To the fullest extent permitted by law, WhatTheFuel and its contributors disclaim liability for losses, decisions, or actions taken in reliance on this site.',
     'myths.why_it_matters': 'Why it matters'
   },
   ms: {
-    'nav.home': 'Utama', 'nav.news': 'Berita', 'nav.global': 'Latar Global', 'nav.malaysia': 'Latar Malaysia', 'nav.timeline': 'Garis Masa', 'nav.myths': 'Mitos & Fakta', 'nav.sources': 'Sumber',
+    'nav.home': 'Utama', 'nav.understanding': 'Memahami Nombor', 'nav.timeline': 'Garis Masa', 'nav.myths': 'Mitos & Fakta', 'nav.sources': 'Sumber',
     'prices.current_title': 'Harga pam semasa',
     'prices.context_title': 'Nota, sumber, dan konteks kemas kini',
     'prices.last_updated': 'Kemas kini terakhir',
@@ -82,12 +82,12 @@ const translations: Record<Language, Dict> = {
     'timeline.error': 'Tidak dapat memuatkan garis masa buat masa ini.',
     'sources.title': 'Sumber & Kaedah', 'sources.subtitle': 'Dari mana laman ini mengambil harga, konteks, dan kemas kini langsung.', 'sources.update_title': 'Kekerapan kemas kini', 'sources.source_title': 'Kumpulan sumber', 'sources.note_title': 'Peraturan penerbitan',
     'sources.error': 'Tidak dapat memuatkan halaman metodologi buat masa ini.',
-    'footer.summary': 'Projek pendidikan awam bebas. Kami menyusun harga yang disahkan, berita semasa, garis masa, dan pautan sumber; kami tidak menerbitkan harga rasmi atau laporan asal.',
+    'footer.summary': 'Projek pendidikan awam bebas. Kami menyusun harga yang disahkan, penerangan, garis masa, dan pautan sumber; kami tidak menerbitkan harga rasmi atau laporan asal.',
     'footer.legal': 'WhatTheFuel ialah laman pendidikan bebas, bukan platform rasmi kerajaan, bukan penerbit harga berlesen, dan bukan bilik berita. Kami menyusun dan meringkaskan maklumat daripada sumber awam untuk tujuan maklumat umum sahaja. Walaupun kami berusaha memastikan laman ini tepat dan sentiasa dikemas kini, kami tidak menjamin kesempurnaan, ketepatan masa, ketersediaan berterusan, atau terjemahan tanpa ralat. Versi Inggeris ialah versi rujukan; terjemahan disediakan hanya untuk kemudahan. Untuk harga rasmi, dasar, subsidi, atau maklumat undang-undang muktamad, rujuk dokumen sumber asal dan pihak berkuasa Malaysia yang berkenaan. Setakat yang dibenarkan oleh undang-undang, WhatTheFuel dan penyumbangnya menafikan liabiliti bagi kerugian, keputusan, atau tindakan yang dibuat bergantung pada laman ini.',
     'myths.why_it_matters': 'Kenapa penting'
   },
   zh: {
-    'nav.home': '首页', 'nav.news': '新闻', 'nav.global': '全球脉络', 'nav.malaysia': '马来西亚脉络', 'nav.timeline': '时间线', 'nav.myths': '常见误区', 'nav.sources': '资料来源',
+    'nav.home': '首页', 'nav.understanding': '看懂数字', 'nav.timeline': '时间线', 'nav.myths': '常见误区', 'nav.sources': '资料来源',
     'prices.current_title': '当前油站价格',
     'prices.context_title': '说明、来源与更新时间',
     'prices.last_updated': '最后更新',
@@ -123,7 +123,7 @@ const translations: Record<Language, Dict> = {
     'timeline.error': '目前无法加载时间线。',
     'sources.title': '资料来源与方法', 'sources.subtitle': '本站从哪里获取价格、背景与实时更新。', 'sources.update_title': '更新频率', 'sources.source_title': '来源分组', 'sources.note_title': '发布规则',
     'sources.error': '目前无法加载方法页面。',
-    'footer.summary': '独立的公众教育项目。我们整理已核实的价格、最新新闻、时间线和来源链接；我们不发布官方价格，也不做原创报道。',
+    'footer.summary': '独立的公众教育项目。我们整理已核实的价格、说明、时间线和来源链接；我们不发布官方价格，也不做原创报道。',
     'footer.legal': 'WhatTheFuel 是独立教育网站，不是官方政府平台，不是持牌价格发布机构，也不是新闻编辑部。本站仅为一般信息目的，汇总并整理公开来源的信息。虽然我们尽力保持内容准确并及时更新，但我们不保证内容完整、及时、持续可用，或翻译绝对无误。英文版本为参考版本，翻译仅供便利。如需最终的官方价格、政策、补贴或法律信息，请以原始来源文件及相关马来西亚主管部门为准。在法律允许的最大范围内，WhatTheFuel 及其贡献者不对任何因依赖本站信息而产生的损失、决定或行为承担责任。',
     'myths.why_it_matters': '为什么重要'
   }

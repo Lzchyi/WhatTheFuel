@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { MalaysiaExplainer } from './pages/MalaysiaExplainer';
 import { Myths } from './pages/Myths';
 import { News } from './pages/News';
+import { Understanding } from './pages/Understanding';
 import { Sources } from './pages/Sources';
 import { Timeline } from './pages/Timeline';
 
@@ -18,6 +19,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+              <Route path="understanding" element={<Understanding />} />
               <Route path="news" element={<News />} />
               <Route path="global" element={<GlobalExplainer />} />
               <Route path="malaysia" element={<MalaysiaExplainer />} />
