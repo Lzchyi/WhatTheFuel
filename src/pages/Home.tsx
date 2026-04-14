@@ -22,15 +22,32 @@ export function Home() {
 
   const malaysiaNews = state.news.filter((item) => item.region === 'malaysia').slice(0, 2);
   const globalNews = state.news.filter((item) => item.region === 'global').slice(0, 2);
-  const snapshotSection = state.fuelPrices?.sections.find((section) => section.title === 'Current subsidised snapshot');
-  const weeklySection = state.fuelPrices?.sections.find((section) => section.title === 'Latest full weekly table we confirmed');
-  const sourceUrl = weeklySection?.sourceUrl ?? snapshotSection?.sourceUrl;
-  const currentPriceCards = [
-    { key: 'ron95_subsidised', label: t('prices.ron95_subsidised'), value: snapshotSection?.items.find((item) => item.label === 'BUDI95 RON95')?.value ?? '—' },
-    { key: 'ron95_unsubsidised', label: t('prices.ron95_unsubsidised'), value: snapshotSection?.items.find((item) => item.label === 'RON95 unsubsidised')?.value ?? '—' },
-    { key: 'ron97', label: t('prices.ron97'), value: weeklySection?.items.find((item) => item.label === 'RON97')?.value ?? '—' },
-    { key: 'diesel_peninsular', label: t('prices.diesel_peninsular'), value: weeklySection?.items.find((item) => item.label === 'Diesel Peninsular')?.value ?? '—' },
-    { key: 'diesel_east', label: t('prices.diesel_east'), value: weeklySection?.items.find((item) => item.label === 'Diesel Sabah / Sarawak / Labuan')?.value ?? snapshotSection?.items.find((item) => item.label === 'Diesel Sabah / Sarawak / Labuan')?.value ?? '—' },
+  const currentSection = state.fuelPrices?.sections[0];
+  const sourceUrl = currentSection?.sourceUrl;
+  const liveTrackUrl = 'https://www.setel.com/latest-fuel-prices-malaysia';
+  const getPrice = (label: string) => currentSection?.items.find((item) => item.label === label)?.value ?? '—';
+  const petrolCards = [
+    { key: 'ron95_subsidised', label: t('prices.ron95_subsidised'), value: getPrice('BUDI95 RON95') },
+    { key: 'ron95_unsubsidised', label: t('prices.ron95_unsubsidised'), value: getPrice('RON95 unsubsidised') },
+    { key: 'ron97', label: t('prices.ron97'), value: getPrice('RON97') },
+  ];
+  const dieselGroups = [
+    {
+      key: 'peninsular',
+      title: t('prices.peninsular_group'),
+      items: [
+        { key: 'diesel_b10_b20_pen', label: t('prices.diesel_b10_b20'), value: getPrice('Diesel B10/B20 Peninsular') },
+        { key: 'diesel_b7_pen', label: t('prices.diesel_b7'), value: getPrice('Diesel B7 Peninsular') },
+      ],
+    },
+    {
+      key: 'sabah_sarawak',
+      title: t('prices.sabah_sarawak_group'),
+      items: [
+        { key: 'diesel_b10_b20_east', label: t('prices.diesel_b10_b20'), value: getPrice('Diesel B10/B20 Sabah / Sarawak') },
+        { key: 'diesel_b7_east', label: t('prices.diesel_b7'), value: getPrice('Diesel B7 Sabah / Sarawak') },
+      ],
+    },
   ];
 
   return (
@@ -57,13 +74,41 @@ export function Home() {
         {state.fuelPrices ? (
           <div className="grid gap-6">
             <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900 sm:p-8">
-              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {currentPriceCards.map((item) => (
-                  <div key={item.key} className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
-                    <div className="mb-1.5 text-sm text-stone-500 dark:text-stone-400">{item.label}</div>
-                    <div className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">{item.value}</div>
+              <div className="space-y-8">
+                <section>
+                  <div className="mb-4 flex items-center justify-between">
+                    <h3 className="text-sm font-bold uppercase tracking-[0.22em] text-stone-500 dark:text-stone-400">{t('prices.petrol_group')}</h3>
                   </div>
-                ))}
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    {petrolCards.map((item) => (
+                      <div key={item.key} className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
+                        <div className="mb-1.5 text-sm text-stone-500 dark:text-stone-400">{item.label}</div>
+                        <div className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">{item.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section>
+                  <div className="mb-4 flex items-center justify-between">
+                    <h3 className="text-sm font-bold uppercase tracking-[0.22em] text-stone-500 dark:text-stone-400">{t('prices.diesel_group')}</h3>
+                  </div>
+                  <div className="grid gap-4 lg:grid-cols-2">
+                    {dieselGroups.map((group) => (
+                      <div key={group.key} className="rounded-2xl border border-stone-100 bg-stone-50 p-4 dark:border-stone-800 dark:bg-stone-800/50">
+                        <h4 className="mb-3 text-base font-bold text-stone-900 dark:text-stone-100">{group.title}</h4>
+                        <div className="grid gap-3 sm:grid-cols-2">
+                          {group.items.map((item) => (
+                            <div key={item.key} className="rounded-2xl bg-white p-4 shadow-sm dark:bg-stone-900">
+                              <div className="mb-1 text-sm text-stone-500 dark:text-stone-400">{item.label}</div>
+                              <div className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">{item.value}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
               </div>
             </div>
 
@@ -78,6 +123,12 @@ export function Home() {
                   <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.source')}</div>
                   <a href={sourceUrl ?? 'https://www.mof.gov.my/portal/en/'} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 font-semibold text-amber-700 hover:text-amber-800 dark:text-amber-500 dark:hover:text-amber-400">
                     {t('prices.source_name')} <ExternalLink size={14} />
+                  </a>
+                </div>
+                <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
+                  <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.live_track')}</div>
+                  <a href={liveTrackUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 font-semibold text-amber-700 hover:text-amber-800 dark:text-amber-500 dark:hover:text-amber-400">
+                    {t('prices.track_name')} <ExternalLink size={14} />
                   </a>
                 </div>
               </div>

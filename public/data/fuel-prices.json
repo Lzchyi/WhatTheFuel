@@ -1,28 +1,20 @@
 {
   "status": "verified",
   "updatedAt": "2026-04-08T16:00:00Z",
-  "disclaimer": "Prices shown here are source-backed snapshots from Ministry of Finance releases. The April 8 citation covers the latest subsidised and regional prices, while the retail-price release below shows the most recent full weekly table we confirmed.",
+  "disclaimer": "Prices shown here are source-backed snapshots from Ministry of Finance releases and the current live fuel tracker. The official release covers the base subsidy and weekly retail prices, while the tracker reflects the grade split people see at the pump.",
   "sections": [
     {
-      "title": "Current subsidised snapshot",
+      "title": "Current pump prices",
       "sourceLabel": "Ministry of Finance press citation",
       "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/govt-maintains-subsidised-prices-amid-global-oil-market-volatility",
       "items": [
         { "label": "BUDI95 RON95", "value": "RM1.99/L" },
         { "label": "RON95 unsubsidised", "value": "RM4.27/L" },
-        { "label": "Diesel Peninsular", "value": "RM6.72/L" },
-        { "label": "Diesel Sabah / Sarawak / Labuan", "value": "RM2.15/L" }
-      ]
-    },
-    {
-      "title": "Latest full weekly table we confirmed",
-      "sourceLabel": "Ministry of Finance press citation",
-      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/govt-maintains-subsidised-prices-amid-global-oil-market-volatility",
-      "items": [
         { "label": "RON97", "value": "RM5.35/L" },
-        { "label": "RON95 unsubsidised", "value": "RM4.27/L" },
-        { "label": "Diesel Peninsular", "value": "RM6.72/L" },
-        { "label": "Diesel Sabah / Sarawak / Labuan", "value": "RM2.15/L" }
+        { "label": "Diesel B10/B20 Peninsular", "value": "RM6.72/L" },
+        { "label": "Diesel B7 Peninsular", "value": "RM6.92/L" },
+        { "label": "Diesel B10/B20 Sabah / Sarawak", "value": "RM2.15/L" },
+        { "label": "Diesel B7 Sabah / Sarawak", "value": "RM2.35/L" }
       ]
     }
   ],
