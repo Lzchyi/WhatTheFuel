@@ -46,6 +46,8 @@ const translations: Record<Language, Dict> = {
     'footer.legal': 'WhatTheFuel is an independent educational website, not an official government platform, not a licensed price publisher, and not a newsroom. We compile and summarize information from publicly available sources for general information only. Although we try to keep the site accurate and current, we do not guarantee completeness, timeliness, uninterrupted availability, or error-free translation. The English version is the reference version; translations are provided for convenience only. For final official price, policy, subsidy, or legal information, rely on the original source documents and the relevant Malaysian authorities. To the fullest extent permitted by law, WhatTheFuel and its contributors disclaim liability for losses, decisions, or actions taken in reliance on this site.',
     'prices.data_as_of': 'Data as of',
     'prices.what_does_this_mean': 'What do these mean? →',
+    'prices.usd_per_barrel': 'USD / barrel',
+    'prices.local_time': 'Local Time',
     'myths.why_it_matters': 'Why it matters'
   },
   ms: {
@@ -90,6 +92,8 @@ const translations: Record<Language, Dict> = {
     'footer.legal': 'WhatTheFuel ialah laman pendidikan bebas, bukan platform rasmi kerajaan, bukan penerbit harga berlesen, dan bukan bilik berita. Kami menyusun dan meringkaskan maklumat daripada sumber awam untuk tujuan maklumat umum sahaja. Walaupun kami berusaha memastikan laman ini tepat dan sentiasa dikemas kini, kami tidak menjamin kesempurnaan, ketepatan masa, ketersediaan berterusan, atau terjemahan tanpa ralat. Versi Inggeris ialah versi rujukan; terjemahan disediakan hanya untuk kemudahan. Untuk harga rasmi, dasar, subsidi, atau maklumat undang-undang muktamad, rujuk dokumen sumber asal dan pihak berkuasa Malaysia yang berkenaan. Setakat yang dibenarkan oleh undang-undang, WhatTheFuel dan penyumbangnya menafikan liabiliti bagi kerugian, keputusan, atau tindakan yang dibuat bergantung pada laman ini.',
     'prices.data_as_of': 'Data setakat',
     'prices.what_does_this_mean': 'Apa maksud ini? →',
+    'prices.usd_per_barrel': 'USD / tong',
+    'prices.local_time': 'Waktu Tempatan',
     'myths.why_it_matters': 'Implikasi Fakta'
   },
   zh: {
@@ -134,6 +138,8 @@ const translations: Record<Language, Dict> = {
     'footer.legal': 'WhatTheFuel 是独立教育网站，不是官方政府平台，不是持牌价格发布机构，也不是新闻编辑部。本站仅为一般信息目的，汇总并整理公开来源的信息。虽然我们尽力保持内容准确并及时更新，但我们不保证内容完整、及时、持续可用，或翻译绝对无误。英文版本为参考版本，翻译仅供便利。如需最终的官方价格、政策、补贴或法律信息，请以原始来源文件及相关马来西亚主管部门为准。在法律允许的最大范围内，WhatTheFuel 及其贡献者不对任何因依赖本站信息而产生的损失、决定或行为承担责任。',
     'prices.data_as_of': '数据截至',
     'prices.what_does_this_mean': '这些数字什么意思？→',
+    'prices.usd_per_barrel': '美元 / 桶',
+    'prices.local_time': '本地时间',
     'myths.why_it_matters': '事实辨析'
   }
 };

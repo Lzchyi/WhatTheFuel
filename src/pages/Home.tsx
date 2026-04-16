@@ -140,7 +140,7 @@ export function Home() {
                   <div>
                     <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">
                       {t('prices.global_trends_title') || 'Global Crude Oil Trends'}
-                      <span className="ml-2 text-sm font-normal text-stone-400 dark:text-stone-500">(USD / barrel)</span>
+                      <span className="ml-2 text-sm font-normal text-stone-400 dark:text-stone-500">({t('prices.usd_per_barrel')})</span>
                     </h3>
                   </div>
                   <div className="group relative">
@@ -187,7 +187,7 @@ export function Home() {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
                   <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.last_updated')}</div>
-                  <div className="mt-1 text-base font-semibold text-stone-900 dark:text-stone-100">{formatDateTimeLabel(state.fuelPrices.updatedAt)} <span className="text-sm font-normal text-stone-500 dark:text-stone-400">(Local Time)</span></div>
+                  <div className="mt-1 text-base font-semibold text-stone-900 dark:text-stone-100">{formatDateTimeLabel(state.fuelPrices.updatedAt)} <span className="text-sm font-normal text-stone-500 dark:text-stone-400">({t('prices.local_time')})</span></div>
                 </div>
                 <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
                   <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.source')}</div>
