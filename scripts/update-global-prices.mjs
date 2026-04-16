@@ -8,7 +8,7 @@ const outputPath = path.join(rootDir, 'public', 'data', 'global-prices.json');
 const API_KEY = process.env.OILPRICE_API_KEY || "1408f85679ef607f767551e6fd1b60a071453002f6bbfd00dea5b81ee1f2aa68";
 
 async function fetchPrices(code) {
-  const url = `https://api.oilpriceapi.com/v1/prices/past_month?by_code=${code}`;
+  const url = `https://api.oilpriceapi.com/v1/prices/historical?by_code=${code}&start_date=2026-03-01`;
   const response = await fetch(url, { headers: { 'Authorization': `Token ${API_KEY}` } });
   if (!response.ok) throw new Error(`Failed to fetch ${code}: ${response.statusText}`);
   const json = await response.json();
