@@ -13,7 +13,6 @@ export function Layout() {
 
   const navItems = [
     { path: '/', label: t('nav.home'), icon: Droplets },
-    { path: '/understanding', label: t('nav.understanding'), icon: Lightbulb },
     { path: '/global', label: t('nav.global'), icon: Globe },
     { path: '/malaysia', label: t('nav.malaysia'), icon: MapPin },
     { path: '/timeline', label: t('nav.timeline'), icon: Clock },
