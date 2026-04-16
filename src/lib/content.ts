@@ -11,7 +11,7 @@ export type NewsItem = {
   language?: 'en' | 'ms' | 'zh' | 'other';
 };
 
-export type FuelPriceItem = { label: string; value: string; notes?: string };
+export type FuelPriceItem = { label: string; value: string; diff?: string | null; notes?: string };
 export type FuelPriceSection = { title: string; sourceLabel?: string; sourceUrl?: string; items: FuelPriceItem[] };
 export type FuelPricesData = {
   status: 'verified' | 'manual_review' | 'pending_source_connection';

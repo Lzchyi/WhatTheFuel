@@ -22,27 +22,27 @@ export function Home() {
   const currentSection = state.fuelPrices?.sections[0];
   const sourceUrl = currentSection?.sourceUrl;
   const liveTrackUrl = 'https://www.setel.com/latest-fuel-prices-malaysia';
-  const getPrice = (label: string) => currentSection?.items.find((item) => item.label === label)?.value ?? '—';
+  const getItem = (label: string) => currentSection?.items.find((item) => item.label === label);
   const petrolCards = [
-    { key: 'ron95_subsidised', label: t('prices.ron95_subsidised'), value: getPrice('BUDI95 RON95') },
-    { key: 'ron95_unsubsidised', label: t('prices.ron95_unsubsidised'), value: getPrice('RON95 unsubsidised') },
-    { key: 'ron97', label: t('prices.ron97'), value: getPrice('RON97') },
+    { key: 'ron95_subsidised', label: t('prices.ron95_subsidised'), value: getItem('BUDI95 RON95')?.value ?? '—', diff: getItem('BUDI95 RON95')?.diff },
+    { key: 'ron95_unsubsidised', label: t('prices.ron95_unsubsidised'), value: getItem('RON95 unsubsidised')?.value ?? '—', diff: getItem('RON95 unsubsidised')?.diff },
+    { key: 'ron97', label: t('prices.ron97'), value: getItem('RON97')?.value ?? '—', diff: getItem('RON97')?.diff },
   ];
   const dieselGroups = [
     {
       key: 'peninsular',
       title: t('prices.peninsular_group'),
       items: [
-        { key: 'diesel_b10_b20_pen', label: t('prices.diesel_b10_b20'), value: getPrice('Diesel B10/B20 Peninsular') },
-        { key: 'diesel_b7_pen', label: t('prices.diesel_b7'), value: getPrice('Diesel B7 Peninsular') },
+        { key: 'diesel_b10_b20_pen', label: t('prices.diesel_b10_b20'), value: getItem('Diesel B10/B20 Peninsular')?.value ?? '—', diff: getItem('Diesel B10/B20 Peninsular')?.diff },
+        { key: 'diesel_b7_pen', label: t('prices.diesel_b7'), value: getItem('Diesel B7 Peninsular')?.value ?? '—', diff: getItem('Diesel B7 Peninsular')?.diff },
       ],
     },
     {
       key: 'sabah_sarawak',
       title: t('prices.sabah_sarawak_group'),
       items: [
-        { key: 'diesel_b10_b20_east', label: t('prices.diesel_b10_b20'), value: getPrice('Diesel B10/B20 Sabah / Sarawak') },
-        { key: 'diesel_b7_east', label: t('prices.diesel_b7'), value: getPrice('Diesel B7 Sabah / Sarawak') },
+        { key: 'diesel_b10_b20_east', label: t('prices.diesel_b10_b20'), value: getItem('Diesel B10/B20 Sabah / Sarawak')?.value ?? '—', diff: getItem('Diesel B10/B20 Sabah / Sarawak')?.diff },
+        { key: 'diesel_b7_east', label: t('prices.diesel_b7'), value: getItem('Diesel B7 Sabah / Sarawak')?.value ?? '—', diff: getItem('Diesel B7 Sabah / Sarawak')?.diff },
       ],
     },
   ];
@@ -80,7 +80,14 @@ export function Home() {
                     {petrolCards.map((item) => (
                       <div key={item.key} className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
                         <div className="mb-1.5 text-sm text-stone-500 dark:text-stone-400">{item.label}</div>
-                        <div className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">{item.value}</div>
+                        <div className="flex items-end gap-2">
+                          <div className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">{item.value}</div>
+                          {item.diff && (
+                            <div className={`text-sm font-medium pb-0.5 ${parseFloat(item.diff) > 0 ? "text-red-600 dark:text-red-400" : "text-green-600 dark:text-green-400"}`}>
+                              {parseFloat(item.diff) > 0 ? '+' : ''}{item.diff}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -98,7 +105,14 @@ export function Home() {
                           {group.items.map((item) => (
                             <div key={item.key} className="rounded-2xl bg-white p-4 shadow-sm dark:bg-stone-900">
                               <div className="mb-1 text-sm text-stone-500 dark:text-stone-400">{item.label}</div>
-                              <div className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">{item.value}</div>
+                              <div className="flex items-end gap-2">
+                                <div className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">{item.value}</div>
+                                {item.diff && (
+                                  <div className={`text-sm font-medium pb-0.5 ${parseFloat(item.diff) > 0 ? "text-red-600 dark:text-red-400" : "text-green-600 dark:text-green-400"}`}>
+                                    {parseFloat(item.diff) > 0 ? '+' : ''}{item.diff}
+                                  </div>
+                                )}
+                              </div>
                             </div>
                           ))}
                         </div>
@@ -114,7 +128,7 @@ export function Home() {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
                   <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.last_updated')}</div>
-                  <div className="mt-1 text-base font-semibold text-stone-900 dark:text-stone-100">{formatDateTimeLabel(state.fuelPrices.updatedAt)}</div>
+                  <div className="mt-1 text-base font-semibold text-stone-900 dark:text-stone-100">{formatDateTimeLabel(state.fuelPrices.updatedAt)} <span className="text-sm font-normal text-stone-500 dark:text-stone-400">(Local Time)</span></div>
                 </div>
                 <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
                   <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.source')}</div>
