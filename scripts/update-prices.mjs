@@ -12,26 +12,24 @@ async function main() {
   const data = await response.json();
   if (!data || data.length === 0) throw new Error('No data found from data.gov.my');
   
-  const latest = data[0];
-  const previous = data.length > 1 ? data[1] : null;
+  const latest = data.find(d => d.series_type === 'level') || data[0];
+  const weeklyChange = data.find(d => d.series_type === 'change_weekly') || null;
 
-  function calculateDiff(currentVal, previousVal) {
-    if (previousVal === null || previousVal === undefined) return null;
-    const c = parseFloat(currentVal) || 0;
-    const p = parseFloat(previousVal) || 0;
-    const diff = c - p;
+  function formatDiff(changeVal) {
+    if (changeVal === null || changeVal === undefined) return null;
+    const diff = parseFloat(changeVal) || 0;
     return diff !== 0 ? diff.toFixed(2) : null;
   }
   
   const b10_peninsular = parseFloat(latest.diesel) || 0;
   const b7_peninsular = parseFloat((b10_peninsular + 0.20).toFixed(2));
-  const prev_b10_peninsular = previous ? (parseFloat(previous.diesel) || 0) : null;
-  const prev_b7_peninsular = previous ? parseFloat((prev_b10_peninsular + 0.20).toFixed(2)) : null;
+  const diff_b10_peninsular = weeklyChange ? (parseFloat(weeklyChange.diesel) || 0) : null;
+  const diff_b7_peninsular = diff_b10_peninsular;
   
   const b10_east = parseFloat(latest.diesel_eastmsia) || 0;
   const b7_east = parseFloat((b10_east + 0.20).toFixed(2));
-  const prev_b10_east = previous ? (parseFloat(previous.diesel_eastmsia) || 0) : null;
-  const prev_b7_east = previous ? parseFloat((prev_b10_east + 0.20).toFixed(2)) : null;
+  const diff_b10_east = weeklyChange ? (parseFloat(weeklyChange.diesel_eastmsia) || 0) : null;
+  const diff_b7_east = diff_b10_east;
   
   const payload = {
     status: "verified",
@@ -43,13 +41,13 @@ async function main() {
         sourceLabel: "data.gov.my / Ministry of Finance",
         sourceUrl: "https://data.gov.my/data-catalogue/fuelprice",
         items: [
-          { label: "BUDI95 RON95", value: `RM${(parseFloat(latest.ron95_budi95) || 0).toFixed(2)}/L`, diff: calculateDiff(latest.ron95_budi95, previous?.ron95_budi95) },
-          { label: "RON95 unsubsidised", value: `RM${(parseFloat(latest.ron95) || 0).toFixed(2)}/L`, diff: calculateDiff(latest.ron95, previous?.ron95) },
-          { label: "RON97", value: `RM${(parseFloat(latest.ron97) || 0).toFixed(2)}/L`, diff: calculateDiff(latest.ron97, previous?.ron97) },
-          { label: "Diesel B10/B20 Peninsular", value: `RM${b10_peninsular.toFixed(2)}/L`, diff: calculateDiff(b10_peninsular, prev_b10_peninsular) },
-          { label: "Diesel B7 Peninsular", value: `RM${b7_peninsular.toFixed(2)}/L`, diff: calculateDiff(b7_peninsular, prev_b7_peninsular) },
-          { label: "Diesel B10/B20 Sabah / Sarawak", value: `RM${b10_east.toFixed(2)}/L`, diff: calculateDiff(b10_east, prev_b10_east) },
-          { label: "Diesel B7 Sabah / Sarawak", value: `RM${b7_east.toFixed(2)}/L`, diff: calculateDiff(b7_east, prev_b7_east) }
+          { label: "BUDI95 RON95", value: `RM${(parseFloat(latest.ron95_budi95) || 0).toFixed(2)}/L`, diff: formatDiff(weeklyChange?.ron95_budi95) },
+          { label: "RON95 unsubsidised", value: `RM${(parseFloat(latest.ron95) || 0).toFixed(2)}/L`, diff: formatDiff(weeklyChange?.ron95) },
+          { label: "RON97", value: `RM${(parseFloat(latest.ron97) || 0).toFixed(2)}/L`, diff: formatDiff(weeklyChange?.ron97) },
+          { label: "Diesel B10/B20 Peninsular", value: `RM${b10_peninsular.toFixed(2)}/L`, diff: formatDiff(diff_b10_peninsular) },
+          { label: "Diesel B7 Peninsular", value: `RM${b7_peninsular.toFixed(2)}/L`, diff: formatDiff(diff_b7_peninsular) },
+          { label: "Diesel B10/B20 Sabah / Sarawak", value: `RM${b10_east.toFixed(2)}/L`, diff: formatDiff(diff_b10_east) },
+          { label: "Diesel B7 Sabah / Sarawak", value: `RM${b7_east.toFixed(2)}/L`, diff: formatDiff(diff_b7_east) }
         ]
       }
     ],
