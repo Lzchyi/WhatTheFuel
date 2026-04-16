@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { AlertTriangle, ArrowRight, ExternalLink, ShieldAlert } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { FuelPricesData, formatDateTimeLabel, loadFuelPrices } from '../lib/content';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { FuelPricesData, formatDateTimeLabel, loadFuelPrices, loadGlobalPrices, GlobalPricePoint } from '../lib/content';
 import { useI18n } from '../lib/i18n';
 import { editorial } from '../lib/editorial';
 
@@ -11,12 +12,15 @@ export function Home() {
   const { t, language } = useI18n();
   const copy = editorial(language);
   const [state, setState] = useState<State>({ fuelPrices: null, error: null });
-
+  const [globalPrices, setGlobalPrices] = useState<GlobalPricePoint[] | null>(null);
   useEffect(() => {
     let mounted = true;
     loadFuelPrices()
       .then((fuelPrices) => mounted && setState({ fuelPrices, error: null }))
       .catch(() => mounted && setState((current) => ({ ...current, error: t('home.error') })));
+    loadGlobalPrices()
+      .then((res) => mounted && setGlobalPrices(res.chartData))
+      .catch(() => {});
     return () => { mounted = false; };
   }, []);
   const currentSection = state.fuelPrices?.sections[0];
@@ -122,6 +126,39 @@ export function Home() {
                 </section>
               </div>
             </div>
+
+            {globalPrices && globalPrices.length > 0 && (
+              <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900 sm:p-8">
+                <h3 className="mb-5 text-lg font-bold text-stone-900 dark:text-stone-100">{t('prices.global_trends_title') || "Global Crude Oil Trends"}</h3>
+                <div style={{ width: '100%', height: 320 }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <AreaChart data={globalPrices} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                      <defs>
+                        <linearGradient id="colorBrent" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.3} />
+                          <stop offset="95%" stopColor="#f59e0b" stopOpacity={0} />
+                        </linearGradient>
+                        <linearGradient id="colorWti" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#10b981" stopOpacity={0.3} />
+                          <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+                        </linearGradient>
+                      </defs>
+                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#444" opacity={0.2} />
+                      <XAxis dataKey="date" tickFormatter={(val) => new Date(val).toLocaleDateString(undefined, {month:'short', day:'numeric'})} axisLine={false} tickLine={false} tick={{fontSize: 12}} dy={10} />
+                      <YAxis domain={['auto', 'auto']} axisLine={false} tickLine={false} tick={{fontSize: 12}} tickFormatter={(val) => `$${val}`} />
+                      <Tooltip 
+                        formatter={(value: number) => [`$${value.toFixed(2)}`, '']}
+                        labelFormatter={(label) => new Date(label).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'})}
+                        contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
+                      />
+                      <Legend iconType="circle" wrapperStyle={{paddingTop: '20px'}} />
+                      <Area type="monotone" name="Brent Crude" dataKey="brent" stroke="#f59e0b" strokeWidth={3} fillOpacity={1} fill="url(#colorBrent)" />
+                      <Area type="monotone" name="WTI Crude" dataKey="wti" stroke="#10b981" strokeWidth={3} fillOpacity={1} fill="url(#colorWti)" />
+                    </AreaChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            )}
 
             <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900 sm:p-8">
               <h3 className="mb-5 text-lg font-bold text-stone-900 dark:text-stone-100">{t('prices.context_title')}</h3>

@@ -64,6 +64,10 @@ export const loadNews = () => fetchJson<{ updatedAt: string; items: NewsItem[] }
 export const loadTimeline = () => fetchJson<{ updatedAt: string; items: TimelineItem[] }>('data/timeline.json');
 export const loadMethodology = () => fetchJson<MethodologyData>('data/sources.json');
 
+export type GlobalPricePoint = { date: string; wti?: number; brent?: number };
+export type GlobalPricesData = { updatedAt: string; chartData: GlobalPricePoint[] };
+export const loadGlobalPrices = () => fetchJson<GlobalPricesData>('data/global-prices.json');
+
 export function formatDateLabel(value: string) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
