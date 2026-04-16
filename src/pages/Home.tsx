@@ -57,9 +57,6 @@ export function Home() {
         <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-500">{copy.home.eyebrow}</p>
         <h1 className="mb-6 text-4xl font-bold leading-tight text-stone-900 dark:text-stone-100 md:text-5xl">{copy.home.title}</h1>
         <p className="text-lg leading-relaxed text-stone-600 dark:text-stone-400 md:text-xl">{copy.home.subtitle}</p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Link to="/timeline" className="inline-flex items-center gap-2 rounded-full bg-stone-200 px-5 py-2.5 font-medium text-stone-800 transition-colors hover:bg-stone-300 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700">{t('nav.timeline')}</Link>
-        </div>
         <div className="mt-6 inline-flex items-start gap-2 rounded-2xl border border-stone-200 bg-white/80 px-4 py-3 text-sm leading-relaxed text-stone-600 shadow-sm dark:border-stone-800 dark:bg-stone-900/80 dark:text-stone-400">
           <ShieldAlert size={16} className="mt-0.5 shrink-0 text-amber-600 dark:text-amber-500" />
           <span>{copy.home.disclaimer}</span>
