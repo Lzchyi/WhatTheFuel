@@ -71,9 +71,13 @@ export function Home() {
               </p>
             )}
           </div>
-          <a href="#understanding" className="inline-flex items-center gap-1 rounded-full bg-stone-100 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:bg-stone-200 dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-stone-700">
+          <button
+            type="button"
+            onClick={() => document.getElementById('understanding')?.scrollIntoView({ behavior: 'smooth' })}
+            className="inline-flex items-center gap-1 rounded-full bg-stone-100 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:bg-stone-200 dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-stone-700"
+          >
             {t('prices.what_does_this_mean')}
-          </a>
+          </button>
         </div>
         {state.fuelPrices ? (
           <div className="grid gap-6">
