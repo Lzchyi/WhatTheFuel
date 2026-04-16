@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link2, MapPin, ShieldAlert } from 'lucide-react';
+import { Link2, MapPin, ShieldAlert, HelpCircle } from 'lucide-react';
 import { editorial } from '../lib/editorial';
 import { useI18n } from '../lib/i18n';
 
@@ -16,7 +16,7 @@ export function MalaysiaExplainer() {
       <div className="space-y-8">
         {copy.malaysia.sections.map((section) => (
           <section key={section.title} className="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-800 dark:bg-stone-900">
-            <h2 className="mb-4 text-2xl font-bold text-stone-900 dark:text-stone-100">{section.title}</h2>
+            <h2 className="mb-4 flex items-center gap-3 text-2xl font-bold text-amber-700 dark:text-amber-500"><HelpCircle size={24} className="shrink-0" /> {section.title}</h2>
             <div className="space-y-4 text-stone-700 dark:text-stone-300">
               {section.paragraphs.map((paragraph) => <p key={paragraph} className="leading-relaxed">{paragraph}</p>)}
             </div>
