@@ -150,7 +150,20 @@ export function Home() {
                         labelFormatter={(label) => new Date(label).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'})}
                         contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
                       />
-                      <Legend iconType="circle" wrapperStyle={{paddingTop: '20px'}} />
+                      <Legend 
+                        iconType="circle" 
+                        wrapperStyle={{paddingTop: '20px'}} 
+                        formatter={(value) => {
+                          const tooltipText = value === 'Brent Crude' 
+                            ? "Represents oil produced in the North Sea. It serves as a major global benchmark." 
+                            : "West Texas Intermediate. Primarily serves as a benchmark for the US oil market.";
+                          return (
+                            <span title={tooltipText} className="cursor-help inline-flex text-sm items-center gap-1.5 ml-1 text-stone-600 dark:text-stone-300">
+                              {value} <span className="text-[10px] font-bold bg-stone-200 dark:bg-stone-700 w-[18px] h-[18px] rounded-full inline-flex items-center justify-center text-stone-500 dark:text-stone-400">i</span>
+                            </span>
+                          );
+                        }}
+                      />
                       <Area type="monotone" name="Brent Crude" dataKey="brent" stroke="#f59e0b" strokeWidth={3} fillOpacity={1} fill="url(#colorBrent)" />
                       <Area type="monotone" name="WTI Crude" dataKey="wti" stroke="#10b981" strokeWidth={3} fillOpacity={1} fill="url(#colorWti)" />
                     </AreaChart>
