@@ -62,8 +62,18 @@ export function Home() {
       </div>
 
       <div className="mb-20">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{t('prices.current_title')}</h2>
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{t('prices.current_title')}</h2>
+            {state.fuelPrices && (
+              <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
+                {t('prices.data_as_of')} <span className="font-semibold text-stone-700 dark:text-stone-300">{formatDateTimeLabel(state.fuelPrices.updatedAt)}</span>
+              </p>
+            )}
+          </div>
+          <a href="#understanding" className="inline-flex items-center gap-1 rounded-full bg-stone-100 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:bg-stone-200 dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-stone-700">
+            {t('prices.what_does_this_mean')}
+          </a>
         </div>
         {state.fuelPrices ? (
           <div className="grid gap-6">
@@ -123,7 +133,12 @@ export function Home() {
             {globalPrices && globalPrices.length > 0 && (
               <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900 sm:p-8">
                 <div className="mb-5 flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">{t('prices.global_trends_title') || "Global Crude Oil Trends"}</h3>
+                  <div>
+                    <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">
+                      {t('prices.global_trends_title') || 'Global Crude Oil Trends'}
+                      <span className="ml-2 text-sm font-normal text-stone-400 dark:text-stone-500">(USD / barrel)</span>
+                    </h3>
+                  </div>
                   <div className="group relative">
                     <button type="button" className="inline-flex h-[18px] w-[18px] items-center justify-center rounded-full bg-stone-100 text-[9px] font-bold text-stone-500 transition-colors hover:bg-stone-200 focus:outline-none dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-stone-700">i</button>
                     <div className="pointer-events-none absolute right-0 top-full mt-2 w-64 rounded-xl bg-stone-800 p-4 text-xs font-medium leading-relaxed text-stone-100 opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 dark:bg-stone-100 dark:text-stone-900 z-50 text-left">
@@ -201,12 +216,10 @@ export function Home() {
         )}
       </div>
 
-      <div className="mb-20">
-        <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{copy.understanding.title}</h2>
-            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600 dark:text-stone-400">{copy.understanding.intro}</p>
-          </div>
+      <div id="understanding" className="mb-20 scroll-mt-24">
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{copy.understanding.title}</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600 dark:text-stone-400">{copy.understanding.intro}</p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {copy.understanding.cards.map((card) => (
