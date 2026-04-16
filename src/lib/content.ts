@@ -74,8 +74,8 @@ export function formatDateLabel(value: string) {
   return new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'short', day: 'numeric' }).format(date);
 }
 
-export function formatDateTimeLabel(value: string) {
+export function formatDateTimeLabel(value: string, locale?: string) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
-  return new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(date);
+  return new Intl.DateTimeFormat(locale ?? 'en-MY', { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(date);
 }

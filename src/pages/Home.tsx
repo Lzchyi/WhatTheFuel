@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { AlertTriangle, ArrowRight, ExternalLink, ShieldAlert } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { AlertTriangle, ExternalLink } from 'lucide-react';
+
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { FuelPricesData, formatDateTimeLabel, loadFuelPrices, loadGlobalPrices, GlobalPricePoint } from '../lib/content';
 import { useI18n } from '../lib/i18n';
@@ -25,7 +25,7 @@ export function Home() {
   }, []);
   const currentSection = state.fuelPrices?.sections[0];
   const sourceUrl = currentSection?.sourceUrl;
-  const liveTrackUrl = 'https://www.setel.com/latest-fuel-prices-malaysia';
+
   const getItem = (label: string) => currentSection?.items.find((item) => item.label === label);
   const petrolCards = [
     { key: 'ron95_subsidised', label: t('prices.ron95_subsidised'), value: getItem('BUDI95 RON95')?.value ?? '—', diff: getItem('BUDI95 RON95')?.diff },
@@ -67,7 +67,7 @@ export function Home() {
             <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{t('prices.current_title')}</h2>
             {state.fuelPrices && (
               <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
-                {t('prices.data_as_of')} <span className="font-semibold text-stone-700 dark:text-stone-300">{formatDateTimeLabel(state.fuelPrices.updatedAt)}</span>
+                {t('prices.data_as_of')} <span className="font-semibold text-stone-700 dark:text-stone-300">{formatDateTimeLabel(state.fuelPrices.updatedAt, language === 'ms' ? 'ms-MY' : language === 'zh' ? 'zh-MY' : 'en-MY')}</span>
               </p>
             )}
           </div>
@@ -146,8 +146,8 @@ export function Home() {
                   <div className="group relative">
                     <button type="button" className="inline-flex h-[18px] w-[18px] items-center justify-center rounded-full bg-stone-100 text-[9px] font-bold text-stone-500 transition-colors hover:bg-stone-200 focus:outline-none dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-stone-700">i</button>
                     <div className="pointer-events-none absolute right-0 top-full mt-2 w-64 rounded-xl bg-stone-800 p-4 text-xs font-medium leading-relaxed text-stone-100 opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 dark:bg-stone-100 dark:text-stone-900 z-50 text-left">
-                      <div className="mb-2"><strong>Brent Crude:</strong> Represents oil produced in the North Sea. It serves as a major global benchmark.</div>
-                      <div><strong>WTI Crude:</strong> West Texas Intermediate. Primarily serves as a benchmark for the US oil market.</div>
+                      <div className="mb-2"><strong>Brent Crude:</strong> {t('chart.brent_desc')}</div>
+                      <div><strong>WTI Crude:</strong> {t('chart.wti_desc')}</div>
                       <div className="absolute -top-1 right-1.5 h-2 w-2 rotate-45 bg-stone-800 dark:bg-stone-100"></div>
                     </div>
                   </div>
@@ -166,7 +166,7 @@ export function Home() {
                         </linearGradient>
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#444" opacity={0.2} />
-                      <XAxis dataKey="date" tickFormatter={(val) => new Date(val).toLocaleDateString(undefined, {month:'short', day:'numeric'})} axisLine={false} tickLine={false} tick={{fontSize: 12}} dy={10} />
+                      <XAxis dataKey="date" tickFormatter={(val) => new Date(val).toLocaleDateString(language === 'ms' ? 'ms-MY' : language === 'zh' ? 'zh-MY' : 'en-MY', {month:'short', day:'numeric'})} axisLine={false} tickLine={false} tick={{fontSize: 12}} dy={10} />
                       <YAxis domain={['auto', 'auto']} axisLine={false} tickLine={false} tick={{fontSize: 12}} tickFormatter={(val) => `$${val}`} />
                       <Tooltip 
                         formatter={(value: number) => [`$${value.toFixed(2)}`, '']}
@@ -187,7 +187,7 @@ export function Home() {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
                   <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.last_updated')}</div>
-                  <div className="mt-1 text-base font-semibold text-stone-900 dark:text-stone-100">{formatDateTimeLabel(state.fuelPrices.updatedAt)} <span className="text-sm font-normal text-stone-500 dark:text-stone-400">({t('prices.local_time')})</span></div>
+                  <div className="mt-1 text-base font-semibold text-stone-900 dark:text-stone-100">{formatDateTimeLabel(state.fuelPrices.updatedAt, language === 'ms' ? 'ms-MY' : language === 'zh' ? 'zh-MY' : 'en-MY')} <span className="text-sm font-normal text-stone-500 dark:text-stone-400">({t('prices.local_time')})</span></div>
                 </div>
                 <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
                   <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.source')}</div>
@@ -198,14 +198,14 @@ export function Home() {
               </div>
               <div className="mt-5 rounded-2xl border border-amber-100 bg-amber-50 p-4 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-100">
                 <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">{t('prices.notes_title')}</h4>
-                <ul className="mb-4 space-y-2 text-sm leading-relaxed">
+                <ul className="mb-4 list-disc list-inside space-y-2 text-sm leading-relaxed">
                   <li>{t('prices.note.1')}</li>
                   <li>{t('prices.note.2')}</li>
                   <li>{t('prices.note.3')}</li>
                   <li>{t('prices.note.4')}</li>
                 </ul>
                 <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">{t('prices.quota.title')}</h4>
-                <ul className="mb-2 space-y-2 text-sm leading-relaxed">
+                <ul className="mb-2 list-disc list-inside space-y-2 text-sm leading-relaxed">
                   <li>{t('prices.quota.1')}</li>
                   <li>{t('prices.quota.2')}</li>
                   <li>{t('prices.quota.3')}</li>
@@ -225,7 +225,7 @@ export function Home() {
           <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{copy.understanding.title}</h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600 dark:text-stone-400">{copy.understanding.intro}</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2 [&>*:last-child:nth-child(odd)]:md:col-span-2">
           {copy.understanding.cards.map((card) => (
             <div key={card.title} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm dark:border-stone-800 dark:bg-stone-900">
               <h3 className="mb-2 text-lg font-bold text-stone-900 dark:text-stone-100">{card.title}</h3>

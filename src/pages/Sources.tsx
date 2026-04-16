@@ -57,7 +57,7 @@ export function Sources() {
           </section>
           
           <section className="rounded-3xl border border-stone-200 bg-stone-50 p-8 text-sm text-stone-600 dark:border-stone-800 dark:bg-stone-900/50 dark:text-stone-400">
-            <h3 className="mb-4 text-base font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">Disclaimer</h3>
+            <h3 className="mb-4 text-base font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">{t('sources.disclaimer_title')}</h3>
             <p className="leading-relaxed">{t('footer.legal')}</p>
           </section>
         </div>

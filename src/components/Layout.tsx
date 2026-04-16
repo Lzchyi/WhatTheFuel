@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { BookOpen, Clock, Droplets, HelpCircle, Lightbulb, Menu, Moon, Sun, X, Globe, MapPin } from 'lucide-react';
+import { BookOpen, Clock, Droplets, HelpCircle, Menu, Moon, Sun, X, Globe, MapPin } from 'lucide-react';
 import { useI18n } from '../lib/i18n';
 import { useTheme } from '../lib/theme';
 import { cn } from '../lib/utils';

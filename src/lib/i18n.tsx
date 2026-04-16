@@ -48,6 +48,9 @@ const translations: Record<Language, Dict> = {
     'prices.what_does_this_mean': 'What do these mean? →',
     'prices.usd_per_barrel': 'USD / barrel',
     'prices.local_time': 'Local Time',
+    'sources.disclaimer_title': 'Disclaimer',
+    'chart.brent_desc': 'Oil produced in the North Sea. Serves as a major global benchmark.',
+    'chart.wti_desc': 'West Texas Intermediate. Primarily a benchmark for the US oil market.',
     'myths.why_it_matters': 'Why it matters'
   },
   ms: {
@@ -94,6 +97,9 @@ const translations: Record<Language, Dict> = {
     'prices.what_does_this_mean': 'Apa maksud ini? →',
     'prices.usd_per_barrel': 'USD / tong',
     'prices.local_time': 'Waktu Tempatan',
+    'sources.disclaimer_title': 'Penafian',
+    'chart.brent_desc': 'Minyak dari Laut Utara. Digunakan sebagai penanda aras utama global.',
+    'chart.wti_desc': 'West Texas Intermediate. Penanda aras utama pasaran minyak Amerika Syarikat.',
     'myths.why_it_matters': 'Implikasi Fakta'
   },
   zh: {
@@ -140,6 +146,9 @@ const translations: Record<Language, Dict> = {
     'prices.what_does_this_mean': '这些数字什么意思？→',
     'prices.usd_per_barrel': '美元 / 桶',
     'prices.local_time': '本地时间',
+    'sources.disclaimer_title': '免责声明',
+    'chart.brent_desc': '北海所产原油，全球主要基准油种之一。',
+    'chart.wti_desc': '西德克萨斯中质油，主要为美国石油市场基准指标。',
     'myths.why_it_matters': '事实辨析'
   }
 };
