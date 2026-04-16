@@ -55,6 +55,10 @@ export function Sources() {
             <div className="mb-2 flex items-center gap-2 font-bold"><ShieldAlert size={18} /> {copy.sources.noteTitle}</div>
             <p className="leading-relaxed">{copy.sources.noteBody}</p>
           </section>
+          
+          <section className="rounded-3xl border border-stone-200 bg-stone-50 p-8 text-sm text-stone-600 dark:border-stone-800 dark:bg-stone-900/50 dark:text-stone-400">
+            <p className="leading-relaxed">{t('footer.legal')}</p>
+          </section>
         </div>
       ) : null}
     </div>

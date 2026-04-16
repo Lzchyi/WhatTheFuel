@@ -182,20 +182,20 @@ export function Home() {
                     {t('prices.source_name')} <ExternalLink size={14} />
                   </a>
                 </div>
-                <div className="rounded-2xl bg-stone-50 p-4 dark:bg-stone-800/60">
-                  <div className="text-sm text-stone-500 dark:text-stone-400">{t('prices.live_track')}</div>
-                  <a href={liveTrackUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 font-semibold text-amber-700 hover:text-amber-800 dark:text-amber-500 dark:hover:text-amber-400">
-                    {t('prices.track_name')} <ExternalLink size={14} />
-                  </a>
-                </div>
               </div>
               <div className="mt-5 rounded-2xl border border-amber-100 bg-amber-50 p-4 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-100">
                 <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">{t('prices.notes_title')}</h4>
-                <ul className="space-y-2 text-sm leading-relaxed">
+                <ul className="mb-4 space-y-2 text-sm leading-relaxed">
                   <li>{t('prices.note.1')}</li>
                   <li>{t('prices.note.2')}</li>
                   <li>{t('prices.note.3')}</li>
                   <li>{t('prices.note.4')}</li>
+                </ul>
+                <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">{t('prices.quota.title')}</h4>
+                <ul className="mb-2 space-y-2 text-sm leading-relaxed">
+                  <li>{t('prices.quota.1')}</li>
+                  <li>{t('prices.quota.2')}</li>
+                  <li>{t('prices.quota.3')}</li>
                 </ul>
               </div>
             </div>
