@@ -128,7 +128,17 @@ export function Home() {
 
             {globalPrices && globalPrices.length > 0 && (
               <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900 sm:p-8">
-                <h3 className="mb-5 text-lg font-bold text-stone-900 dark:text-stone-100">{t('prices.global_trends_title') || "Global Crude Oil Trends"}</h3>
+                <div className="mb-5 flex items-center justify-between">
+                  <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">{t('prices.global_trends_title') || "Global Crude Oil Trends"}</h3>
+                  <div className="group relative">
+                    <button type="button" className="inline-flex h-[18px] w-[18px] items-center justify-center rounded-full bg-stone-100 text-[9px] font-bold text-stone-500 transition-colors hover:bg-stone-200 focus:outline-none dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-stone-700">i</button>
+                    <div className="pointer-events-none absolute right-0 top-full mt-2 w-64 rounded-xl bg-stone-800 p-4 text-xs font-medium leading-relaxed text-stone-100 opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 dark:bg-stone-100 dark:text-stone-900 z-50 text-left">
+                      <div className="mb-2"><strong>Brent Crude:</strong> Represents oil produced in the North Sea. It serves as a major global benchmark.</div>
+                      <div><strong>WTI Crude:</strong> West Texas Intermediate. Primarily serves as a benchmark for the US oil market.</div>
+                      <div className="absolute -top-1 right-1.5 h-2 w-2 rotate-45 bg-stone-800 dark:bg-stone-100"></div>
+                    </div>
+                  </div>
+                </div>
                 <div style={{ width: '100%', height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={globalPrices} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
@@ -150,24 +160,7 @@ export function Home() {
                         labelFormatter={(label) => new Date(label).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'})}
                         contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
                       />
-                      <Legend 
-                        iconType="circle" 
-                        wrapperStyle={{paddingTop: '20px'}} 
-                        formatter={(value) => {
-                          const tooltipText = value === 'Brent Crude' 
-                            ? "Represents oil produced in the North Sea. It serves as a major global benchmark." 
-                            : "West Texas Intermediate. Primarily serves as a benchmark for the US oil market.";
-                          return (
-                            <span className="group relative cursor-help inline-flex text-sm items-center gap-1.5 ml-1 text-stone-600 dark:text-stone-300">
-                              {value} <span className="text-[10px] font-bold bg-stone-200 dark:bg-stone-700 w-[18px] h-[18px] rounded-full inline-flex items-center justify-center text-stone-500 dark:text-stone-400">i</span>
-                              <div className="pointer-events-none absolute bottom-full left-1/2 mb-2 w-56 -translate-x-1/2 rounded-md bg-stone-800 p-2.5 text-xs font-medium leading-relaxed text-stone-100 opacity-0 shadow-lg transition-opacity group-hover:opacity-100 dark:bg-stone-100 dark:text-stone-900 z-50 text-center">
-                                {tooltipText}
-                                <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-stone-800 dark:bg-stone-100"></div>
-                              </div>
-                            </span>
-                          );
-                        }}
-                      />
+                      <Legend iconType="circle" wrapperStyle={{paddingTop: '20px'}} />
                       <Area type="monotone" name="Brent Crude" dataKey="brent" stroke="#f59e0b" strokeWidth={3} fillOpacity={1} fill="url(#colorBrent)" />
                       <Area type="monotone" name="WTI Crude" dataKey="wti" stroke="#10b981" strokeWidth={3} fillOpacity={1} fill="url(#colorWti)" />
                     </AreaChart>
