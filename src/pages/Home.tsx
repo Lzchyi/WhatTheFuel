@@ -158,8 +158,12 @@ export function Home() {
                             ? "Represents oil produced in the North Sea. It serves as a major global benchmark." 
                             : "West Texas Intermediate. Primarily serves as a benchmark for the US oil market.";
                           return (
-                            <span title={tooltipText} className="cursor-help inline-flex text-sm items-center gap-1.5 ml-1 text-stone-600 dark:text-stone-300">
+                            <span className="group relative cursor-help inline-flex text-sm items-center gap-1.5 ml-1 text-stone-600 dark:text-stone-300">
                               {value} <span className="text-[10px] font-bold bg-stone-200 dark:bg-stone-700 w-[18px] h-[18px] rounded-full inline-flex items-center justify-center text-stone-500 dark:text-stone-400">i</span>
+                              <div className="pointer-events-none absolute bottom-full left-1/2 mb-2 w-56 -translate-x-1/2 rounded-md bg-stone-800 p-2.5 text-xs font-medium leading-relaxed text-stone-100 opacity-0 shadow-lg transition-opacity group-hover:opacity-100 dark:bg-stone-100 dark:text-stone-900 z-50 text-center">
+                                {tooltipText}
+                                <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-stone-800 dark:bg-stone-100"></div>
+                              </div>
                             </span>
                           );
                         }}
