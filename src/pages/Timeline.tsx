@@ -7,7 +7,7 @@ import { cn } from '../lib/utils';
 export function Timeline() {
   const { t } = useI18n();
   const [filter, setFilter] = useState<'all' | 'global' | 'malaysia'>('all');
-  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('asc');
+  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [items, setItems] = useState<TimelineItem[]>([]);
   const [error, setError] = useState<string | null>(null);
