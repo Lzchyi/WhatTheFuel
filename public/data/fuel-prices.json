@@ -1,20 +1,41 @@
 {
   "status": "verified",
-  "updatedAt": "2026-04-08T16:00:00Z",
-  "disclaimer": "Prices shown here are source-backed snapshots from Ministry of Finance releases and the current live fuel tracker. The official release covers the base subsidy and weekly retail prices, while the tracker reflects the grade split people see at the pump.",
+  "updatedAt": "2026-04-16T08:51:30.530Z",
+  "disclaimer": "Prices shown here are automatically sourced from the data.gov.my open API (Ministry of Finance). The data is maintained and released officially by the government.",
   "sections": [
     {
       "title": "Current pump prices",
-      "sourceLabel": "Ministry of Finance press citation",
-      "sourceUrl": "https://www.mof.gov.my/portal/en/news/press-citations/govt-maintains-subsidised-prices-amid-global-oil-market-volatility",
+      "sourceLabel": "data.gov.my / Ministry of Finance",
+      "sourceUrl": "https://data.gov.my/data-catalogue/fuelprice",
       "items": [
-        { "label": "BUDI95 RON95", "value": "RM1.99/L" },
-        { "label": "RON95 unsubsidised", "value": "RM4.27/L" },
-        { "label": "RON97", "value": "RM5.35/L" },
-        { "label": "Diesel B10/B20 Peninsular", "value": "RM6.72/L" },
-        { "label": "Diesel B7 Peninsular", "value": "RM6.92/L" },
-        { "label": "Diesel B10/B20 Sabah / Sarawak", "value": "RM2.15/L" },
-        { "label": "Diesel B7 Sabah / Sarawak", "value": "RM2.35/L" }
+        {
+          "label": "BUDI95 RON95",
+          "value": "RM1.99/L"
+        },
+        {
+          "label": "RON95 unsubsidised",
+          "value": "RM4.02/L"
+        },
+        {
+          "label": "RON97",
+          "value": "RM5.10/L"
+        },
+        {
+          "label": "Diesel B10/B20 Peninsular",
+          "value": "RM5.97/L"
+        },
+        {
+          "label": "Diesel B7 Peninsular",
+          "value": "RM6.17/L"
+        },
+        {
+          "label": "Diesel B10/B20 Sabah / Sarawak",
+          "value": "RM2.15/L"
+        },
+        {
+          "label": "Diesel B7 Sabah / Sarawak",
+          "value": "RM2.35/L"
+        }
       ]
     }
   ],

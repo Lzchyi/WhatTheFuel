@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-14T00:00:00Z",
+  "updatedAt": "2026-04-16T00:00:00Z",
   "items": [
     {
       "id": "2026-02-28-strikes-on-iran",
@@ -110,6 +110,17 @@
       "source": "Reuters",
       "sourceUrl": "https://www.reuters.com/world/middle-east/us-blockade-iran-after-talks-fail-yield-a-deal-2026-04-13/",
       "reviewedAt": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "2026-04-15-naval-interdictions",
+      "date": "2026-04-15T00:00:00Z",
+      "title": "U.S. Navy begins active tanker interdictions forcing price volatility",
+      "description": "Reports confirmed that U.S. naval forces actively interdicted tankers leaving Iranian ports under the President's orders. Successive come-and-back threats between parties pushed supply risk drastically higher.",
+      "impact": "This marks actual military enforcement of the blockade, transforming theoretical political tension into concrete real-world supply disruption.",
+      "category": "global",
+      "source": "JPost / Security Reports",
+      "sourceUrl": "https://www.jpost.com/",
+      "reviewedAt": "2026-04-16T00:00:00Z"
     }
   ]
 }
