@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-16T00:00:00Z",
+  "updatedAt": "2026-04-18T00:00:00Z",
   "items": [
     {
       "id": "2026-02-28-strikes-on-iran",
@@ -121,6 +121,17 @@
       "source": "JPost / Security Reports",
       "sourceUrl": "https://www.jpost.com/middle-east/iran-news/article-893028",
       "reviewedAt": "2026-04-16T00:00:00Z"
+    },
+    {
+      "id": "2026-04-17-hormuz-reopens",
+      "date": "2026-04-17T00:00:00Z",
+      "title": "Iran announces reopening of the Strait of Hormuz to commercial traffic",
+      "description": "Iran's foreign minister announced the reopening of the key oil channel for commercial vessels through designated safe lanes, following a ceasefire in Lebanon.",
+      "impact": "This triggered a sharp drop in oil prices as the risk premium associated with the blockade eased. However, maritime groups remain cautious about the actual safety of the route.",
+      "category": "global",
+      "source": "BBC",
+      "sourceUrl": "https://www.bbc.com/news/articles/cwydexp39ddo",
+      "reviewedAt": "2026-04-18T00:00:00Z"
     }
   ]
 }
