@@ -2,14 +2,7 @@ import React from 'react';
 import { Link2, MapPin, ShieldAlert, HelpCircle } from 'lucide-react';
 import { editorial } from '../lib/editorial';
 import { useI18n } from '../lib/i18n';
-import { MalaysiaFieldsMap } from '../components/MalaysiaFieldsMap';
 
-/** Section titles that trigger the fields map injection */
-const FIELDS_TITLES: Record<string, boolean> = {
-  "Where Malaysia's oil comes from — the key fields": true,
-  'Kawasan Pengeluaran Minyak Malaysia — Medan-Medan Utama': true,
-  '马来西亚石油来自哪里——主要油田': true,
-};
 
 export function MalaysiaExplainer() {
   const { language } = useI18n();
@@ -43,9 +36,7 @@ export function MalaysiaExplainer() {
               </div>
             ) : null}
 
-            {/* Inject Malaysia fields map after the key fields section */}
-            {FIELDS_TITLES[section.title] && <MalaysiaFieldsMap lang={language} />}
-          </section>
+            </section>
         ))}
       </div>
       <div className="mt-8 rounded-3xl border border-amber-100 bg-amber-50 p-6 text-amber-900 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-200">
