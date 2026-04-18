@@ -53,8 +53,8 @@ export const zh: EditorialCopy = {
           '重质原油：价值最低，需经过复杂的精炼过程（如：委内瑞拉重原油）。',
         ],
         sources: [
-          { label: 'EIA 官方报告', url: 'https://www.eia.gov/todayinenergy/detail.php?id=31372' },
-          { label: 'S&P 全球市场解读', url: 'https://www.spglobal.com/commodityinsights/en/market-insights/videos/market-movers-asia/041425-middle-east-iran-us-tensions-china-india-oil-steel-agriculture' },
+          { label: 'EIA 官方报告', url: 'https://www.eia.gov/petroleum/data.php#crude' },
+          { label: 'EIA 全球市场基准', url: 'https://www.eia.gov/finance/markets/crudeoil/' },
         ],
       },
       {
@@ -248,7 +248,7 @@ export const zh: EditorialCopy = {
       { name: '马来西亚统计局', purpose: '经济与石油贸易数据', url: 'https://www.dosm.gov.my/portal-main/' },
       { name: '美国能源信息署', purpose: '全球市场结构与运行机制', url: 'https://www.eia.gov/' },
       { name: 'Petronas', purpose: '企业运营与国家资源所有权', url: 'https://www.petronas.com/' },
-      { name: 'BP 统计报告', purpose: '全球产量与能源数据', url: 'https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html' },
+      { name: '能源研究所 (Energy Institute)', purpose: '全球产量与能源数据', url: 'https://www.energyinst.org/statistical-review' },
     ],
   },
 };

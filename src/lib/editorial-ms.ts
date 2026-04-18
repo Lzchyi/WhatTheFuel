@@ -53,8 +53,8 @@ export const ms: EditorialCopy = {
           'Berat: Nilai terendah, memerlukan penapisan intensif (cth: Venezuelan heavy).',
         ],
         sources: [
-          { label: 'EIA: Gred Minyak Mentah', url: 'https://www.eia.gov/todayinenergy/detail.php?id=31372' },
-          { label: 'S&P Global: Penanda Aras Global', url: 'https://www.spglobal.com/commodityinsights/en/market-insights/videos/market-movers-asia/041425-middle-east-iran-us-tensions-china-india-oil-steel-agriculture' },
+          { label: 'EIA: Gred Minyak Mentah', url: 'https://www.eia.gov/petroleum/data.php#crude' },
+          { label: 'EIA: Penanda Aras Global', url: 'https://www.eia.gov/finance/markets/crudeoil/' },
         ],
       },
       {
@@ -248,7 +248,7 @@ export const ms: EditorialCopy = {
       { name: 'Jabatan Perangkaan Malaysia', purpose: 'Data ekonomi dan perdagangan petroleum', url: 'https://www.dosm.gov.my/portal-main/' },
       { name: 'U.S. Energy Information Administration', purpose: 'Struktur dan mekanik pasaran global', url: 'https://www.eia.gov/' },
       { name: 'Petronas', purpose: 'Operasi dan pemilikan sumber nasional', url: 'https://www.petronas.com/' },
-      { name: 'BP Statistical Review', purpose: 'Data pengeluaran dan tenaga global', url: 'https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html' },
+      { name: 'Energy Institute', purpose: 'Data pengeluaran dan tenaga global', url: 'https://www.energyinst.org/statistical-review' },
     ],
   },
 };

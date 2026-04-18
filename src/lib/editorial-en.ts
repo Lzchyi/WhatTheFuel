@@ -53,8 +53,8 @@ export const en: EditorialCopy = {
           'Heavy: Lowest value, most intensive refining required (e.g., Venezuelan heavy).',
         ],
         sources: [
-          { label: 'EIA: Crude Oil Grades', url: 'https://www.eia.gov/todayinenergy/detail.php?id=31372' },
-          { label: 'S&P Global: Global Benchmarks', url: 'https://www.spglobal.com/commodityinsights/en/market-insights/videos/market-movers-asia/041425-middle-east-iran-us-tensions-china-india-oil-steel-agriculture' },
+          { label: 'EIA: Crude Oil Grades', url: 'https://www.eia.gov/petroleum/data.php#crude' },
+          { label: 'EIA: Global Benchmarks', url: 'https://www.eia.gov/finance/markets/crudeoil/' },
         ],
       },
       {
@@ -248,7 +248,7 @@ export const en: EditorialCopy = {
       { name: 'Department of Statistics Malaysia', purpose: 'Economic and petroleum trade data', url: 'https://www.dosm.gov.my/portal-main/' },
       { name: 'U.S. Energy Information Administration', purpose: 'Global market structure and mechanics', url: 'https://www.eia.gov/' },
       { name: 'Petronas', purpose: 'Operations and national resource ownership', url: 'https://www.petronas.com/' },
-      { name: 'BP Statistical Review', purpose: 'Global production and energy data', url: 'https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html' },
+      { name: 'Energy Institute', purpose: 'Global production and energy data', url: 'https://www.energyinst.org/statistical-review' },
     ],
   },
 };
