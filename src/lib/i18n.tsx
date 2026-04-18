@@ -5,9 +5,9 @@ type Dict = Record<string, string>;
 
 const translations: Record<Language, Dict> = {
   en: {
-    'nav.home': 'Home', 'nav.understanding': 'Understanding the Numbers', 'nav.global': 'Global Context', 'nav.malaysia': 'Malaysia Context', 'nav.timeline': 'Timeline', 'nav.myths': 'Myths', 'nav.sources': 'Sources',
+    'nav.home': 'Home', 'nav.understanding': 'Understanding the Numbers', 'nav.global': 'Oil 101', 'nav.malaysia': 'Malaysia & Oil', 'nav.timeline': 'Timeline', 'nav.myths': 'Myths', 'nav.sources': 'Sources',
     'prices.global_trends_title': 'Global Crude Oil Trends',
-    'prices.current_title': 'Current pump prices',
+    'prices.current_title': 'Current fuel prices',
     'prices.context_title': 'Notes, source, and update context',
     'prices.last_updated': 'Last updated',
     'prices.source': 'Source',
@@ -54,9 +54,9 @@ const translations: Record<Language, Dict> = {
     'myths.why_it_matters': 'Why it matters'
   },
   ms: {
-    'nav.home': 'Utama', 'nav.understanding': 'Pemahaman Data', 'nav.global': 'Konteks Global', 'nav.malaysia': 'Konteks Malaysia', 'nav.timeline': 'Garis Masa', 'nav.myths': 'Mitos & Fakta', 'nav.sources': 'Sumber Rujukan',
+    'nav.home': 'Utama', 'nav.understanding': 'Pemahaman Data', 'nav.global': 'Minyak 101', 'nav.malaysia': 'Malaysia & Minyak', 'nav.timeline': 'Garis Masa', 'nav.myths': 'Mitos & Fakta', 'nav.sources': 'Sumber Rujukan',
     'prices.global_trends_title': 'Trend Harga Minyak Mentah Global',
-    'prices.current_title': 'Harga Runcit Bahan Api Semasa',
+    'prices.current_title': 'Harga Bahan Api Semasa',
     'prices.context_title': 'Nota, sumber, dan konteks kemas kini',
     'prices.last_updated': 'Kemas kini terakhir',
     'prices.source': 'Sumber',
@@ -103,9 +103,9 @@ const translations: Record<Language, Dict> = {
     'myths.why_it_matters': 'Implikasi Fakta'
   },
   zh: {
-    'nav.home': '首页', 'nav.understanding': '数据解析', 'nav.global': '国际环境', 'nav.malaysia': '国内背景', 'nav.timeline': '演进表', 'nav.myths': '迷思与事实', 'nav.sources': '资料来源',
+    'nav.home': '首页', 'nav.understanding': '数据解析', 'nav.global': '石油101', 'nav.malaysia': '马来西亚与石油', 'nav.timeline': '演进表', 'nav.myths': '迷思与事实', 'nav.sources': '资料来源',
     'prices.global_trends_title': '国际原油价格走势',
-    'prices.current_title': '当前燃油零售价',
+    'prices.current_title': '当前燃油价格',
     'prices.context_title': '更新详情与来源说明',
     'prices.last_updated': '最后更新',
     'prices.source': '资料来源',

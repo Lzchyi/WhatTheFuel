@@ -4,12 +4,15 @@ import { AlertTriangle, ExternalLink } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { FuelPricesData, formatDateTimeLabel, loadFuelPrices, loadGlobalPrices, GlobalPricePoint } from '../lib/content';
 import { useI18n } from '../lib/i18n';
+import { useTheme } from '../lib/theme';
 import { editorial } from '../lib/editorial';
 
 type State = { fuelPrices: FuelPricesData | null; error: string | null };
 
 export function Home() {
   const { t, language } = useI18n();
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
   const copy = editorial(language);
   const [state, setState] = useState<State>({ fuelPrices: null, error: null });
   const [globalPrices, setGlobalPrices] = useState<GlobalPricePoint[] | null>(null);
@@ -166,12 +169,12 @@ export function Home() {
                         </linearGradient>
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#444" opacity={0.2} />
-                      <XAxis dataKey="date" tickFormatter={(val) => new Date(val).toLocaleDateString(language === 'ms' ? 'ms-MY' : language === 'zh' ? 'zh-MY' : 'en-MY', {month:'short', day:'numeric'})} axisLine={false} tickLine={false} tick={{fontSize: 12}} dy={10} />
-                      <YAxis domain={['auto', 'auto']} axisLine={false} tickLine={false} tick={{fontSize: 12}} tickFormatter={(val) => `$${val}`} />
+                      <XAxis dataKey="date" tickFormatter={(val) => new Date(val).toLocaleDateString(language === 'ms' ? 'ms-MY' : language === 'zh' ? 'zh-MY' : 'en-MY', {month:'short', day:'numeric'})} axisLine={false} tickLine={false} tick={{fontSize: 12, fill: isDark ? '#a8a29e' : '#57534e'}} dy={10} />
+                      <YAxis domain={['auto', 'auto']} axisLine={false} tickLine={false} tick={{fontSize: 12, fill: isDark ? '#a8a29e' : '#57534e'}} tickFormatter={(val) => `$${val}`} />
                       <Tooltip 
                         formatter={(value: number) => [`$${value.toFixed(2)}`, '']}
                         labelFormatter={(label) => new Date(label).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'})}
-                        contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
+                        contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)', backgroundColor: isDark ? '#1c1917' : '#fff', color: isDark ? '#e7e5e4' : '#1c1917'}}
                       />
                       <Legend iconType="circle" wrapperStyle={{paddingTop: '20px'}} />
                       <Area type="monotone" name="Brent Crude" dataKey="brent" stroke="#f59e0b" strokeWidth={3} fillOpacity={1} fill="url(#colorBrent)" />

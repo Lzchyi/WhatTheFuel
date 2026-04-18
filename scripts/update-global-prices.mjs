@@ -18,26 +18,26 @@ async function fetchPrices(code) {
 async function main() {
   const brentReq = await fetchPrices('BRENT_CRUDE_USD');
   const wtiReq = await fetchPrices('WTI_USD');
-  
+
   // Group by day to get daily prices (takes the latest value for each day)
   const mapByDate = {};
-  
+
   for (const item of wtiReq) {
     const date = item.created_at.split('T')[0];
     if (!mapByDate[date]) mapByDate[date] = { date };
     if (!mapByDate[date].wti) mapByDate[date].wti = item.price;
   }
-  
+
   for (const item of brentReq) {
     const date = item.created_at.split('T')[0];
     if (!mapByDate[date]) mapByDate[date] = { date };
     if (!mapByDate[date].brent) mapByDate[date].brent = item.price;
   }
-  
+
   // Convert to array and sort ascending
   const chartData = Object.values(mapByDate)
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-    
+
   const payload = {
     updatedAt: new Date().toISOString(),
     chartData

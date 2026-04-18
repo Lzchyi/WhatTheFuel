@@ -1,6 +1,6 @@
 {
   "status": "verified",
-  "updatedAt": "2026-04-16T08:51:30.530Z",
+  "updatedAt": "2026-04-18T02:11:45.966Z",
   "disclaimer": "Prices shown here are automatically sourced from the data.gov.my open API (Ministry of Finance). The data is maintained and released officially by the government.",
   "sections": [
     {
@@ -10,31 +10,38 @@
       "items": [
         {
           "label": "BUDI95 RON95",
-          "value": "RM1.99/L"
+          "value": "RM1.99/L",
+          "diff": null
         },
         {
           "label": "RON95 unsubsidised",
-          "value": "RM4.02/L"
+          "value": "RM4.02/L",
+          "diff": "-0.25"
         },
         {
           "label": "RON97",
-          "value": "RM5.10/L"
+          "value": "RM5.10/L",
+          "diff": "-0.25"
         },
         {
           "label": "Diesel B10/B20 Peninsular",
-          "value": "RM5.97/L"
+          "value": "RM5.97/L",
+          "diff": "-0.75"
         },
         {
           "label": "Diesel B7 Peninsular",
-          "value": "RM6.17/L"
+          "value": "RM6.17/L",
+          "diff": "-0.75"
         },
         {
           "label": "Diesel B10/B20 Sabah / Sarawak",
-          "value": "RM2.15/L"
+          "value": "RM2.15/L",
+          "diff": null
         },
         {
           "label": "Diesel B7 Sabah / Sarawak",
-          "value": "RM2.35/L"
+          "value": "RM2.35/L",
+          "diff": null
         }
       ]
     }
