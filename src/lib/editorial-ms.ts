@@ -10,7 +10,7 @@ export const ms: EditorialCopy = {
     latestSubtitle: 'Harga semasa dan garis subsidi berpandukan sumber rasmi.',
     pricesLabel: 'Harga',
     newsLabel: 'Berita',
-    loadingPrices: 'Memuatkan data harga sahih.',
+    loadingPrices: 'Muat turun data harga sahih.',
     emptyNews: 'Tiada berita buat masa ini.',
   },
   understanding: {
@@ -37,7 +37,7 @@ export const ms: EditorialCopy = {
           'Selama jutaan tahun, haba dan tekanan tinggi menukarkan bahan organik ini menjadi kerogen, yang akhirnya "pecah" menjadi minyak cair dan gas. Proses geologi yang lama ini menjadikan minyak sumber yang tidak boleh diperbaharui.',
         ],
         sources: [
-          { label: 'Penn State EARTH 104', url: 'https://www.e-education.psu.edu/earth104/node/1382' },
+          { label: 'Penn State EARTH 104', url: 'https://www.e-education.psu.edu/earth104/node/2215' },
           { label: 'EnergyEducation.ca', url: 'https://energyeducation.ca/encyclopedia/Petroleum_formation' },
         ],
       },
@@ -53,8 +53,8 @@ export const ms: EditorialCopy = {
           'Berat: Nilai terendah, memerlukan penapisan intensif (cth: Venezuelan heavy).',
         ],
         sources: [
-          { label: 'EIA: Gred Minyak Mentah', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php' },
-          { label: 'OilPriceAPI Benchmarks', url: 'https://oilpriceapi.com/blog/crude-oil-benchmarks' },
+          { label: 'EIA: Gred Minyak Mentah', url: 'https://www.eia.gov/todayinenergy/detail.php?id=31372' },
+          { label: 'S&P Global: Penanda Aras Global', url: 'https://www.spglobal.com/commodityinsights/en/market-insights/videos/market-movers-asia/041425-middle-east-iran-us-tensions-china-india-oil-steel-agriculture' },
         ],
       },
       {
@@ -69,8 +69,8 @@ export const ms: EditorialCopy = {
           'Bawah: Minyak Bahan Api dan Bitumen (Asfalt).',
         ],
         sources: [
-          { label: 'Busch Vacuum: Penyulingan', url: 'https://www.buschvacuum.com/en/knowledge/fractional-distillation' },
-          { label: 'Crown Oil: Proses Penapisan', url: 'https://www.crownoil.co.uk/news/oil-refining-process/' },
+          { label: 'EIA: Penerangan Penapisan', url: 'https://www.eia.gov/energyexplained/oil-and-petroleum-products/refining-crude-oil-fractions.php' },
+          { label: 'Crown Oil: Proses Penapisan', url: 'https://www.crownoil.co.uk/guides/oil-refining-process-guide/' },
         ],
       },
       {
@@ -94,21 +94,21 @@ export const ms: EditorialCopy = {
         paragraphs: [
           'Harga minyak mentah bertindak balas terhadap kekurangan bekalan global dan risiko geopolitik. Pedagang dan penapis bertindak mengikut isyarat pasaran merangkumi harga spot, tahap inventori, dan pasaran kewangan secara serentak.',
         ],
-        sources: [{ label: 'Tinjauan EIA', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php?funnelFromId=71' }],
+        sources: [{ label: 'Tinjauan Pasaran EIA', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: 'Titik sekatan menukarkan ketegangan menjadi kos perkapalan',
         paragraphs: [
           'Laluan perkapalan kritikal seperti Selat Hormuz mengendalikan 20% minyak global. Sebarang ancaman terhadap laluan ini menyebabkan kos pengangkutan dan insurans naik serta-merta, walaupun sebelum gangguan fizikal berlaku.',
         ],
-        sources: [{ label: 'Analisis EIA Hormuz', url: 'https://www.eia.gov/todayinenergy/detail.php?id=65504' }],
+        sources: [{ label: 'Analisis Laluan EIA', url: 'https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints' }],
       },
       {
         title: 'Harga spot, hadapan, dan inventori',
         paragraphs: [
           'Pasaran mengimbangkan bekalan fizikal semasa (harga spot) dengan jangkaan masa depan (harga hadapan). Inventori yang rendah mengurangkan penampan pasaran, menjadikan harga lebih sensitif terhadap berita global.',
         ],
-        sources: [{ label: 'Pasaran kewangan EIA', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php?funnelFromId=71' }],
+        sources: [{ label: 'Pasaran Kewangan EIA', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: 'Malaysia tetap terkesan oleh pasaran yang sama',
@@ -146,9 +146,9 @@ export const ms: EditorialCopy = {
         bullets: [
           'Luar Pesisir Terengganu: Matang, minyak mentah ringan manis (Tapis).',
           'Luar Pesisir Sabah: Projek pertumbuhan air dalam (Kikeh, Malikai).',
-          'Luar Pesisir Sarawak: Pengeluaran utama gas asli dan minyak.',
+          'Luar Pesisir Sarawak: Pengeluaran utama gas asli and minyak.',
         ],
-        sources: [{ label: 'Operasi Petronas', url: 'https://www.petronas.com/what-we-do' }],
+        sources: [{ label: 'Portfolio Petronas', url: 'https://www.petronas.com/what-we-do/upstream' }],
       },
       {
         title: 'Minyak Tapis — Penanda aras premium Malaysia',
@@ -161,7 +161,7 @@ export const ms: EditorialCopy = {
           'Eksport Strategik: Dijual sebagai penanda aras premium Asia-Pasifik.',
           'Realiti Penapisan: Kilang tempatan dioptimumkan untuk gred import yang lebih berat.',
         ],
-        sources: [{ label: 'Penanda aras EIA', url: 'https://www.eia.gov/finance/markets/crudeoil/' }],
+        sources: [{ label: 'Penanda Aras EIA', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: 'Petronas — Syarikat Minyak Nasional',
@@ -174,7 +174,7 @@ export const ms: EditorialCopy = {
           'Hasil: Dividen tahunan RM 40B+ kepada kerajaan (2023).',
           'Jangkauan Global: Beroperasi di lebih 30 negara dengan fasiliti LNG bertaraf dunia.',
         ],
-        sources: [{ label: 'Laporan Bersepadu Petronas', url: 'https://www.petronas.com/investor-relations/annual-report' }],
+        sources: [{ label: 'Laporan Kewangan Petronas', url: 'https://www.petronas.com/investor-relations/reports-results' }],
       },
       {
         title: "Kilang penapisan Malaysia — Kapasiti domestik",
@@ -187,7 +187,7 @@ export const ms: EditorialCopy = {
           'Pengimport Bersih: Penggunaan domestik melebihi jumlah keluaran penapisan.',
           'Pautan Harga: Kos dan margin penapisan kekal terikat dengan pasaran global.',
         ],
-        sources: [{ label: 'Butiran RAPID Pengerang', url: 'https://www.petronas.com/what-we-do/downstream' }],
+        sources: [{ label: 'Bahagian Hiliran Petronas', url: 'https://www.petronas.com/what-we-do/downstream' }],
       },
       {
         title: 'Subsidi adalah bersasar, bukan tanpa had',
@@ -200,7 +200,7 @@ export const ms: EditorialCopy = {
           'Pengurusan Kuota: Had bulanan untuk mengawal pendedahan fiskal.',
           'Sokongan Wilayah: Kerangka berbeza untuk Sabah dan Sarawak.',
         ],
-        sources: [{ label: 'Kemaskini bahan api Kementerian Kewangan', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: 'Arkib Kenyataan MOF', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
     ],
   },
@@ -218,19 +218,19 @@ export const ms: EditorialCopy = {
         myth: '"Harga pam sama dengan harga minyak mentah hari ini."',
         fact: 'Harga runcit mencerminkan purata kos minggu sebelumnya, bukan reaksi masa nyata terhadap berita pasaran hari ini.',
         whyItMatters: 'Sela masa ini menjelaskan kenapa penurunan harga minyak global tidak terus kelihatan di pam pada petang yang sama.',
-        sources: [{ label: 'Penjelasan harga MOF', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: 'Makluman Harga MOF', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
       {
         myth: '"Subsidi bermaksud kerajaan boleh tanggung sebarang kos tanpa had."',
         fact: 'Subsidi mempunyai kesan fiskal langsung. Sistem seperti BUDI95 menggunakan had dan sasaran untuk memastikan sokongan mampan tanpa menjejaskan bajet negara.',
         whyItMatters: 'Subsidi tanpa had mewujudkan risiko fiskal yang boleh menjejaskan perkhidmatan awam lain.',
-        sources: [{ label: 'Kenyataan MOF April 8', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: 'Bilik Berita MOF', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
       {
         myth: '"Negara pengeluar terlindung daripada gangguan global."',
         fact: 'Titik sekatan dan konflik global menjejaskan kos perkapalan, insurans, dan harga "tong penggantian" yang diperlukan untuk memastikan bekalan di pam sentiasa ada.',
         whyItMatters: 'Menjadi pengeluar membantu, tetapi geografi tidak menghalang pasaran komoditi global daripada menentukan nilai bahan api.',
-        sources: [{ label: 'Analisis Hormuz EIA', url: 'https://www.eia.gov/todayinenergy/detail.php?id=65504' }],
+        sources: [{ label: 'Analisis Laluan EIA', url: 'https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints' }],
       },
     ],
   },
@@ -244,11 +244,11 @@ export const ms: EditorialCopy = {
     noteTitle: 'Komitmen',
     noteBody: 'Tiada dakwaan tanpa sumber, tiada kandungan pengisi, dan tiada penjejakan harga tanpa bukti.',
     sourceGroups: [
-      { name: 'Kementerian Kewangan Malaysia', purpose: 'Dasar harga, subsidi, dan kuota', url: 'https://www.mof.gov.my/portal/en/' },
+      { name: 'Kementerian Kewangan Malaysia', purpose: 'Dasar harga, subsidi, dan kuota', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' },
       { name: 'Jabatan Perangkaan Malaysia', purpose: 'Data ekonomi dan perdagangan petroleum', url: 'https://www.dosm.gov.my/portal-main/' },
       { name: 'U.S. Energy Information Administration', purpose: 'Struktur dan mekanik pasaran global', url: 'https://www.eia.gov/' },
       { name: 'Petronas', purpose: 'Operasi dan pemilikan sumber nasional', url: 'https://www.petronas.com/' },
-      { name: 'BP Statistical Review', purpose: 'Data pengeluaran dan tenaga global', url: 'https://www.bp.com/' },
+      { name: 'BP Statistical Review', purpose: 'Data pengeluaran dan tenaga global', url: 'https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html' },
     ],
   },
 };

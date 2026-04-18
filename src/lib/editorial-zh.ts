@@ -37,7 +37,7 @@ export const zh: EditorialCopy = {
           '在数百万年的演变中，高温高压将这些有机物转化为干酪根，最终“裂解”为液态原油和天然气。这一漫长的地质过程决定了石油是不可再生资源。',
         ],
         sources: [
-          { label: '宾州大学 EARTH 104', url: 'https://www.e-education.psu.edu/earth104/node/1382' },
+          { label: '宾州大学 EARTH 104', url: 'https://www.e-education.psu.edu/earth104/node/2215' },
           { label: 'EnergyEducation.ca', url: 'https://energyeducation.ca/encyclopedia/Petroleum_formation' },
         ],
       },
@@ -53,8 +53,8 @@ export const zh: EditorialCopy = {
           '重质原油：价值最低，需经过复杂的精炼过程（如：委内瑞拉重原油）。',
         ],
         sources: [
-          { label: 'EIA：原油等级', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php' },
-          { label: 'OilPriceAPI 基准比较', url: 'https://oilpriceapi.com/blog/crude-oil-benchmarks' },
+          { label: 'EIA 官方报告', url: 'https://www.eia.gov/todayinenergy/detail.php?id=31372' },
+          { label: 'S&P 全球市场解读', url: 'https://www.spglobal.com/commodityinsights/en/market-insights/videos/market-movers-asia/041425-middle-east-iran-us-tensions-china-india-oil-steel-agriculture' },
         ],
       },
       {
@@ -69,8 +69,8 @@ export const zh: EditorialCopy = {
           '塔底：燃料油与沥青。',
         ],
         sources: [
-          { label: 'Busch Vacuum：分馏原理', url: 'https://www.buschvacuum.com/en/knowledge/fractional-distillation' },
-          { label: 'Crown Oil：提炼过程', url: 'https://www.crownoil.co.uk/news/oil-refining-process/' },
+          { label: 'EIA 提炼指南', url: 'https://www.eia.gov/energyexplained/oil-and-petroleum-products/refining-crude-oil-fractions.php' },
+          { label: 'Crown Oil 提炼流程', url: 'https://www.crownoil.co.uk/guides/oil-refining-process-guide/' },
         ],
       },
       {
@@ -94,21 +94,21 @@ export const zh: EditorialCopy = {
         paragraphs: [
           '原油价格反映了全球供应的紧张程度及地缘政治风险。交易员与炼油商会根据现货价格、库存水平和金融市场的同步信号做出反应。',
         ],
-        sources: [{ label: 'EIA 市场概览', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php?funnelFromId=71' }],
+        sources: [{ label: 'EIA 市场分析', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: '航运瓶颈推高物流成本',
         paragraphs: [
           '诸如霍尔木兹海峡等关键航道承担了全球20%的石油运输。这些咽喉点的任何潜在威胁都会立即推高运费和保险费用，即便实际供应尚未中断。',
         ],
-        sources: [{ label: 'EIA 霍尔木兹海峡分析', url: 'https://www.eia.gov/todayinenergy/detail.php?id=65504' }],
+        sources: [{ label: 'EIA 航道分析', url: 'https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints' }],
       },
       {
         title: '现货、期货与库存的平衡',
         paragraphs: [
           '市场需要在当前实物。供应量（现货）与未来预期（期货）之间寻找平衡。低库存会消除市场缓冲，使价格对全球新闻更为敏感。',
         ],
-        sources: [{ label: 'EIA 金融市场分析', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php?funnelFromId=71' }],
+        sources: [{ label: 'EIA 金融市场概览', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: '马来西亚深处全球体系之中',
@@ -135,7 +135,7 @@ export const zh: EditorialCopy = {
           '2004年，我国石油产量达到每日约86.2万桶的巅峰。随着半岛东海岸成熟浅海油田的衰退，目前产量已降至每日约60万桶左右。',
           '投资已转向沙巴和砂拉越技术极其复杂的深海油田。这些项目维持了产量，但与传统油田相比，其开发成本更高、周期更长。',
         ],
-        sources: [{ label: 'EIA 马来西亚概况', url: 'https://www.eia.gov/international/analysis/country/MYS' }],
+        sources: [{ label: 'EIA 马来西亚概览', url: 'https://www.eia.gov/international/analysis/country/MYS' }],
       },
       {
         title: '大马石油产自哪里：核心油田',
@@ -148,7 +148,7 @@ export const zh: EditorialCopy = {
           '沙巴近海：深海增长项目 (Kikeh, Malikai)。',
           '砂拉越近海：国内主要的天然气与石油产地。',
         ],
-        sources: [{ label: 'Petronas 运营概览', url: 'https://www.petronas.com/what-we-do' }],
+        sources: [{ label: 'Petronas 业务组合', url: 'https://www.petronas.com/what-we-do/upstream' }],
       },
       {
         title: '塔比斯原油：大马的优质基准',
@@ -161,7 +161,7 @@ export const zh: EditorialCopy = {
           '战略出口：作为亚太地区的优质定价基准。',
           '炼油分工：国内炼厂通常针对进口重质原油进行优化。',
         ],
-        sources: [{ label: 'EIA 基准对比', url: 'https://www.eia.gov/finance/markets/crudeoil/' }],
+        sources: [{ label: 'EIA 基准分析', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: 'Petronas：国家石油公司',
@@ -174,7 +174,7 @@ export const zh: EditorialCopy = {
           '收入：2023年向政府支付超过400亿令吉股息。',
           '全球化：业务遍及30多个国家，拥有世界级的液化天然气设施。',
         ],
-        sources: [{ label: 'Petronas 综合报告', url: 'https://www.petronas.com/investor-relations/annual-report' }],
+        sources: [{ label: 'Petronas 财务报告', url: 'https://www.petronas.com/investor-relations/reports-results' }],
       },
       {
         title: '大马炼油能力：国内加工现状',
@@ -187,7 +187,7 @@ export const zh: EditorialCopy = {
           '净进口状况：国内消费需求超出了总炼油产量。',
           '定价联动：炼油成本与利润空间仍与全球市场挂钩。',
         ],
-        sources: [{ label: '边佳兰 RAPID 详情', url: 'https://www.petronas.com/what-we-do/downstream' }],
+        sources: [{ label: 'Petronas 下游业务', url: 'https://www.petronas.com/what-we-do/downstream' }],
       },
       {
         title: '补贴机制：定向而非无限',
@@ -200,7 +200,7 @@ export const zh: EditorialCopy = {
           '配额管理：通过设定月度限额来管理财政风险。',
           '地区支持：为沙巴及砂拉越制定了不同的执行框架。',
         ],
-        sources: [{ label: '财政部燃油政策更新', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: '财政部官方动态', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
     ],
   },
@@ -218,19 +218,19 @@ export const zh: EditorialCopy = {
         myth: '“加油站价格就是今天的国际原油价。”',
         fact: '零售价格反映的是前一周的平均成本，而非对今日市场新闻的即时反应。',
         whyItMatters: '价格滞后解释了为何全球油价下跌不会在同日下午立即反映在加油站。',
-        sources: [{ label: '财政部定价说明', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: '财政部定价说明', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
       {
         myth: '“补贴意味着政府能无止境承担任何成本。”',
         fact: '补贴有直接的财政代价。BUDI95 等系统通过限额和定向投放，确保政府能持续提供支持而不透支预算。',
         whyItMatters: '无限补贴会产生财政风险，长期可能影响其他公共服务。',
-        sources: [{ label: '财政部 4月8日引述', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: '财政部新闻中心', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
       {
         myth: '“产油国能免受全球震荡的影响。”',
         fact: '全球航道瓶颈及冲突会推高运费、保险费以及确保油泵运行所需的“替代桶”价格。',
         whyItMatters: '产油身份有帮助，但地缘政治依然会决定大宗商品的最终价值。',
-        sources: [{ label: 'EIA 霍尔木兹海峡分析', url: 'https://www.eia.gov/todayinenergy/detail.php?id=65504' }],
+        sources: [{ label: 'EIA 航道安全分析', url: 'https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints' }],
       },
     ],
   },
@@ -244,11 +244,11 @@ export const zh: EditorialCopy = {
     noteTitle: '我们的承诺',
     noteBody: '不发布无来源的主张，无灌水内容，且所有数据可溯源。',
     sourceGroups: [
-      { name: '马来西亚财政部', purpose: '定价政策、补贴与配额', url: 'https://www.mof.gov.my/portal/en/' },
+      { name: '马来西亚财政部', purpose: '定价政策、补贴与配额', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' },
       { name: '马来西亚统计局', purpose: '经济与石油贸易数据', url: 'https://www.dosm.gov.my/portal-main/' },
       { name: '美国能源信息署', purpose: '全球市场结构与运行机制', url: 'https://www.eia.gov/' },
       { name: 'Petronas', purpose: '企业运营与国家资源所有权', url: 'https://www.petronas.com/' },
-      { name: 'BP 统计报告', purpose: '全球产量与能源数据', url: 'https://www.bp.com/' },
+      { name: 'BP 统计报告', purpose: '全球产量与能源数据', url: 'https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html' },
     ],
   },
 };

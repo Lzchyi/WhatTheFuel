@@ -37,7 +37,7 @@ export const en: EditorialCopy = {
           'Over millions of years, intense heat and pressure transformed this organic matter into a waxy substance called kerogen, which eventually "cracked" into liquid oil and gas. This slow geological process makes oil a non-renewable resource.',
         ],
         sources: [
-          { label: 'Penn State EARTH 104', url: 'https://www.e-education.psu.edu/earth104/node/1382' },
+          { label: 'Penn State EARTH 104', url: 'https://www.e-education.psu.edu/earth104/node/2215' },
           { label: 'EnergyEducation.ca', url: 'https://energyeducation.ca/encyclopedia/Petroleum_formation' },
         ],
       },
@@ -53,8 +53,8 @@ export const en: EditorialCopy = {
           'Heavy: Lowest value, most intensive refining required (e.g., Venezuelan heavy).',
         ],
         sources: [
-          { label: 'EIA: Crude Oil Grades', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php' },
-          { label: 'OilPriceAPI Benchmarks', url: 'https://oilpriceapi.com/blog/crude-oil-benchmarks' },
+          { label: 'EIA: Crude Oil Grades', url: 'https://www.eia.gov/todayinenergy/detail.php?id=31372' },
+          { label: 'S&P Global: Global Benchmarks', url: 'https://www.spglobal.com/commodityinsights/en/market-insights/videos/market-movers-asia/041425-middle-east-iran-us-tensions-china-india-oil-steel-agriculture' },
         ],
       },
       {
@@ -69,8 +69,8 @@ export const en: EditorialCopy = {
           'Bottom: Fuel Oil and Bitumen (Asphalt).',
         ],
         sources: [
-          { label: 'Busch Vacuum: Distillation', url: 'https://www.buschvacuum.com/en/knowledge/fractional-distillation' },
-          { label: 'Crown Oil: Refining Process', url: 'https://www.crownoil.co.uk/news/oil-refining-process/' },
+          { label: 'EIA: Refining Explained', url: 'https://www.eia.gov/energyexplained/oil-and-petroleum-products/refining-crude-oil-fractions.php' },
+          { label: 'Crown Oil: Refining Process', url: 'https://www.crownoil.co.uk/guides/oil-refining-process-guide/' },
         ],
       },
       {
@@ -94,21 +94,21 @@ export const en: EditorialCopy = {
         paragraphs: [
           'Crude prices respond to global supply tightness and geopolitical risks. Traders and refiners react to market signals across spot prices, inventory levels, and financial markets simultaneously.',
         ],
-        sources: [{ label: 'EIA overview', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php?funnelFromId=71' }],
+        sources: [{ label: 'EIA Market Overview', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: 'Chokepoints turn tension into shipping cost',
         paragraphs: [
           'Critical shipping routes like the Strait of Hormuz handle 20% of global oil. Any perceived threat to these chokepoints causes freight and insurance costs to rise immediately, even before an actual disruption occurs.',
         ],
-        sources: [{ label: 'EIA Hormuz analysis', url: 'https://www.eia.gov/todayinenergy/detail.php?id=65504' }],
+        sources: [{ label: 'EIA Chokepoint Analysis', url: 'https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints' }],
       },
       {
         title: 'Spot prices, futures, and inventories',
         paragraphs: [
           'The market balances current physical supply (spot prices) with future expectations (futures). Low inventories act as a vanishing buffer, making prices more sensitive to global news.',
         ],
-        sources: [{ label: 'EIA financial markets', url: 'https://www.eia.gov/finance/markets/crudeoil/financial_markets.php?funnelFromId=71' }],
+        sources: [{ label: 'EIA Financial Markets', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: 'Malaysia still feels the same market',
@@ -148,7 +148,7 @@ export const en: EditorialCopy = {
           'Offshore Sabah: Deepwater growth projects (Kikeh, Malikai).',
           'Offshore Sarawak: Major natural gas and oil production.',
         ],
-        sources: [{ label: 'Petronas Operations', url: 'https://www.petronas.com/what-we-do' }],
+        sources: [{ label: 'Petronas Portfolio', url: 'https://www.petronas.com/what-we-do/upstream' }],
       },
       {
         title: 'Tapis crude — Malaysia\'s premium benchmark',
@@ -161,7 +161,7 @@ export const en: EditorialCopy = {
           'Strategic Export: Sold as a premium benchmark for Asia-Pacific.',
           'Refinery Reality: Domestic refineries are often optimized for imported heavier grades.',
         ],
-        sources: [{ label: 'EIA benchmarks', url: 'https://www.eia.gov/finance/markets/crudeoil/' }],
+        sources: [{ label: 'EIA Crude Benchmarks', url: 'https://www.eia.gov/finance/markets/crudeoil/reports_and_analysis.php' }],
       },
       {
         title: 'Petronas — The National Oil Company',
@@ -174,7 +174,7 @@ export const en: EditorialCopy = {
           'Revenue: RM 40B+ annual dividend to the government (2023).',
           'Global Reach: Operates in over 30 countries and owns world-class LNG facilities.',
         ],
-        sources: [{ label: 'Petronas Integrated Report', url: 'https://www.petronas.com/investor-relations/annual-report' }],
+        sources: [{ label: 'Petronas Financial Reports', url: 'https://www.petronas.com/investor-relations/reports-results' }],
       },
       {
         title: "Malaysia's refineries — Domestic capacity",
@@ -187,7 +187,7 @@ export const en: EditorialCopy = {
           'Net Importer: Domestic consumption exceeds total refining output.',
           'Price Link: Refinery costs and margins remain tied to global markets.',
         ],
-        sources: [{ label: 'RAPID Pengerang details', url: 'https://www.petronas.com/what-we-do/downstream' }],
+        sources: [{ label: 'Petronas Downstream', url: 'https://www.petronas.com/what-we-do/downstream' }],
       },
       {
         title: 'Subsidies are targeted, not infinite',
@@ -200,7 +200,7 @@ export const en: EditorialCopy = {
           'Quota Management: Monthly limits to manage fiscal exposure.',
           'Regional Support: Differentiated frameworks for Sabah and Sarawak.',
         ],
-        sources: [{ label: 'Ministry of Finance fuel updates', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: 'Ministry of Finance Updates', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
     ],
   },
@@ -218,19 +218,19 @@ export const en: EditorialCopy = {
         myth: '"Pump price equals today\'s crude oil price."',
         fact: 'Retail prices reflect the previous week\'s average costs, not a real-time reaction to today\'s market news.',
         whyItMatters: 'Lagged pricing explains why a sudden global oil drop isn\'t reflected at the pump the same afternoon.',
-        sources: [{ label: 'MOF pricing explanation', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: 'MOF Pricing Updates', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
       {
         myth: '"Subsidies mean the government can absorb any cost indefinitely."',
         fact: 'Subsidies have a direct fiscal impact. Systems like BUDI95 use limits and targeting to ensure the government can sustain support without overextending the national budget.',
         whyItMatters: 'Unlimited subsidies create fiscal risks that can impact other public services over time.',
-        sources: [{ label: 'MOF April 8 Citation', url: 'https://www.mof.gov.my/portal/en/' }],
+        sources: [{ label: 'MOF Pressroom', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' }],
       },
       {
         myth: '"A producer country is insulated from global shocks."',
         fact: 'Global chokepoints and conflicts impact shipping, insurance, and the price of the "replacement barrels" we need to keep pumps running.',
         whyItMatters: 'Being a producer helps, but geography doesn\'t stop global commodity markets from dictating value.',
-        sources: [{ label: 'EIA Hormuz Analysis', url: 'https://www.eia.gov/todayinenergy/detail.php?id=65504' }],
+        sources: [{ label: 'EIA Hormuz Analysis', url: 'https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints' }],
       },
     ],
   },
@@ -244,11 +244,11 @@ export const en: EditorialCopy = {
     noteTitle: 'Commitment',
     noteBody: 'No unsourced claims, no filler content, and no tracking-free pricing.',
     sourceGroups: [
-      { name: 'Ministry of Finance Malaysia', purpose: 'Pricing policy, subsidies, and quotas', url: 'https://www.mof.gov.my/portal/en/' },
+      { name: 'Ministry of Finance Malaysia', purpose: 'Pricing policy, subsidies, and quotas', url: 'https://www.mof.gov.my/portal/en/news/press-citations/' },
       { name: 'Department of Statistics Malaysia', purpose: 'Economic and petroleum trade data', url: 'https://www.dosm.gov.my/portal-main/' },
       { name: 'U.S. Energy Information Administration', purpose: 'Global market structure and mechanics', url: 'https://www.eia.gov/' },
       { name: 'Petronas', purpose: 'Operations and national resource ownership', url: 'https://www.petronas.com/' },
-      { name: 'BP Statistical Review', purpose: 'Global production and energy data', url: 'https://www.bp.com/' },
+      { name: 'BP Statistical Review', purpose: 'Global production and energy data', url: 'https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html' },
     ],
   },
 };
