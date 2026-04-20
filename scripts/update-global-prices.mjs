@@ -7,7 +7,7 @@ const outputPath = path.join(rootDir, 'public', 'data', 'global-prices.json');
 
 const API_KEY = process.env.OILPRICE_API_KEY || "1408f85679ef607f767551e6fd1b60a071453002f6bbfd00dea5b81ee1f2aa68";
 
-const TARGET_START_DATE = '2026-02-01';
+const TARGET_START_DATE = '2026-03-01';
 
 async function fetchPrices(code) {
   let allPrices = [];
